@@ -1,4 +1,5 @@
-===Demonstration===
+Demonstration
+======
 
 Use rewrite to create a modular web-application with each module performing a different style task:
 
