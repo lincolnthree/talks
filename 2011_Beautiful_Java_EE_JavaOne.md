@@ -5,3 +5,4 @@ Use rewrite to create a modular web-application with each module performing a di
 
  * Module showing creation of REST endpoints
  * Show "free" RESTful URLs with JSF via Join.path("/{param}").to("/pages/{param}.xhtml")
+ * (humor) Show a rewrite rule that is a limerick.
