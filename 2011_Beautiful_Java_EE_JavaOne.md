@@ -30,6 +30,11 @@ Intro describing the problem that people run in to using URLs:
    * http://habrahabr.ru/showme404/
    * http://fryewiles.com/templateserrors/404.html
 
+Explain why you need URL-rewriting
+
+Discuss differences between Mod_Rewrite and Java-based Rewriting tools
+
+
 Use rewrite to create a modular web-application with each module performing a different style task:
 
  * Module showing creation of REST endpoints
