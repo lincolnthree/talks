@@ -34,6 +34,8 @@ Explain why you need URL-rewriting
 
 Discuss differences between Mod_Rewrite and Java-based Rewriting tools
 
+Show demos by deploying via forge to openshift.
+
 
 Use rewrite to create a modular web-application with each module performing a different style task:
 
