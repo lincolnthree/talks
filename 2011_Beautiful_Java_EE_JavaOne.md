@@ -34,6 +34,8 @@ Explain why you need URL-rewriting
 
 Discuss differences between Mod_Rewrite and Java-based Rewriting tools
 
+Discuss different types of redirects.
+
 Show demos by deploying via forge to openshift.
 
 
