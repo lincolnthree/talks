@@ -935,6 +935,9 @@ body {
 .whiteout .state-background {
 	background: rgba( 255, 255, 255, 1.0 );
 }
+.whiteout {
+   color: #ccc;
+}
 .blackout .state-background {
 	background: rgba( 0, 0, 0, 0.6 );
 }

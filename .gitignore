@@ -10,6 +10,6 @@ target/
 bin/
 _site/
 /*/src/main/java/META-INF
-.gitignore.swp
+*.swp
 .~lock*
 docs/reference/src/main/docbook/en-US/version_info.xml
