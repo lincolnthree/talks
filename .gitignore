@@ -8,6 +8,7 @@ target/
 *.ipr
 *.iws
 bin/
+_site/
 /*/src/main/java/META-INF
 .gitignore.swp
 .~lock*
