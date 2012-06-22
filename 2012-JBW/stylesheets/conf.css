@@ -1,0 +1,247 @@
+.footer {
+ background-color: #cc0000;
+ width: 100%;
+ clear: both;
+ position: fixed;
+ z-index: 30;
+ height: 75px;
+ left: 0;
+ bottom: 0;
+}
+
+.footer .summit-logo {
+ position: relative;
+ z-index: 50;
+ top: -75px;
+ left: 35px;
+ float: left;
+ border: none;
+ background: none;
+}
+
+.footer .redhat-logo {
+ position: relative;
+ float: right;
+ z-index: 50;
+ top: -10px;
+ right: 20px;
+ border: none;
+ background: none;
+}
+
+.reveal ul {
+ list-style: none;
+}
+
+.reveal ul ul, .reveal ul.bullets {
+ list-style: disc;
+}
+
+ul.intro {
+ margin-top: 50px;
+ list-style: none;
+}
+
+.reveal section img.splash, .reveal section .footer img, .reveal img.plain {
+ border: none;
+ background: none;
+ -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+         box-shadow: none;
+
+}
+
+.reveal .white {
+ background-color: #FFFFFF;
+}
+
+.reveal .images {
+ width: 100%;
+ padding-bottom: 50px;
+
+}
+
+.reveal .images table {
+ width: 100%;
+ margin: auto;
+}
+
+.reveal .images td {
+ vertical-align: middle;
+}
+
+.reveal .images img {
+ border: none;
+ background: none;
+ -webkit-box-shadow: none;
+ -moz-box-shadow: none;
+ box-shadow: none;
+}
+
+.html5_slide img {
+ padding: 20px;
+ float: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.reveal .prettyprint {
+    background-color: #ffffff;
+    border: none;
+}
+
+.reveal .prettyprint .prettyprint {
+    width: auto;
+}
+
+.reveal .capitalize {
+    text-transform: capitalize;
+}
+
+.reveal .normalcase {
+    text-transform: none;
+}
+
+.reveal .prettyprint .highlight, .reveal .prettyprint .highlight code {
+    background-color:#eee;
+    font-weight: normal;
+    font-size: 16pt;
+    margin: 2px auto;
+}
+
+.reveal section .print {
+    display: none;
+}
+
+.reveal .commons {
+    font-size: 10pt;
+    text-align: center;
+}
+
+.reveal .links li a {
+    font-size: 16pt;
+}
+
+.reveal .links li {
+    font-size: 16pt;
+    line-height: normal;
+}
+
+.reveal .links li a {
+    font-size: 18pt;
+}
+
+.reveal .links li {
+    font-size: 18pt;
+    line-height: normal;
+}
+
+@media screen {
+    .reveal .notes {
+        display: none;
+    }
+
+    .html5_slide p, .html5_slide div, .html5_slide img {
+        position: relative;
+    }
+
+    .relative {
+        position: relative
+    }
+
+    .resources {
+        margin-left: 15%;
+    }
+}
+
+@media print {
+    .reveal img {
+        border: none;
+        background: none;
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+                box-shadow: none;
+    }
+
+    section > ul, section > div, section > p {
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+
+    body {
+        position: static;
+    }
+
+    .state-background {
+        position: static;
+    }
+
+    body, p, td, li, div, a {
+        font-size: 24pt;
+    }
+
+    h1 { font-size: 150% !important; }
+    h2 { font-size: 140% !important; }
+    h3 { font-size: 130% !important; }
+    h4 { font-size: 120% !important; }
+    h5 { font-size: 115% !important; }
+    h6 { font-size: 110% !important; }
+
+    .reveal section .screen {
+        display: none; !important
+    }
+
+    .reveal section .print {
+        display: block;
+    }
+
+    .footer, .landscape, .portrait {
+        position: static;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+    }
+
+    .footer {
+        margin-top: 200px;
+    }
+
+    .reveal .notes, .notes p, .notes td, .notes li, .notes div, .notes a {
+        font-size: 16pt;
+    }
+
+    .reveal .notes li {
+        line-height: normal;
+    }
+
+    .reveal .notes {
+        border-top: #000000 solid 4px;
+        width: 100%;
+        margin-top: 40px;
+        padding-top: 40px;
+    }
+
+    .reveal ul {
+        list-style: disc;
+    }
+
+    .reveal.linear .slides>section, .reveal.linear .slides>section>section,
+    .reveal.linear .slides>section.past, .reveal.linear .slides>section.future {
+        width: 100%;
+        clear: both;
+    }
+
+    .reveal .links li, .reveal .links li a, .reveal .commons *{
+        font-size: 12pt;
+    }
+
+    .reveal pre.prettyprint {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+}
