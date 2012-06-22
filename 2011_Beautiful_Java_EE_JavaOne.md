@@ -30,8 +30,18 @@ Intro describing the problem that people run in to using URLs:
    * http://habrahabr.ru/showme404/
    * http://fryewiles.com/templateserrors/404.html
 
+Explain why you need URL-rewriting
+
+Discuss differences between Mod_Rewrite and Java-based Rewriting tools
+
+Discuss different types of redirects.
+
+Show demos by deploying via forge to openshift.
+
+
 Use rewrite to create a modular web-application with each module performing a different style task:
 
+ * Create an extension to "compress/encode/decode" query-params into one path or query-param 
  * Module showing creation of REST endpoints
  * Show "free" RESTful URLs with JSF via Join.path("/{param}").to("/pages/{param}.xhtml")
  * (humor) Show a rewrite rule that is a limerick.
