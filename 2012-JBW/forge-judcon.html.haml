@@ -25,17 +25,23 @@ layout: reveal
 
 %section
   %section
-    %h2 Wat?
-    %ol
-      %li.fragment Getting started sucks
-      %li.fragment Integrating stuff is hard
-      %li.fragment Remembering things is ...?
-      %li.fragment Repetition is pain
-      %li.fragment Repetition is pain
-      %li.fragment Repetition is pain
-    %ul.notes
+    %h2{:style=>"margin-top: 200px;"} Wat's this about?
   %section
-    %h2 So what do we do?
+    %div{:style=>"margin-top: 200px;"} Getting started sucks
+  %section
+    %div{:style=>"margin-top: 200px;"} Integrating stuff is hard
+  %section
+    %div{:style=>"margin-top: 200px;"} I can't remember ... but it's hard.
+  %section
+    %div{:style=>"margin-top: 200px;"} Repetitive tasks are annoying
+  %section
+    %div{:style=>"margin-top: 200px;"} Repetitive tasks are frustrating
+  %section
+    %div{:style=>"margin-top: 200px;"} Repetitive tasks will make you crazy
+  %section
+    %div{:style=>"margin-top: 200px;"} I'm already crazy
+  %section
+    %h2 So what do we do about it?
   %section{:"data-state" => "whiteout" }
     %img{:src=>"assets/images/googling.png"}
   %section{:"data-state"=>"alert"}
@@ -66,6 +72,43 @@ layout: reveal
       %span forge $ &nbsp;
       %span get-integrated &nbsp;
       %span{:style=>"text-decoration:blink;"} &#9608;
+    %ul.notes
+      %li rest setup
+      %li rest endpoint-from-entity
+      %li arquillian setup --container JBOSS_AS_REMOTE_7.X
+      %li arquillian create-test com.example.foo
+      %li
+        %pre{:class => "prettyprint", :style => "font-size: 8px"}
+        %code{:id => "multiple_page_elements"}
+          :escaped 
+            @RunWith(Arquillian.class)
+            public class ChildrenBeanTest {
+
+            @Deployment
+            public static WebArchive createDeployment() {
+            return ShrinkWrap
+            .create(WebArchive.class)
+            .addClasses(RestApplication.class, ChildEndpoint.class,
+            ChildrenBean.class, Child.class, ViewUtils.class)
+            .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
+            .addAsResource("META-INF/persistence.xml",
+            "META-INF/persistence.xml");
+            }
+
+            @Inject
+            ChildEndpoint endpoint;
+        
+            @PersistenceContext
+            EntityManager em;
+
+            @Test
+            public void testIsDeployed() {
+            Child c = new Child();
+            endpoint.create(c);
+            Assert.assertEquals(c, endpoint.findById(c.getId()));
+            }
+            }
+      %li build --profile JBOSS_AS_REMOTE_7.X
 
 %section
   %section
@@ -73,6 +116,9 @@ layout: reveal
       %span forge $ &nbsp;
       %span get-mental &nbsp;
       %span{:style=>"text-decoration:blink;"} &#9608;
+    %ul.notes
+      %li JSF ProjectStage
+      %li OpenShift plugin
 
 %section
   %section
@@ -80,6 +126,8 @@ layout: reveal
       %span forge $ &nbsp;
       %span get-efficient &nbsp;
       %span{:style=>"text-decoration:blink;"} &#9608;
+    %ul.notes
+      %li Write a presenter plugin
 
 %section
   %section{:"data-state"=>"whiteout"}
