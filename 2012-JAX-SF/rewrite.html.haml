@@ -68,18 +68,32 @@ layout: reveal
     %img{:src => "assets/images/rewrite/404birds.png", :width=>"800px"}
   %section.invert{:"data-state" => "whiteout" }
     %img{:src => "assets/images/rewrite/404shark.png", :width=>"800px"}
-  %section
+  %section{:"data-state"=>"hGr5wzbh2vU"}
     %p robo.to
-    %iframe{:width=>"800", :height=>"600", :src=>"http://www.youtube.com/embed/hGr5wzbh2vU?autoplay=0&rel=0&hd=1", :frameborder=>"0"}
-  %section
+    %div{:id=>"hGr5wzbh2vU"}
+    %script{:type=>"text/javascript"}
+      :plain
+        loadPlayer("hGr5wzbh2vU");
+  %section{:"data-state"=>"QQBjuyNPdDY"}
     %p github.com
-    %iframe{:width=>"800", :height=>"600", :src=>"http://www.youtube.com/embed/QQBjuyNPdDY?autoplay=0&rel=0&hd=1", :frameborder=>"0"}
-  %section
-    %p nosh.com
-    %iframe{:width=>"800", :height=>"600", :src=>"http://www.youtube.com/embed/pRj2UWOy7eY?autoplay=0&rel=0&hd=1", :frameborder=>"0"}
-  %section
+    %div{:id=>"QQBjuyNPdDY"}
+    %script{:type=>"text/javascript"}
+      :plain
+        loadPlayer("QQBjuyNPdDY");
+  %section{:"data-state"=>"pRj2UWOy7eY"}
+    %p tosh.com
+    %div{:id=>"pRj2UWOy7eY"}
+    %script{:type=>"text/javascript"}
+      :plain
+        loadPlayer("pRj2UWOy7eY");
+  %section{:"data-state"=>"cnpjRZ_Kxh8"}
     %p blippy.com
-    %iframe{:width=>"800", :height=>"600", :src=>"http://www.youtube.com/embed/cnpjRZ_Kxh8?autoplay=0&rel=0&hd=1", :frameborder=>"0"}
+    %div{:id=>"cnpjRZ_Kxh8"}
+    %script{:type=>"text/javascript"}
+      :plain
+        loadPlayer("cnpjRZ_Kxh8");
+
+%section
   %section
     %div.md250 "What does it mean?"
   %section
@@ -175,9 +189,14 @@ layout: reveal
 %section
   %section.invert{:"data-state" => "whiteout" }
     %h2.md200 4. Revealing sensitive information
-  %section
-    %p microsoft.com
-    %iframe{:width=>"800", :height=>"600", :src=>"http://www.youtube.com/embed/cnpjRZ_Kxh8?autoplay=0&rel=0&hd=1", :frameborder=>"0"}
+  %section{:"data-state"=>"-paKBxiPI9A"}
+    %p microsoft.com FAQ
+    %div{:id=>"-paKBxiPI9A"}
+    %script{:type=>"text/javascript"}
+      :plain
+        loadPlayer("-paKBxiPI9A");
+  %section{:"data-state" => "soothe" }
+    %h2.md200 *Blush*
   %section{:"data-state" => "alert" }
     %ul.center.md100
       %li.fragment .jsf
@@ -255,8 +274,8 @@ layout: reveal
   %section
     %h2 A brief interlude.
     %p.md200 
-      %span.fragment HTTP/1.1: 410
-      %span.fragment - I'm a teapot.
+      %span.fragment HTTP/1.1: 418
+      %span.fragment - I'm a teapot; the resulting entity may be short and stout.
   %section{:"data-state" => "soothe" }
     %h1.md200 WTF!?
 
@@ -273,6 +292,11 @@ layout: reveal
     %h2 URL-rewriting!
     %img.bg.md50{:src => "assets/images/rewrite/bg-superman.png"}
   %section
+    %h2 Two types of rewriting tools.
+    %ol.md150
+      %li.fragment Proxy-based - Apache (inbound only)
+      %li.fragment Filter-based - Java (inbound and outbound)
+  %section.invert{:"data-state" => "whiteout" }
     %h2.md250 Basic things we can do with all types of URL-rewriting.
   %section
     %h2 Redirection and relocation:
@@ -286,7 +310,74 @@ layout: reveal
   %section
     %h2 Header validation and modification
     %img.md150{:src => "assets/images/rewrite/rw-header.png"}
+  %section
+    %h2 "I have no personal investment in any of these tools."
+    %p.fragment -- blatant lie
+  %section.invert{:"data-state" => "whiteout" }
+    %h2.md250 Cool things we can do with Filter-based Java URL-rewriting
+  %section
+    %h2 Transformation and canonicalization
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          .defineRule()
+          .when(Path.matches("/{path}.css"))
+          .perform(Forward.to("/styles/{path}.less")
+                          .and(Render.with(Less.class)))
+    %pre.fragment.md100{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          .defineRule()
+          .when(Path.matches("/foo/{bar}")
+                    .where("bar")
+                    .transformedBy(ToLowercase.class))
+          .perform(Forward.to("/foo/{bar}"));
+  %section
+    %h2 Complex conversion and validation
+    %pre.fragment.md150{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          .when(Path.matches("/store/product/{pid}")
+          .where("pid")
+          .matches("\\d+\\w{3}\\d+")
+          .bindsTo(El.property("productBean.product")
+          .convertedBy(ProductConverter.class)
+          .validatedBy(ProductValidator.class)))
 
+  %section
+    %h2 Request interception
+    %pre.fragment{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          public class AccountVerificationInterceptor extends HttpConfigurationProvider {
+             @Inject
+             private Account account;
+          
+             @PersistenceContext
+             private EntityManager em;
+          
+             @Override
+             public Configuration getConfiguration(final ServletContext context) {
+                ConfigurationBuilder config = ConfigurationBuilder.begin();
+                account.setEntityManager(em);
+                Profile current = account.getLoggedIn();
+                if (current.isPersistent() && !current.isUsernameConfirmed()) {
+                   return config
+                      .defineRule()
+                      .when(DispatchType.isRequest()
+                      .and(Direction.isInbound())
+                      .perform(Forward.to("/account/confirm"))
+                
+                      .addRule(Join.path("/account/confirm")
+                                .to("/pages/accountConfirm.xhtml"));
+                }
+                return config;
+             }
+          }
+  %section.invert{:"data-state" => "whiteout" }
+    %h2.md250 Some things you should NOT do with Java URL-rewriting
+  %section
+    %div.md250 If it needs to run when your app is not, you probably don't want to put it in your app.
 
 %section
   %section{:"data-state"=>"whiteout"}

@@ -21,6 +21,37 @@
         <link rel="stylesheet" href="lib/google-code-prettify/prettify.css">
         <link rel="stylesheet" href="stylesheets/print.css" media="print">
         <link rel="stylesheet" href="stylesheets/conf.css">
+        
+        <script src="lib/jquery-1.7.2.min.js"></script>
+        <script src="js/swfobject.js"></script>
+
+        <script type="text/javascript">
+           // This function is automatically called by the player once it loads
+           function onYouTubePlayerReady(playerId) {
+           }
+
+           function loadPlayer(videoId) {
+              // Lets Flash from another domain call JavaScript
+              var params = { allowScriptAccess: "always" };
+              // The element id of the Flash embed
+              var atts = { id: videoId };
+
+              // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
+           $(document).ready(function () {
+              swfobject.embedSWF("http://www.youtube.com/v/" + videoId +
+                                 "?version=3&enablejsapi=1&rel=0&hd=1&playerapiid=" + videoId + "_id",
+                                 videoId, "800", "600", "9", null, null, params, atts);
+
+              Reveal.addEventListener(videoId, function () {
+                 // The player ID comes from the "playerapiid" parameter that was set
+                 // when the embedded player was loaded
+                 var player = document.getElementById(videoId);
+                 player.playVideo();
+              }, false);
+           });
+
+           }
+        </script>
     </head>
 
     <body>
@@ -49,14 +80,11 @@
 
     </div>
 
-    <script src="lib/jquery-1.7.2.min.js"></script>
     <!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
-    <script src="lib/google-code-prettify/prettify.js"></script>
-    <script src="lib/classList.js"></script>
-
-    <script src="js/reveal.js"></script>
-
-    <script src="js/code_highlight.js"></script>
+        <script src="lib/google-code-prettify/prettify.js"></script>
+        <script src="lib/classList.js"></script>
+        <script src="js/reveal.js"></script>
+        <script src="js/code_highlight.js"></script>
 
     <script>
         // Parse the query string into a key/value object
@@ -65,19 +93,15 @@
             query[ a.split('=').shift() ] = a.split('=').pop();
         });
 
-        // Fires when a slide with data-state=customevent is activated
-        Reveal.addEventListener('customevent', function () {
-            alert('"customevent" has fired');
-        });
-
         // Fires each time a new slide is activated
         Reveal.addEventListener('slidechanged', function (event) {
             // event.previousSlide, event.currentSlide, event.indexh, event.indexv
         });
 
+        $(document).ready(function () {
         Reveal.initialize({
             // Display controls in the bottom right corner
-            controls:true,
+            controls:false,
 
             // Display a presentation progress bar
             progress:true,
@@ -100,10 +124,10 @@
             // Transition style
             transition:'linear' // || query.transition || 'default' // default/cube/page/concave/linear(2d)
         });
-
         CodeHighlight.initialize({reveal: Reveal});
-
         prettyPrint();
+        });
+
 
     </script>
     </body>
