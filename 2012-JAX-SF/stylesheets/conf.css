@@ -10,16 +10,74 @@
  color: #555;
 }
 
-.mt50 {
- padding-top: 50px;
+.small {
+ font-size: 75%;
+ line-height: 95%;
 }
 
-.mt100 {
- padding-top: 100px;
+.md50 {
+ position: relative;
+ top: 50px;
 }
 
-.mt200 {
- padding-top: 200px;
+.md100 {
+ position: relative;
+ top: 100px;
+}
+
+.md200 {
+ position: relative;
+ top: 200px;
+}
+
+.md250 {
+ position: relative;
+ top: 250px;
+}
+
+.ml50 {
+ position: relative;
+ right: 50px;
+}
+
+.ml100 {
+ position: relative;
+ right: 100px;
+}
+
+.ml200 {
+ position: relative;
+ right: 200px;
+}
+
+.mr50 {
+ position: relative;
+ left: 50px;
+}
+
+.mr100 {
+ position: relative;
+ left: 100px;
+}
+
+.mr200 {
+ position: relative;
+ left: 200px;
+}
+
+.mu50 {
+ position: relative;
+ bottom: 50px;
+}
+
+.mu100 {
+ position: relative;
+ bottom: 100px;
+}
+
+.mu200 {
+ position: relative;
+ bottom: 200px;
 }
 
 .fl {

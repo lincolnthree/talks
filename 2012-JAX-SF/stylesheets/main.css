@@ -932,6 +932,9 @@ body {
 .soothe .state-background {
 	background: rgba( 50, 200, 90, 0.4 );
 }
+.blackout .state-background {
+	background: rgba( 0, 0, 0, 1.0 );
+}
 .whiteout .state-background {
 	background: rgba( 255, 255, 255, 1.0 );
 }

@@ -25,36 +25,37 @@ layout: reveal
 
 %section
   %section.invert{:"data-state"=>"whiteout"}
-    %div.mt200 "Judgements prevent us from seeing the good that lies beyond appearances."
-    %p.mt50 -- Wayne Dyer
+    %div.md200
+      %div "Judgements prevent us from seeing the good that lies beyond appearances."
+      %p.md50 -- Wayne Dyer
   %section
     %h2 What is URL-rewriting?
-    %p.fragment.mt200 Any manipulation of the HTTP Request/Response lifecycle.
+    %p.fragment.md200 Any manipulation of the HTTP Request/Response lifecycle.
   %section
     %h2 We've got problems:
-    %ol
-      %li.mt100.fragment Missing or relocated resources
+    %ol.md100
+      %li.fragment Missing or relocated resources
       %li.fragment Readability & clutter
       %li.fragment Revealing sensitive information
       %li.fragment Formatting of useful information
       %li.fragment Validation of user input
   %section
-    %div.mt200 And many more.
+    %div.md250 And many more.
   %section
-    %div.mt200 "URL-rewriting - not a good choice for doing it wrong."
-    %p.mt50.fragment -- Yeah...
+    %div.md250
+      %div "URL-rewriting - not a good choice for doing it wrong."
 
 %section
   %section.invert{:"data-state" => "whiteout" }
-    %h2.mt200 1. Missing or relocated resources
+    %h2.md200 1. Missing or relocated resources
   %section{:"data-state" => "alert" }
     %h1.fl 404
     %p.fl Slide not found.
   %section.invert{:"data-state" => "whiteout" }
     %p.fragment.red.fr Wtf?
-    %img.mt100{:src => "assets/images/rewrite/404oracle.png", :width=>"800px"}
+    %img.md100{:src => "assets/images/rewrite/404oracle.png", :width=>"800px"}
   %section.invert{:"data-state" => "whiteout" }
-    %img.mt100{:src => "assets/images/rewrite/404bummer.png", :width=>"800px"}
+    %img.md100{:src => "assets/images/rewrite/404bummer.png", :width=>"800px"}
   %section.invert{:"data-state" => "whiteout" }
     %img{:src => "assets/images/rewrite/404kitten.png", :width=>"800px"}
   %section
@@ -80,64 +81,64 @@ layout: reveal
     %p blippy.com
     %iframe{:width=>"800", :height=>"600", :src=>"http://www.youtube.com/embed/cnpjRZ_Kxh8?autoplay=0&rel=0&hd=1", :frameborder=>"0"}
   %section
-    %div.mt200 "What does it mean?"
+    %div.md250 "What does it mean?"
   %section
-    %div.mt200 It's a distraction from failure.
+    %div.md250 It's a distraction from failure.
   %section
     %h2 There are two ways to have a magical 404 experience.
-    %ol
-      %li.mt100.fragment
+    %ol.md100
+      %li.fragment
         %span The content existed and now does not 
         %span.red.fragment ( the website sucks )
       %li.fragment
         %span The content never existed
         %span.red.fragment ( you suck )
   %section
-    %div.mt200 Neither is going to make anyone happy.
+    %div.md250 Neither is going to make anyone happy.
+  %section
+    %div.md200
+      %h3
+        %span What do we do about it?
+        %span.red.fragmenet (easy)
+      %ul
+        %li.fragment 301 MOVED PERMANENTLY
+        %li.fragment 302 MOVED TEMPORARILY
+  %section
+    %div.md250 180 Days.
+  %section
+    %img{:src => "assets/images/rewrite/404kenny.png", :width=>"800px"}
+  %section
+    %div.md200
+      %h3
+        %span Several options
+      %div.fragment Apache mod_rewrite
+      %div.fragment Tuckey URLRewriteFilter
+      %div.fragment OCPsoft Rewrite
+
 
 %section
-  %section{:"data-state" => "whiteout" }
-    %img{:src => "assets/images/JBoss_Forge_logo.png"}
-    %img.fragment{:src => "assets/images/JBoss_Community_logo.png", :style => "float:right; margin-left:300px; margin-top: 150px;", :width=>"250px"}
+  %section.invert{:"data-state" => "whiteout" }
+    %h2.md200 2. URL-readability
   %section
-    %h2 Our tasks for the day
-    %ol
-      %li.fragment Get started
-      %li.fragment Get integrated
-      %li.fragment Get mental
-      %li.fragment Get efficient
+    %img{:src => "assets/images/rewrite/kindle.png", :width=>"400px"}
+    %p.fragment.small http://www.amazon.com/Kindle-Touch-Wi-Fi-Ink-Display/dp/B005890G8Y/ref=amb_link_357575542_6?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=gateway-center-column&pf_rd_r=1T2J5PYBVZZWBHWN1BP1&pf_rd_t=101&pf_rd_p=1321408942&pf_rd_i=507846
+    %div.fragment.red.fr.mu200.ml100 wtf?
+  %section.invert{:"data-state"=>"whiteout"}
+    %img.fragment.mu50{:src => "assets/images/rewrite/logo-amazon.png", :width=>"400"}
+    %img.fragment.mu50{:src => "assets/images/rewrite/logo-tux.png", :width=>"400"}
+    %h2.fragment We are friends.
+  %section{:"data-state"=>"soothe"}
+    %h3.md250 http://amazon.com/shop/kindle-touch 
+  %section{:"data-state" => "blackout" }
+    %h2 Tired of trash in your face?
+    %img.mu50{:src => "assets/images/rewrite/URLtrash.png", :width=>"800"}
+    %img.mu50{:src => "assets/images/rewrite/starwars.png", :width=>"800"}
 
-%section
-  %section
-    %div{:style=>"text-align: left;"}
-      %span forge $ &nbsp;
-      %span get-started &nbsp;
-      %span{:style=>"text-decoration:blink;"} &#9608;
 
-%section
-  %section
-    %div{:style=>"text-align: left;"}
-      %span forge $ &nbsp;
-      %span get-integrated &nbsp;
-      %span{:style=>"text-decoration:blink;"} &#9608;
 
-%section
-  %section
-    %div{:style=>"text-align: left;"}
-      %span forge $ &nbsp;
-      %span get-mental &nbsp;
-      %span{:style=>"text-decoration:blink;"} &#9608;
-    %ul.notes
-      %li JSF ProjectStage
 
-%section
-  %section
-    %div{:style=>"text-align: left;"}
-      %span forge $ &nbsp;
-      %span get-efficient &nbsp;
-      %span{:style=>"text-decoration:blink;"} &#9608;
-    %ul.notes
-      %li Write a presenter plugin
+
+
 
 %section
   %section{:"data-state"=>"whiteout"}
