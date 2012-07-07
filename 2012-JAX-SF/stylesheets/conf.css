@@ -1,3 +1,19 @@
+img.bg {
+ position: absolute;
+ top: 0;
+ left: 0;
+ z-index: -10;
+ width: 100%;
+}
+
+.bold {
+ font-weight: bold;
+}
+
+.footnote {
+ font-size: 12px;
+}
+
 .red {
  color: red;
 }
@@ -23,6 +39,11 @@
 .md100 {
  position: relative;
  top: 100px;
+}
+
+.md150 {
+ position: relative;
+ top: 150px;
 }
 
 .md200 {

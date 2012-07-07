@@ -36,8 +36,8 @@ layout: reveal
     %ol.md100
       %li.fragment Missing or relocated resources
       %li.fragment Readability & clutter
-      %li.fragment Revealing sensitive information
       %li.fragment Formatting of useful information
+      %li.fragment Revealing sensitive information
       %li.fragment Validation of user input
   %section
     %div.md250 And many more.
@@ -141,7 +141,40 @@ layout: reveal
 
 %section
   %section.invert{:"data-state" => "whiteout" }
-    %h2.md200 3. Revealing sensitive information
+    %h2.md200 3. Formatting useful information
+  %section
+    %p.md250 http://example.com?c=shoes&app=store&pid=1&buy=true
+  %section.invert{:"data-state" => "whiteout" }
+    %h2 Be cool.
+    %img.bg{:src => "assets/images/rewrite/bg-travolta.png"}
+  %section
+    %p.md250 http://example.com?c=shoes&app=store&pid=1&buy=true
+  %section
+    %p.md250
+      %span.fragment http://example.com
+      %span.fragment / store
+      %span.fragment / shoes
+      %span.fragment / 1
+      %span.fragment ? buy=true
+  %section
+    %h2.md200 What are you most afraid of when you buy a used car?
+  %section
+    %img.bg{:src => "assets/images/rewrite/bg-junker.png", :width=>"100%"}
+    %h2 You never know what you are going to get.
+  %section
+    %div.md200
+      %h2 Do you trust me?
+      %a.fragment{:href => "http://www.youtube.com/watch?v=oHg5SJYRHA0"} http://www.youtube.com/watch?v=oHg5SJYRHA0
+  %section
+    %div.md200
+      %h2 Build trust by reducing clutter. Use clean, transparent URLs.
+      %a.fragment{:href => "http://www.youtube.com/watch?v=oHg5SJYRHA0"} 
+        %span http://www.youtube.com/watch/rick-rolld-again
+      
+
+%section
+  %section.invert{:"data-state" => "whiteout" }
+    %h2.md200 4. Revealing sensitive information
   %section
     %p microsoft.com
     %iframe{:width=>"800", :height=>"600", :src=>"http://www.youtube.com/embed/cnpjRZ_Kxh8?autoplay=0&rel=0&hd=1", :frameborder=>"0"}
@@ -168,43 +201,91 @@ layout: reveal
 
 %section
   %section.invert{:"data-state" => "whiteout" }
-    %h2.md200 4. Formatting useful information
-  %section
-    %p.md250 http://example.com?c=shoes&app=store&pid=1&buy=true
-  %section.invert{:"data-state" => "whiteout" }
-    %h2 Be cool.
-    %img.fl{:src => "assets/images/rewrite/bg-travolta.png", :width=>"100%", :style=>"position: absolute; z-index: -10; left: 0; top: 0;"}
-  %section
-    %p.md250 http://example.com?c=shoes&app=store&pid=1&buy=true
+    %h2.md200 5. Validation of user input
   %section
     %p.md250
-      %span.fragment http://example.com
-      %span.fragment / store
-      %span.fragment / shoes
-      %span.fragment / 1
-      %span.fragment ? buy=true
+      %span If you have to expose data, remember that URLs and headers are USER INPUT and are 
+      %span.red VULNERABLE.
   %section
-    %h2.md200 What are you most afraid of when you buy a used car?
+    %h2 Aspect Security says:
+    %p.md200
+      %span.bold Two of three 
+      %span recent 
+      %span.red security vulnerabilities 
+      %span in web-frameworks are 
+      %span.bold URL-based
+      %span .*
+    %p.md100
+      %a.footnote.md250.fl{:href=>"https://www.aspectsecurity.com/uploads/downloads/2012/03/Aspect-Security-The-Unfortunate-Reality-of-Insecure-Libraries.pdf"} * Aspect-Security-The-Unfortunate-Reality-of-Insecure-Libraries
+  %section{:"data-state" => "whiteout" }
+    %img.bg.md50{:src => "assets/images/rewrite/aspect-struts2.png"}
+  %section{:"data-state" => "whiteout" }
+    %img.bg.md50{:src => "assets/images/rewrite/aspect-spring.png"}
   %section
-    %img{:src => "assets/images/rewrite/bg-junker.png", :width=>"100%", :style=>"position: absolute; z-index: -10; left: 0; top: 0;"}
-    %h2 You never know what you are going to get.
+    %h2 Real life.
+    %p.md150 http://www.llbean.com/webapp/wcs/stores/servlet/CategoryDisplay?categoryId=28&storeId=1&catalogId=1&langId=-1&nav=hp-gndp
   %section
-    %div.md200
-      %h2 Do you trust me?
-      %a.fragment{:href => "http://www.youtube.com/watch?v=oHg5SJYRHA0"} http://www.youtube.com/watch?v=oHg5SJYRHA0
+    %img.bg{:src => "assets/images/rewrite/bg-kids.png"}
+    %h2.fragment http://llbean.com/kids
   %section
-    %div.md200
-      %h2 Build trust by reducing clutter. Use clean, transparent URLs.
-      %a.fragment{:href => "http://www.youtube.com/watch?v=oHg5SJYRHA0"} 
-        %span http://www.youtube.com/watch/rick-rolld-again
-      
+    %h2 Another look.
+    %p.md150 
+      %span.fragment http://www.llbean.com
+      %span.fragment /
+      %span.fragment webapp
+      %span.fragment /
+      %span.fragment.red wcs
+      %span.fragment /
+      %span.fragment.red servlet
+      %span.fragment / CategoryDisplay
+      %span.fragment ?
+      %span.fragment.red categoryId=28
+      %span.fragment &
+      %span.fragment.red storeId=1
+      %span.fragment &
+      %span.fragment.red catalogId=1
+      %span.fragment &
+      %span.fragment.red langId=-1
+      %span.fragment &
+      %span.fragment.red &nav=hp-gndp
+  %section{:"data-state" => "alert" }
+    %h1.md200 Clean and Validate!
+
+%section
+  %section
+    %h2 A brief interlude.
+    %p.md200 
+      %span.fragment HTTP/1.1: 410
+      %span.fragment - I'm a teapot.
+  %section{:"data-state" => "soothe" }
+    %h1.md200 WTF!?
 
 %section
   %section.invert{:"data-state" => "whiteout" }
-    %h2.md200 5. Validation of user input
-
-
-
+    %h2 We've got problems:
+    %ol.md100
+      %li.fragment Missing or relocated resources
+      %li.fragment Readability & clutter
+      %li.fragment Formatting of useful information
+      %li.fragment Revealing sensitive information
+      %li.fragment Validation of user input
+  %section
+    %h2 URL-rewriting!
+    %img.bg.md50{:src => "assets/images/rewrite/bg-superman.png"}
+  %section
+    %h2.md250 Basic things we can do with all types of URL-rewriting.
+  %section
+    %h2 Redirection and relocation:
+    %img{:src => "assets/images/rewrite/rw-relocation.png"}
+  %section
+    %h2 Inbound parameterization
+    %img.md150{:src => "assets/images/rewrite/rw-parameterization.png"}
+  %section
+    %h2 Simple URL validation
+    %img.md150{:src => "assets/images/rewrite/rw-validate.png"}
+  %section
+    %h2 Header validation and modification
+    %img.md150{:src => "assets/images/rewrite/rw-header.png"}
 
 
 %section
