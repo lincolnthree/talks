@@ -1,0 +1,228 @@
+---
+layout: reveal
+---
+
+%section
+  %section
+    %img.splash.screen{:src => "assets/images/jax_logo.png", :width=>"80%"}
+    %img.splash.print{:src => "assets/images/jax_logo.png"}
+  %section
+    %h1{:style=>"color:#ffffff;"} URL-rewriting
+    %h2.capitalize Enhance developer productivity, usability, and security
+    %ul.intro{:style=>"margin-top: 100px;"}
+      %li Lincoln Baxter, III
+      %li Senior Software Engineer, Red Hat
+      %li 07.11.12
+    %ul.notes
+      %li Welcome!
+  %section
+    %h2 
+      %a{:href=>"http://twitter.com/lincolnthree"} @lincolnthree
+    %ul
+      %li Founder of OCPsoft
+    %div
+      %img{:src => "assets/images/lincoln_profile.jpg", :width=>"200px"}
+
+%section
+  %section.invert{:"data-state"=>"whiteout"}
+    %div.mt200 "Judgements prevent us from seeing the good that lies beyond appearances."
+    %p.mt50 -- Wayne Dyer
+  %section
+    %h2 What is URL-rewriting?
+    %p.fragment.mt200 Any manipulation of the HTTP Request/Response lifecycle.
+  %section
+    %h2 We've got problems:
+    %ol
+      %li.mt100.fragment Missing or relocated resources
+      %li.fragment Readability & clutter
+      %li.fragment Revealing sensitive information
+      %li.fragment Formatting of useful information
+      %li.fragment Validation of user input
+  %section
+    %div.mt200 And many more.
+  %section
+    %div.mt200 "URL-rewriting - not a good choice for doing it wrong."
+    %p.mt50.fragment -- Yeah...
+
+%section
+  %section.invert{:"data-state" => "whiteout" }
+    %h2.mt200 1. Missing or relocated resources
+  %section{:"data-state" => "alert" }
+    %h1.fl 404
+    %p.fl Slide not found.
+  %section.invert{:"data-state" => "whiteout" }
+    %p.fragment.red.fr Wtf?
+    %img.mt100{:src => "assets/images/rewrite/404oracle.png", :width=>"800px"}
+  %section.invert{:"data-state" => "whiteout" }
+    %img.mt100{:src => "assets/images/rewrite/404bummer.png", :width=>"800px"}
+  %section.invert{:"data-state" => "whiteout" }
+    %img{:src => "assets/images/rewrite/404kitten.png", :width=>"800px"}
+  %section
+    %img{:src => "assets/images/rewrite/404blizzard.png", :width=>"800px"}
+  %section.invert{:"data-state" => "whiteout" }
+    %img{:src => "assets/images/rewrite/404ohsnap.png", :width=>"800px"}
+  %section.invert{:"data-state" => "whiteout" }
+    %img{:src => "assets/images/rewrite/404whoopsie.png", :width=>"800px"}
+  %section.invert{:"data-state" => "whiteout" }
+    %img{:src => "assets/images/rewrite/404birds.png", :width=>"800px"}
+  %section.invert{:"data-state" => "whiteout" }
+    %img{:src => "assets/images/rewrite/404shark.png", :width=>"800px"}
+  %section
+    %p robo.to
+    %iframe{:width=>"800", :height=>"600", :src=>"http://www.youtube.com/embed/hGr5wzbh2vU?autoplay=0&rel=0&hd=1", :frameborder=>"0"}
+  %section
+    %p github.com
+    %iframe{:width=>"800", :height=>"600", :src=>"http://www.youtube.com/embed/QQBjuyNPdDY?autoplay=0&rel=0&hd=1", :frameborder=>"0"}
+  %section
+    %p nosh.com
+    %iframe{:width=>"800", :height=>"600", :src=>"http://www.youtube.com/embed/pRj2UWOy7eY?autoplay=0&rel=0&hd=1", :frameborder=>"0"}
+  %section
+    %p blippy.com
+    %iframe{:width=>"800", :height=>"600", :src=>"http://www.youtube.com/embed/cnpjRZ_Kxh8?autoplay=0&rel=0&hd=1", :frameborder=>"0"}
+  %section
+    %div.mt200 "What does it mean?"
+  %section
+    %div.mt200 It's a distraction from failure.
+  %section
+    %h2 There are two ways to have a magical 404 experience.
+    %ol
+      %li.mt100.fragment
+        %span The content existed and now does not 
+        %span.red.fragment ( the website sucks )
+      %li.fragment
+        %span The content never existed
+        %span.red.fragment ( you suck )
+  %section
+    %div.mt200 Neither is going to make anyone happy.
+
+%section
+  %section{:"data-state" => "whiteout" }
+    %img{:src => "assets/images/JBoss_Forge_logo.png"}
+    %img.fragment{:src => "assets/images/JBoss_Community_logo.png", :style => "float:right; margin-left:300px; margin-top: 150px;", :width=>"250px"}
+  %section
+    %h2 Our tasks for the day
+    %ol
+      %li.fragment Get started
+      %li.fragment Get integrated
+      %li.fragment Get mental
+      %li.fragment Get efficient
+
+%section
+  %section
+    %div{:style=>"text-align: left;"}
+      %span forge $ &nbsp;
+      %span get-started &nbsp;
+      %span{:style=>"text-decoration:blink;"} &#9608;
+
+%section
+  %section
+    %div{:style=>"text-align: left;"}
+      %span forge $ &nbsp;
+      %span get-integrated &nbsp;
+      %span{:style=>"text-decoration:blink;"} &#9608;
+
+%section
+  %section
+    %div{:style=>"text-align: left;"}
+      %span forge $ &nbsp;
+      %span get-mental &nbsp;
+      %span{:style=>"text-decoration:blink;"} &#9608;
+    %ul.notes
+      %li JSF ProjectStage
+
+%section
+  %section
+    %div{:style=>"text-align: left;"}
+      %span forge $ &nbsp;
+      %span get-efficient &nbsp;
+      %span{:style=>"text-decoration:blink;"} &#9608;
+    %ul.notes
+      %li Write a presenter plugin
+
+%section
+  %section{:"data-state"=>"whiteout"}
+    %img{:src=>"assets/images/what_happened.png", :style=>"position: absolute; bottom: 0px; left: 0px; border-bottom: 3px solid #888;"}
+  %section
+    %h2{:style=>"margin-bottom: 150px;"} We used PLUGINS!
+    %img{:src=>"assets/images/jsf_logo.png", :width=>"250px;"}
+    %img{:src=>"assets/images/ocpsoft_logo.png", :width=>"150px;"}
+    %img{:src=>"assets/images/as7_logo.png", :width=>"150px;"}
+    %img{:src=>"assets/images/openshift_logo.png", :width=>"150px;"}
+    %img{:src=>"assets/images/gwt_logo.png", :width=>"150px;", :style=>"margin-left: 15px;"}
+  %section{:"data-state"=>"whiteout"}
+    %h2.invert Wrote PLUGINS!
+    %img{:src=>"assets/images/plugins_facets.png"}
+  %section{:"data-state"=>"whiteout"}
+    %h2{:style=>"color:#333e3e;"} Ate PLUGINS!
+    %img{:src=>"assets/images/eating_plugins.png", :alt=>"http://www.homestarrunner.com/sbemail.html"}
+  %section
+
+%section
+  %h2 The end?
+  %h3.fragment{:style => "margin-top: 160px"} The beginning - of your adventure with Forge!
+%section
+  %h2 "The Eclipse of command shells."
+  %p --Dan Allen
+%section
+  %h2 "Is loving Forge!! So much easier than writing Maven plugins."
+  %p --James Perkins
+%section
+  %h2 "Forge takes the 'cruft' out of 'CRUD'."
+  %p --Ken Finnigan
+%section
+  %h2 "Distributing plugins with Git makes SO much sense!"
+  %p --Craig Schwarzwald
+%section
+  %h2 "*Crickets*"
+  %p --George Gastaldi
+%section
+  %h2 Credits
+  %center
+    %p
+      %a{:href => "http://jboss.org/"} http://jboss.org/
+    %p
+      %a{:href => "http://homestarrunner.com/"} http://homestarrunner.com/
+    %p
+      %a{:href => "http://ocpsoft.org/"} http://ocpsoft.org/
+    .links.commons
+      :plain
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">JBoss Forge - Productivity, Reliability, Testability</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ocpsoft.org/" property="cc:attributionName" rel="cc:attributionURL">Lincoln Baxter</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="dct:source">github.com</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="cc:morePermissions">https://github.com/lincolnthree/talks/tree/master/2012-JBW</a>.
+%section
+  %h2{:style=>"margin-bottom:100px;"} Additional Resources
+  .left.resources
+    %p Quickstarts and guides:
+    %ul.links
+      %li
+        %a{:href => "http://arquillian.org/guides/get_started_faster_with_forge/"} Arquillian: Get started faster with Forge
+      %li
+        %a{:href => "http://www.jboss.org/jdf/quickstarts/jboss-as-quickstart/forge-from-scratch/"} JBoss Developer Framework: Forge from scratch quickstart
+      %li
+        %a{:href => "https://docs.jboss.org/author/display/FORGE/Reference+the+Forge+APIs"} Forge plugin-writing guide
+
+%section
+  %h2 Stay in the loop
+  %ul.links.loop
+    %li
+      Project website:
+      %a{:href => "http://jboss.org/forge"} http://jboss.org/forge
+    %li
+      Twitter:
+      %a{:href => "https://twitter.com/search/%23JBossForge"} https://twitter.com/search/#JBossForge
+    %li
+      Forge Forums:
+      %a{:href => "https://community.jboss.org/en/forge"} https://community.jboss.org/en/forge
+    %li
+      Vimeo feed:
+      %a{:href => "https://vimeo.com/channels/jbossforge"} https://vimeo.com/channels/jbossforge
+    %li
+      IRC: 
+      %a{:href=>"http://webchat.freenode.net?channels=forge"} #forge
+  %p{:style => "margin-top: 50px" } Get involved:
+  %ul.links
+    %li
+      Get the source:
+      %a{:href => "https://github.com/forge/core"} https://github.com/forge/core
+    %li
+      Join the discussion:
+      %a{:href => "https://lists.jboss.org/mailman/listinfo/forge-dev"} https://lists.jboss.org/mailman/listinfo/forge-dev
+  %img{:src=>"assets/images/JBoss_Forge_logo.png", :width=>"300px"}
