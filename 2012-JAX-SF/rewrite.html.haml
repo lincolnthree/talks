@@ -350,32 +350,33 @@ layout: reveal
       %code{:id => "multiple_page_elements"}
         :escaped 
           public class AccountVerificationInterceptor extends HttpConfigurationProvider {
-             @Inject
-             private Account account;
+
+          @Inject
+          private Account account;
           
-             @PersistenceContext
-             private EntityManager em;
+          @PersistenceContext
+          private EntityManager em;
           
-             @Override
-             public Configuration getConfiguration(final ServletContext context) {
-                ConfigurationBuilder config = ConfigurationBuilder.begin();
-                account.setEntityManager(em);
-                Profile current = account.getLoggedIn();
-                if (current.isPersistent() && !current.isUsernameConfirmed()) {
-                   return config
-                      .defineRule()
-                      .when(DispatchType.isRequest()
-                      .and(Direction.isInbound())
-                      .perform(Forward.to("/account/confirm"))
-                
-                      .addRule(Join.path("/account/confirm")
-                                .to("/pages/accountConfirm.xhtml"));
-                }
-                return config;
+          @Override
+          public Configuration getConfiguration(final ServletContext context) {
+             ConfigurationBuilder config = ConfigurationBuilder.begin();
+             account.setEntityManager(em);
+             Profile current = account.getLoggedIn();
+             if (current.isPersistent() && !current.isUsernameConfirmed()) {
+                return config
+                   .defineRule()
+                   .when(DispatchType.isRequest()
+                   .and(Direction.isInbound())
+                   .perform(Forward.to("/account/confirm"))
+             
+                   .addRule(Join.path("/account/confirm")
+                             .to("/pages/accountConfirm.xhtml"));
              }
+             return config;
           }
-  %section.invert{:"data-state" => "whiteout" }
-    %h2.md250 Some things you should NOT do with Java URL-rewriting
+
+  %section{:"data-state" => "alert" }
+    %h2.md200 Some things you should NOT do with Java URL-rewriting
   %section
     %div.md250 If it needs to run when your app is not, you probably don't want to put it in your app.
 
@@ -383,86 +384,98 @@ layout: reveal
   %section{:"data-state"=>"whiteout"}
     %img{:src=>"assets/images/what_happened.png", :style=>"position: absolute; bottom: 0px; left: 0px; border-bottom: 3px solid #888;"}
   %section
-    %h2{:style=>"margin-bottom: 150px;"} We used PLUGINS!
-    %img{:src=>"assets/images/jsf_logo.png", :width=>"250px;"}
-    %img{:src=>"assets/images/ocpsoft_logo.png", :width=>"150px;"}
-    %img{:src=>"assets/images/as7_logo.png", :width=>"150px;"}
-    %img{:src=>"assets/images/openshift_logo.png", :width=>"150px;"}
-    %img{:src=>"assets/images/gwt_logo.png", :width=>"150px;", :style=>"margin-left: 15px;"}
-  %section{:"data-state"=>"whiteout"}
-    %h2.invert Wrote PLUGINS!
-    %img{:src=>"assets/images/plugins_facets.png"}
-  %section{:"data-state"=>"whiteout"}
-    %h2{:style=>"color:#333e3e;"} Ate PLUGINS!
-    %img{:src=>"assets/images/eating_plugins.png", :alt=>"http://www.homestarrunner.com/sbemail.html"}
+    %h2 Let's find out, because It's DEMO time.
+    %div.md100
+      %img{:src=>"assets/images/jsf_logo.png", :width=>"250px;"}
+      %img{:src=>"assets/images/ocpsoft_logo.png", :width=>"150px;"}
+      %img{:src=>"assets/images/as7_logo.png", :width=>"150px;"}
+      %img{:src=>"assets/images/openshift_logo.png", :width=>"150px;"}
+      %img{:src=>"assets/images/gwt_logo.png", :width=>"150px;", :style=>"margin-left: 15px;"}
   %section
+    %h2 Access Control Demo
+    %a{:href=>"http://access-rewrite.rhcloud.com/"} http://access-rewrite.rhcloud.com/
+    %div.md100
+    %img{:src=>"assets/images/rewrite/bc-access.png", :width=>"250px;"}
+  %section
+    %h2 Rest Validation & Conversion Demo
+    %a{:href=>"http://rest-rewrite.rhcloud.com/"} http://rest-rewrite.rhcloud.com/
+    %div.md100
+    %img{:src=>"assets/images/rewrite/bc-rest.png", :width=>"250px;"}
+  %section
+    %h2 Composite Query Demo
+    %a{:href=>"http://composite-rewrite.rhcloud.com/"} http://composite-rewrite.rhcloud.com/
+    %div.md100
+    %img{:src=>"assets/images/rewrite/bc-composite.png", :width=>"250px;"}
+  %section.invert{:"data-state"=>"whiteout"}
+    %h2 Bonus round!
+    %div.md150.fragment But client-side applications are the future; can't I just ignore the URL and use web-sockets?
+  %section.invert{:"data-state"=>"whiteout"}
+    %h2 Bookmarks in client browser apps
+    %img.bg.md50{:src => "assets/images/rewrite/client-server-1.png"}
+  %section.invert{:"data-state"=>"whiteout"}
+    %h2 Clean up the URL (HTML5)
+    %img.bg.md50{:src => "assets/images/rewrite/client-server-2.png"}
+  %section.invert{:"data-state"=>"whiteout"}
+    %h2 It should be simple
+    %img.bg.md50{:src => "assets/images/rewrite/client-server-3.png"}
+  %section.invert{:"data-state"=>"whiteout"}
+    %h2 But then we see something like...
+    %ul.md100
+      %li.fragment example.com /
+      %li.fragment example.com / lincoln
+      %li.fragment example.com / lincoln / project-one
+      %li.fragment 
+        %span example.com / lincoln
+        %span.red / lincoln
+  %section.invert{:"data-state"=>"whiteout"}
+    %h2 All better
+    %img.bg.md50{:src => "assets/images/rewrite/client-server-4.png"}
+
+%section
+  %section.invert{:"data-state" => "whiteout" }
+    %h2 We've got problems:
+    %ol.md100
+      %li.fragment Missing or relocated resources
+      %li.fragment Readability & clutter
+      %li.fragment Formatting of useful information
+      %li.fragment Revealing sensitive information
+      %li.fragment Validation of user input
+      %li.fragment.bold (And many more.)
+  %section
+    %div.md250
+      %div "URL-rewriting - not a good choice for doing it wrong."
 
 %section
   %h2 The end?
-  %h3.fragment{:style => "margin-top: 160px"} The beginning - of your adventure with Forge!
-%section
-  %h2 "The Eclipse of command shells."
-  %p --Dan Allen
-%section
-  %h2 "Is loving Forge!! So much easier than writing Maven plugins."
-  %p --James Perkins
-%section
-  %h2 "Forge takes the 'cruft' out of 'CRUD'."
-  %p --Ken Finnigan
-%section
-  %h2 "Distributing plugins with Git makes SO much sense!"
-  %p --Craig Schwarzwald
-%section
-  %h2 "*Crickets*"
-  %p --George Gastaldi
+  %h3.fragment{:style => "margin-top: 160px"} The beginning - of your adventure with URL-rewriting!
 %section
   %h2 Credits
   %center
     %p
-      %a{:href => "http://jboss.org/"} http://jboss.org/
-    %p
-      %a{:href => "http://homestarrunner.com/"} http://homestarrunner.com/
-    %p
       %a{:href => "http://ocpsoft.org/"} http://ocpsoft.org/
     .links.commons
       :plain
-        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">JBoss Forge - Productivity, Reliability, Testability</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ocpsoft.org/" property="cc:attributionName" rel="cc:attributionURL">Lincoln Baxter</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="dct:source">github.com</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="cc:morePermissions">https://github.com/lincolnthree/talks/tree/master/2012-JBW</a>.
-%section
-  %h2{:style=>"margin-bottom:100px;"} Additional Resources
-  .left.resources
-    %p Quickstarts and guides:
-    %ul.links
-      %li
-        %a{:href => "http://arquillian.org/guides/get_started_faster_with_forge/"} Arquillian: Get started faster with Forge
-      %li
-        %a{:href => "http://www.jboss.org/jdf/quickstarts/jboss-as-quickstart/forge-from-scratch/"} JBoss Developer Framework: Forge from scratch quickstart
-      %li
-        %a{:href => "https://docs.jboss.org/author/display/FORGE/Reference+the+Forge+APIs"} Forge plugin-writing guide
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">URL-rewriting: Enhance developer productivity, usability, and security</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ocpsoft.org/" property="cc:attributionName" rel="cc:attributionURL">Lincoln Baxter</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="dct:source">github.com</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="cc:morePermissions">https://github.com/lincolnthree/talks/tree/master/2012-JBW</a>.
 
 %section
   %h2 Stay in the loop
   %ul.links.loop
     %li
       Project website:
-      %a{:href => "http://jboss.org/forge"} http://jboss.org/forge
+      %a{:href => "http://ocpsoft.org/rewrite"} http://ocpsoft.org/rewrite
     %li
       Twitter:
-      %a{:href => "https://twitter.com/search/%23JBossForge"} https://twitter.com/search/#JBossForge
+      %a{:href => "http://twitter.com/%23!ocpsoft"} https://twitter.com/#!ocpsoft
     %li
-      Forge Forums:
-      %a{:href => "https://community.jboss.org/en/forge"} https://community.jboss.org/en/forge
-    %li
-      Vimeo feed:
-      %a{:href => "https://vimeo.com/channels/jbossforge"} https://vimeo.com/channels/jbossforge
-    %li
-      IRC: 
-      %a{:href=>"http://webchat.freenode.net?channels=forge"} #forge
+      OCPsoft Forums:
+      %a{:href => "http://ocpsoft.org/support/"} http://ocpsoft.org/support/
   %p{:style => "margin-top: 50px" } Get involved:
   %ul.links
     %li
       Get the source:
-      %a{:href => "https://github.com/forge/core"} https://github.com/forge/core
+      %a{:href => "https://github.com/ocpsoft/rewrite"} https://github.com/ocpsoft/rewrite
     %li
       Join the discussion:
-      %a{:href => "https://lists.jboss.org/mailman/listinfo/forge-dev"} https://lists.jboss.org/mailman/listinfo/forge-dev
-  %img{:src=>"assets/images/JBoss_Forge_logo.png", :width=>"300px"}
+      %a{:href => "http://groups.google.com/group/prettyfaces-dev"} http://groups.google.com/group/prettyfaces-dev
+  %p 
+    %img{:src=>"assets/images/ocpsoft_logo.png", :width=>"150px"}
