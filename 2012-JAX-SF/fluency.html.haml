@@ -1,0 +1,184 @@
+---
+layout: reveal
+---
+
+%section
+  %section
+    %img.splash.screen{:src => "assets/images/jax_logo.png", :width=>"80%"}
+    %img.splash.print{:src => "assets/images/jax_logo.png"}
+  %section
+    %h1{:style=>"color:#ffffff;"} Why oh why, the API
+    %h2.capitalize What the hell were you thinking?
+    %ul.intro{:style=>"margin-top: 100px;"}
+      %li Lincoln Baxter, III
+      %li Red Hat
+      %li 07.11.12
+  %section
+    %h2 
+      %a{:href=>"http://twitter.com/lincolnthree"} @lincolnthree
+    %ul
+      %li Founder of OCPsoft - Simpler is Better
+    %div
+      %img{:src => "assets/images/lincoln_profile.jpg", :width=>"200px"}
+
+%section
+  %section.invert{:"data-state"=>"whiteout"}
+    %div.md200
+      %div "Judgements prevent us from seeing the good that lies beyond appearances."
+      %p.md50 -- Wayne Dyer
+
+%section
+  %section
+    %h2 Java Calendar API
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          // set calendar to 1 Jan 2012
+          Calendar calendar = new GregorianCalendar(2012,Calendar.JANUARY,1);
+
+          // add 2m 1d
+          calendar.add(Calendar.MONTH,2);
+          calendar.add(Calendar.DAY_OF_MONTH,1);
+  %section
+    %h2 Fluent Calendar API
+    %pre{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          Date date = GregorianCalendar.july(1).year(2012);
+          Date incremented = date.add(2).months().add(1).day();
+    %div.fragment Or...
+    %pre.fragment{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          Date date = GregorianCalendar.july(1, 2012);
+          Date incremented = date.add(Quantity.months(2).days(1)));
+    %div.fragment Where
+    %pre.fragment{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          public interface Date implements Month, Day, Year
+  %section
+    %pre{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          Month month = GregorianCalendar.july();
+          DateTime time = month.year(2012).hour(13).minute(42);
+          Hour hour = time.getHour();
+          Minute minute = time.getMinute();
+    %div.fragment But what about...
+    %pre.fragment{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          Day day = time.getDay();
+    %div.fragment ?
+    %div.md100.fragment 0 or StrictTimeNotAvailableException
+  %section
+    %h2 How do we enforce the inbetween?
+    %pre.md150{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          Month month = GregorianCalendar.july();
+          DateTime time = month.year(2012).hour(13).minute(42);
+          Hour hour = time.getHour();
+          Minute minute = time.getMinute();
+    %h2.fragment.md200 Where is 'Day'?
+  %section
+    %pre.md200{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          Year year = GregorianCalendar.year(2012);
+          YearMonth month = year.july();
+          Date date = month.day(1);
+  %section
+    %pre.md200{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          Month month = GregorianCalendar.july();
+          MonthYear year = month.year(2012);
+          Date date = year.day(1);
+  %section
+    %pre.md200{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          public interface Date implements Month, Day, Year
+
+%section
+  %section
+    %h2 But now we have a problem.
+    %pre.fragment.md150{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          MonthYearHourMinuteBuilder k = 
+                GregorianCalendar.july().year(2012).hour(13).minute(42);
+  %section
+    %h2 Which means
+    %ol
+      %li.fragment Microsecond
+      %li.fragment Millisecond
+      %li.fragment Second
+      %li.fragment Minute
+      %li.fragment Hour
+      %li.fragment Day
+      %li.fragment Week
+      %li.fragment Month
+      %li.fragment Year
+    %div.fragment == 9! == 362,880 interfaces...
+  %section
+    %h2 But we can simplify this
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          DateTimeBuilder k = 
+                GregorianCalendar.year(2012).minute(42).minute(3);
+    %pre.fragment.md150{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          DateTimeBuilder k = 
+                GregorianCalendar.july().year(2012).hour(13).minute(42).hour(2);
+  %section
+    %h2 Domain specific language issues
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          DateTimeBuilder k = 
+                GregorianCalendar.year(2012).minute(42).minute(3);
+
+%section
+  %section
+    %div.md200
+      %div "Judgements prevent us from seeing the good that lies beyond appearances."
+      %p.md50 -- Wayne Dyer
+  %section
+    %div.md200
+      %div These judgements are accurate, but if Java is not cool, it's our fault.
+%section
+  %h2 Credits
+  %center
+    %p
+      %a{:href => "http://ocpsoft.org/"} http://ocpsoft.org/
+    .links.commons
+      :plain
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Why oh why, the API; What the hell were you thinking?</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ocpsoft.org/" property="cc:attributionName" rel="cc:attributionURL">Lincoln Baxter</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="dct:source">github.com</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="cc:morePermissions">https://github.com/lincolnthree/talks/tree/master/2012-JBW</a>.
+
+%section
+  %h2 Stay in the loop
+  %ul.links.loop
+    %li
+      Project website:
+      %a{:href => "http://ocpsoft.org/rewrite"} http://ocpsoft.org/rewrite
+    %li
+      Twitter:
+      %a{:href => "http://twitter.com/%23!ocpsoft"} https://twitter.com/#!ocpsoft
+    %li
+      OCPsoft Forums:
+      %a{:href => "http://ocpsoft.org/support/"} http://ocpsoft.org/support/
+  %p{:style => "margin-top: 50px" } Get involved:
+  %ul.links
+    %li
+      Get the source:
+      %a{:href => "https://github.com/ocpsoft/rewrite"} https://github.com/ocpsoft/rewrite
+    %li
+      Join the discussion:
+      %a{:href => "http://groups.google.com/group/prettyfaces-dev"} http://groups.google.com/group/prettyfaces-dev
+  %p 
+    %img{:src=>"assets/images/ocpsoft_logo.png", :width=>"150px"}
