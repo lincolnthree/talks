@@ -87,14 +87,14 @@ layout: reveal
       %code{:id => "multiple_page_elements"}
         :escaped 
           Year year = GregorianCalendar.year(2012);
-          YearMonth month = year.july();
+          YearMonthBuilder month = year.july();
           Date date = month.day(1);
   %section
     %pre.md200{:class => "prettyprint", :style => "font-size:18px"}
       %code{:id => "multiple_page_elements"}
         :escaped 
           Month month = GregorianCalendar.july();
-          MonthYear year = month.year(2012);
+          MonthYearBuilder year = month.year(2012);
           Date date = year.day(1);
   %section
     %pre.md200{:class => "prettyprint", :style => "font-size:18px"}
@@ -141,16 +141,32 @@ layout: reveal
       %code{:id => "multiple_page_elements"}
         :escaped 
           DateTimeBuilder k = 
-                GregorianCalendar.year(2012).minute(42).minute(3);
+                GregorianCalendar.year(2012).minute(42);
+    %p.md150.fragment What does a year and 42 minutes mean?
+    %pre.fragment.md250{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          DateTime k = 
+                GregorianCalendar.year(2012).minute(42).finish();
 
 %section
+  %section
+    %div.md200
+      %div How can we improve?
+  %section
+    %div.md200
+      %div Is our API small enough to become ubiquitous?
+  %section
+    %div.md200
+      %div With the coming of Modularity in Java, how can we be most efficient?
   %section
     %div.md200
       %div "Judgements prevent us from seeing the good that lies beyond appearances."
       %p.md50 -- Wayne Dyer
   %section
     %div.md200
-      %div These judgements are accurate, but if Java is not cool, it's our fault.
+      %div There is a lot of good in Java and in the JVM, but it's still hard to achieve.
+
 %section
   %h2 Credits
   %center
@@ -164,21 +180,13 @@ layout: reveal
   %h2 Stay in the loop
   %ul.links.loop
     %li
-      Project website:
-      %a{:href => "http://ocpsoft.org/rewrite"} http://ocpsoft.org/rewrite
+      Website:
+      %a{:href => "http://ocpsoft.org/"} http://ocpsoft.org/
     %li
       Twitter:
       %a{:href => "http://twitter.com/%23!ocpsoft"} https://twitter.com/#!ocpsoft
     %li
       OCPsoft Forums:
       %a{:href => "http://ocpsoft.org/support/"} http://ocpsoft.org/support/
-  %p{:style => "margin-top: 50px" } Get involved:
-  %ul.links
-    %li
-      Get the source:
-      %a{:href => "https://github.com/ocpsoft/rewrite"} https://github.com/ocpsoft/rewrite
-    %li
-      Join the discussion:
-      %a{:href => "http://groups.google.com/group/prettyfaces-dev"} http://groups.google.com/group/prettyfaces-dev
   %p 
     %img{:src=>"assets/images/ocpsoft_logo.png", :width=>"150px"}
