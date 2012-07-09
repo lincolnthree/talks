@@ -242,6 +242,25 @@ layout: reveal
   %section{:"data-state" => "whiteout" }
     %img.bg.md50{:src => "assets/images/rewrite/aspect-spring.png"}
   %section
+    %h2 You can secure existing applications
+    %pre.md50{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          .defineRule()
+          .when(Direction.isInbound()
+            .andNot(
+              URL.captureIn("url")
+                .where("url").constrainedBy(selectedCharacters)
+
+              .and(RequestParameter.matchesAll("{name}", "{value}")
+                .where("name").constrainedBy(selectedCharacters)
+                .where("value").constrainedBy(selectedCharacters)
+                .orNot(RequestParameter.exists("{}"))
+              )
+            )
+          )
+          .perform(Lifecycle.abort())) // or take some protective action
+  %section
     %h2 Real life.
     %p.md150 http://www.llbean.com/webapp/wcs/stores/servlet/CategoryDisplay?categoryId=28&storeId=1&catalogId=1&langId=-1&nav=hp-gndp
   %section
