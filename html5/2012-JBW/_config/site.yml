@@ -1,7 +1,0 @@
-profiles:
-  development:
-  production:
-    base_url: http://www.bleathem.ca/talks/JBW-2012/
-    deploy:
-      host: bleathem.ca
-      path: /home/bleathem/bleathem.ca/talks/2012-JBW/
