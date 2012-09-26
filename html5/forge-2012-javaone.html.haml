@@ -1,0 +1,230 @@
+---
+layout: reveal
+---
+
+%section
+  %section{:"data-state" => "whiteout" }
+    %img.splash.screen{:src => "assets/images/logos/javaone.png", :width=>"80%"}
+    %img.splash.print{:src => "assets/images/logos/javaone.png"}
+  %section
+    %h1{:style=>"color:#ffffff;"} JBoss Forge
+    %h2.capitalize Productivity, Reliability, Testability
+    %ul.intro{:style=>"margin-top: 100px;"}
+      %li.bold Lincoln Baxter, III
+      %liSenior Software Engineer, Red Hat
+      %li
+        %hr
+      %li.bold Paul Bakker
+      %li Software Engineer, Luminis Technologies
+  %section
+    %table{:width => "100%"}
+      %tr 
+        %td 
+          %h2 
+            %a{:href=>"http://twitter.com/lincolnthree"} @lincolnthree
+          %ul
+            %li Forge Project Lead
+          %div
+            %img{:src => "assets/images/lincoln_profile.jpg", :width=>"200px"}
+        %td
+          %h2 
+            %a{:href=>"http://twitter.com/pbakker"} @pbakker
+          %ul
+            %li Forge Committer
+          %div
+            %img{:src => "assets/images/profiles/paul_bakker.jpg", :width=>"200px"}
+
+%section
+  %section
+    %h2{:style=>"margin-top: 200px;"} Wat's this about?
+  %section
+    %div{:style=>"margin-top: 200px;"} Getting started sucks
+  %section
+    %div{:style=>"margin-top: 200px;"} Integrating stuff is hard
+  %section
+    %div{:style=>"margin-top: 200px;"} Remembering stuff is hard
+  %section
+    %div{:style=>"margin-top: 200px;"} Repetitive tasks are:
+  %section
+    %div{:style=>"margin-top: 200px;"} Annoying
+  %section
+    %div{:style=>"margin-top: 200px;"} Frustrating
+  %section
+    %div{:style=>"margin-top: 200px;"} Make you crazy
+  %section
+    %div{:style=>"margin-top: 200px;"} Ok, maybe we are already a little crazy
+  %section
+    %h2 So what do we do about it?
+  %section{:"data-state" => "whiteout" }
+    %img{:src=>"assets/images/googling.png"}
+  %section{:"data-state"=>"alert"}
+    %h1.capitalize No!
+
+%section
+  %section{:"data-state" => "whiteout" }
+    %img{:src => "assets/images/JBoss_Forge_logo.png"}
+    %img.fragment{:src => "assets/images/JBoss_Community_logo.png", :style => "float:right; margin-left:300px; margin-top: 150px;", :width=>"250px"}
+  %section
+    %h2 Our tasks for the day
+    %ol
+      %li.fragment Get started
+      %li.fragment Get integrated
+      %li.fragment Get mental
+      %li.fragment Get efficient
+
+%section
+  %section
+    %div{:style=>"text-align: left;"}
+      %span forge $ &nbsp;
+      %span get-started &nbsp;
+      %span{:style=>"text-decoration:blink;"} &#9608;
+
+%section
+  %section
+    %div{:style=>"text-align: left;"}
+      %span forge $ &nbsp;
+      %span get-integrated &nbsp;
+      %span{:style=>"text-decoration:blink;"} &#9608;
+    %ul.notes
+      %li rest setup
+      %li rest endpoint-from-entity
+      %li arquillian setup --container JBOSS_AS_REMOTE_7.X
+      %li arquillian create-test com.example.foo
+      %li
+        %pre{:class => "prettyprint", :style => "font-size: 8px"}
+        %code{:id => "multiple_page_elements"}
+          :escaped 
+            @RunWith(Arquillian.class)
+            public class ChildrenBeanTest {
+
+            @Deployment
+            public static WebArchive createDeployment() {
+            return ShrinkWrap
+            .create(WebArchive.class)
+            .addClasses(RestApplication.class, ChildEndpoint.class,
+            ChildrenBean.class, Child.class, ViewUtils.class)
+            .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
+            .addAsResource("META-INF/persistence.xml",
+            "META-INF/persistence.xml");
+            }
+
+            @Inject
+            ChildEndpoint endpoint;
+        
+            @PersistenceContext
+            EntityManager em;
+
+            @Test
+            public void testIsDeployed() {
+            Child c = new Child();
+            endpoint.create(c);
+            Assert.assertEquals(c, endpoint.findById(c.getId()));
+            }
+            }
+      %li build --profile JBOSS_AS_REMOTE_7.X
+
+%section
+  %section
+    %div{:style=>"text-align: left;"}
+      %span forge $ &nbsp;
+      %span get-mental &nbsp;
+      %span{:style=>"text-decoration:blink;"} &#9608;
+    %ul.notes
+      %li JSF ProjectStage
+
+%section
+  %section
+    %div{:style=>"text-align: left;"}
+      %span forge $ &nbsp;
+      %span get-efficient &nbsp;
+      %span{:style=>"text-decoration:blink;"} &#9608;
+    %ul.notes
+      %li Write a presenter plugin
+
+%section
+  %section{:"data-state"=>"whiteout"}
+    %img{:src=>"assets/images/what_happened.png", :style=>"position: absolute; bottom: 0px; left: 0px; border-bottom: 3px solid #888;"}
+  %section
+    %h2{:style=>"margin-bottom: 150px;"} We used PLUGINS!
+    %img{:src=>"assets/images/jsf_logo.png", :width=>"250px;"}
+    %img{:src=>"assets/images/ocpsoft_logo.png", :width=>"150px;"}
+    %img{:src=>"assets/images/as7_logo.png", :width=>"150px;"}
+    %img{:src=>"assets/images/openshift_logo.png", :width=>"150px;"}
+    %img{:src=>"assets/images/gwt_logo.png", :width=>"150px;", :style=>"margin-left: 15px;"}
+  %section{:"data-state"=>"whiteout"}
+    %h2{:style=>"color:#3c3c3c;"} Wrote PLUGINS!
+    %img{:src=>"assets/images/plugins_facets.png"}
+  %section{:"data-state"=>"whiteout"}
+    %h2{:style=>"color:#333e3e;"} Ate PLUGINS!
+    %img{:src=>"assets/images/eating_plugins.png", :alt=>"http://www.homestarrunner.com/sbemail.html"}
+  %section
+
+%section
+  %h2 The end?
+  %h3.fragment{:style => "margin-top: 160px"} The beginning - of your adventure with Forge!
+%section
+  %h2 "The Eclipse of command shells."
+  %p --Dan Allen
+%section
+  %h2 "Is loving Forge!! So much easier than writing Maven plugins."
+  %p -James Perkins
+%section
+  %h2 "Forge takes the 'cruft' out of 'CRUD'."
+  %p -Ken Finnigan
+%section
+  %h2 "Distributing plugins with Git makes SO much sense!"
+  %p -Craig Schwarzwald
+%section
+  %h2 "*Crickets*"
+  %p -George Gastaldi
+%section
+  %h2 Credits
+  %center
+    %p
+      %a{:href => "http://jboss.org/"} http://jboss.org/
+    %p
+      %a{:href => "http://homestarrunner.com/"} http://homestarrunner.com/
+    %p
+      %a{:href => "http://ocpsoft.org/"} http://ocpsoft.org/
+    .links.commons
+      :plain
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">JBoss Forge - Productivity, Reliability, Testability</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ocpsoft.org/" property="cc:attributionName" rel="cc:attributionURL">Lincoln Baxter</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="dct:source">github.com</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="cc:morePermissions">https://github.com/lincolnthree/talks/tree/master/2012-JBW</a>.
+%section
+  %h2{:style=>"margin-bottom:100px;"} Additional Resources
+  .left.resources
+    %p Quickstarts and guides:
+    %ul.links
+      %li
+        %a{:href => "http://arquillian.org/guides/get_started_faster_with_forge/"} Arquillian: Get started faster with Forge
+      %li
+        %a{:href => "http://www.jboss.org/jdf/quickstarts/jboss-as-quickstart/forge-from-scratch/"} JBoss Developer Framework: Forge from scratch quickstart
+      %li
+        %a{:href => "https://docs.jboss.org/author/display/FORGE/Reference+the+Forge+APIs"} Forge plugin-writing guide
+
+%section
+  %h2 Stay in the loop
+  %ul.links.loop
+    %li
+      Project website:
+      %a{:href => "http://jboss.org/forge"} http://jboss.org/forge
+    %li
+      Twitter:
+      %a{:href => "https://twitter.com/JBossForge"} @JBossForge
+    %li
+      Forge Forums:
+      %a{:href => "https://community.jboss.org/en/forge"} https://community.jboss.org/en/forge
+    %li
+      Vimeo feed:
+      %a{:href => "https://vimeo.com/channels/jbossforge"} https://vimeo.com/channels/jbossforge
+    %li
+      IRC: 
+      %a{:href=>"http://webchat.freenode.net?channels=forge"} #forge
+  %p{:style => "margin-top: 50px" } Get involved:
+  %ul.links
+    %li
+      Get the source:
+      %a{:href => "https://github.com/forge/core"} https://github.com/forge/core
+    %li
+      Join the discussion:
+      %a{:href => "https://lists.jboss.org/mailman/listinfo/forge-dev"} https://lists.jboss.org/mailman/listinfo/forge-dev
+  %img{:src=>"assets/images/JBoss_Forge_logo.png", :width=>"300px"}
