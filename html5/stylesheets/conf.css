@@ -59,6 +59,31 @@ img.bg {
  line-height: 95%;
 }
 
+.mt50 {
+ position: relative;
+ top: 50px;
+}
+
+.mt100 {
+ position: relative;
+ top: 100px;
+}
+
+.mt150 {
+ position: relative;
+ top: 150px;
+}
+
+.mt200 {
+ position: relative;
+ top: 200px;
+}
+
+.mt250 {
+ position: relative;
+ top: 250px;
+}
+
 .md50 {
  position: relative;
  top: 50px;
