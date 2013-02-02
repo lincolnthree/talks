@@ -5,10 +5,6 @@ layout: reveal
 %section
   %section{:"data-state" => "whiteout" }
     %img.splash.screen{:src => "assets/images/JBoss_Forge_logo.png"}
-    %img.fragment{:src => "assets/images/JBoss_Community_logo.png", :style => "float:right; margin-left:300px; margin-top: 150px;", :width=>"250px"}
-  %section
-    %h1{:style=>"color:#ffffff;"} JBoss Forge
-    %h2.capitalize Productivity, Reliability, Testability
   %section
     %table{:width => "140%", :style=>"position: relative; left: -200px;"}
       %tr 
@@ -18,7 +14,7 @@ layout: reveal
           %ul
             %li Forge Project Lead
           %div
-            %img{:src => "assets/images/profiles/lincoln_profile.jpg", :width=>"300px"}
+            %img{:src => "assets/images/profiles/lincoln_profile.jpg", :width=>"200px"}
         %td
           %h4 
             %a{:href=>"http://twitter.com/gegastaldi"} George Gastaldi
@@ -26,34 +22,54 @@ layout: reveal
             %li Forge Team
           %div
             %img{:src => "assets/images/profiles/george_gastaldi.jpg", :width=>"150px"}
-          %h4{:style=>"margin-top: 50px;"}
-            %a{:href=>""} Stale Pedersen
-          %ul
-            %li Forge Team (Perf.) 
-          %div
-            %img{:src => "assets/images/profiles/stale_pedersen.jpg", :width=>"150px"}
+          %div.mt50
+            %h4
+              %a{:href=>""} Stale Pedersen
+            %ul
+              %li Forge Team (Perf.) 
+            %div
+              %img{:src => "assets/images/profiles/stale_pedersen.jpg", :width=>"150px"}
         %td
           %h4
             %a{:href=>"http://twitter.com/koentsje"} Koen Aers
           %ul
-            %li Forge Team (JBoss Tools)
+            %li Forge Team (JBDS)
           %div
-            %img{:src => "assets/images/profiles/koen_aers.jpg", :width=>"200px"}
-          %h1{:style=>"margin-top: 150px;"}
+            %img{:src => "assets/images/profiles/koen_aers.jpg", :width=>"150px"}
+          %h1.mt150
             %span.fragment YOU!
 
 %section
   %section
-    %h2{:style=>"margin-top: 200px;"} Elevator Pitch
+    %h2.mt200 Elevator Pitch
   %section
-    %div{:style=>"margin-top: 200px;"} Getting started sucks
+    %div.mt200 Getting started sucks.
   %section
-    %div{:style=>"margin-top: 200px;"} Integrating stuff is hard
+    %div.mt200 Integrating new technology is hard.
   %section
-    %div{:style=>"margin-top: 200px;"} Remembering stuff is hard
+    %div.mt200 Our faulty memories cause bugs.
   %section
-    %div{:style=>"margin-top: 200px;"} Repetitive tasks are annoying and costly.
+    %div.mt200 Repetitive tasks are annoying and costly.
+  %section
+    %ul.mt200
+      %li.fragment Makes getting started easy
+      %li.fragment Simplifes otherwise complex choices
+      %li.fragment Ensures predictably successful results
+      %li.fragment Saves time instead of wasting time
   %section{:"data-state" => "whiteout" }
+    %ul.mt200.capitalize{:style=>"color: #333;"}
+      %li Extendable framework
+      %li.fragment &rarr; Teaching
+      %li.fragment &rarr; Promoting
+      %li.fragment &rarr; Automating
+      %li.fragment &rarr; Enjoying
+  %section
+    %h2.mt200 Brings our communities together
+    %ul{:style=>"text-align: right; position: relative; left: 100px; color: #efafaf"}
+      %li.fragment Centralized sandbox of choices
+      %li.fragment Plug and play functionality
+      %li.mt100.fragment Real, achievable results
+      %li.mt100.fragment True enjoyment
 
 %section
   %section
@@ -95,6 +111,7 @@ layout: reveal
       %li.fragment * Redesign the website and documentation
       %li.fragment * Come up with a cool name for addons
       %li.fragment * To be decided this week...
+      %li.fragment * AND!
   %section{:"data-state" => "whiteout" }
     %img{:src => "assets/images/logos/forge_logo.png"}
     %h1.fragment{:style=>"color: #ccc; font-size: 800px; position: relative; left: 450px; bottom: 300px; z-index: -10;"} 2
@@ -123,7 +140,7 @@ layout: reveal
   %h1 DEMO
 %section
   %section
-    %h2{:style=>"margin-bottom: 150px;"} We'll make PLUGINS together!
+    %h2.mb150 We'll make PLUGINS together!
     %img{:src=>"assets/images/logos/aerogear_logo.png", :width=>"140px;"}
     %img{:src=>"assets/images/logos/richfaces_logo.png", :width=>"150px;"}
     %img{:src=>"assets/images/as7_logo.png", :width=>"170px;"}
@@ -185,12 +202,13 @@ layout: reveal
     %li
       IRC: 
       %a{:href=>"http://webchat.freenode.net?channels=forge"} #forge
-  %p{:style => "margin-top: 50px" } Get involved:
-  %ul.links
-    %li
-      Get the source:
-      %a{:href => "https://github.com/forge/core"} https://github.com/forge/core
-    %li
-      Join the discussion:
-      %a{:href => "https://lists.jboss.org/mailman/listinfo/forge-dev"} https://lists.jboss.org/mailman/listinfo/forge-dev
-  %img{:src=>"assets/images/JBoss_Forge_logo.png", :width=>"300px"}
+  %div.mt50
+    %p Get involved:
+    %ul.links
+      %li
+        Get the source:
+        %a{:href => "https://github.com/forge/core"} https://github.com/forge/core
+      %li
+        Join the discussion:
+        %a{:href => "https://lists.jboss.org/mailman/listinfo/forge-dev"} https://lists.jboss.org/mailman/listinfo/forge-dev
+    %img{:src=>"assets/images/JBoss_Forge_logo.png", :width=>"300px"}
