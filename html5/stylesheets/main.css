@@ -926,25 +926,16 @@ body {
 	     -o-transition: background 800ms ease;
 	        transition: background 800ms ease;
 }
-.alert .state-background {
+.alert .state-background, .alert {
 	background: rgba( 200, 50, 30, 0.6 );
 }
-.soothe .state-background {
+.soothe .state-background, .soothe {
 	background: rgba( 50, 200, 90, 0.4 );
 }
-.blackout .state-background {
-	background: rgba( 0, 0, 0, 1.0 );
-}
-.whiteout .state-background {
-	background: rgba( 255, 255, 255, 1.0 );
-}
-.whiteout {
-   color: #ccc;
-}
-.blackout .state-background {
+.blackout .state-background, .blackout {
 	background: rgba( 0, 0, 0, 0.6 );
 }
-
-
-
+.whiteout .state-background, .whiteout {
+	background: rgba( 255, 255, 255, 1.0 );
+}
 
