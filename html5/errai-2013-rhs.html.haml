@@ -98,14 +98,64 @@ layout: reveal
     %h2 UI Templating
     %ul
       %li.fragment Use HTML5 / CSS templates directly from the designer or brand team.
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:14px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          <form onsubmit="false" data-field="app-template">
+            <input type="text" data-field="name" placeholder="Full Name" type="text"/>
+            <input type="email" data-field="email" placeholder="you@example.com" type="text" />
+            <textarea data-field="complaint" rows="10" placeholder="What can we help you with?">
+            <button type="button" class="btn" data-field="submit">Submit</button><br />
+          </form>
+    %p.fragment.md50
+      Just attach it!
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:14px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          @Page
+          @Templated("Admin.html#app-template")
+          public class Admin extends Composite
+    %p.fragment.md50
+      And navigate:
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:14px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          @Inject
+          private TransitionTo<ComplaintSubmitted> complaintSubmittedPage;
+
   %section
     %h2 Two-Way Data Binding
     %ul
       %li.fragment Remove boilerplate code and bring forms to life with a few simple annotations.
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          @Inject @Model private UserComplaint model;
+    %p.fragment.md50
+      And bind:
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          @Inject @Bound @DataField private TextBox name;
+          @Inject @Bound @DataField private TextBox email;
+          @Inject @Bound @DataField private TextArea complaint;
+          @Inject @DataField private Button submit;
   %section
     %h2 Type-safe RPC and REST
     %ul
       %li.fragment Simple and powerful to set up, leaving a foundation of confidence to refactor, test, and maintain.
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          @Inject
+          private Caller<UserComplaintEndpoint> endpoint;
+    %p.fragment.md50
+      And with our DataBinder model:
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          endpoint.call().create(model);
+
   %section
     %h2 Dependency Injection
     %ul
@@ -115,6 +165,11 @@ layout: reveal
     %h2 Offline mode and data sync
     %p.fragment Stay connected, even when you can't.
     %p.fragment Bring ideas together again, satisfy rising demands for collaboration.
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          @Inject private EntityManager em;
+          @Inject private ClientSyncManager syncManager;
 
 %section
   %section

@@ -186,18 +186,37 @@
     <ul>
       <li class="fragment">Use HTML5 / CSS templates directly from the designer or brand team.</li>
     </ul>
+    <pre class="fragment md50 prettyprint" style="font-size:14px"><code id="multiple_page_elements">&lt;form onsubmit=&quot;false&quot; data-field=&quot;app-template&quot;&gt;&#x000A;      &lt;input type=&quot;text&quot; data-field=&quot;name&quot; placeholder=&quot;Full Name&quot; type=&quot;text&quot;/&gt;&#x000A;      &lt;input type=&quot;email&quot; data-field=&quot;email&quot; placeholder=&quot;you@example.com&quot; type=&quot;text&quot; /&gt;&#x000A;      &lt;textarea data-field=&quot;complaint&quot; rows=&quot;10&quot; placeholder=&quot;What can we help you with?&quot;&gt;&#x000A;      &lt;button type=&quot;button&quot; class=&quot;btn&quot; data-field=&quot;submit&quot;&gt;Submit&lt;/button&gt;&lt;br /&gt;&#x000A;    &lt;/form&gt;</code></pre>
+    <p class="fragment md50">
+      Just attach it!
+    </p>
+    <pre class="fragment md50 prettyprint" style="font-size:14px"><code id="multiple_page_elements">@Page&#x000A;    @Templated(&quot;Admin.html#app-template&quot;)&#x000A;    public class Admin extends Composite</code></pre>
+    <p class="fragment md50">
+      And navigate:
+    </p>
+    <pre class="fragment md50 prettyprint" style="font-size:14px"><code id="multiple_page_elements">@Inject&#x000A;    private TransitionTo&lt;ComplaintSubmitted&gt; complaintSubmittedPage;</code></pre>
   </section>
   <section>
     <h2>Two-Way Data Binding</h2>
     <ul>
       <li class="fragment">Remove boilerplate code and bring forms to life with a few simple annotations.</li>
     </ul>
+    <pre class="fragment md50 prettyprint" style="font-size:18px"><code id="multiple_page_elements">@Inject @Model private UserComplaint model;</code></pre>
+    <p class="fragment md50">
+      And bind:
+    </p>
+    <pre class="fragment md50 prettyprint" style="font-size:18px"><code id="multiple_page_elements">@Inject @Bound @DataField private TextBox name;&#x000A;    @Inject @Bound @DataField private TextBox email;&#x000A;    @Inject @Bound @DataField private TextArea complaint;&#x000A;    @Inject @DataField private Button submit;</code></pre>
   </section>
   <section>
     <h2>Type-safe RPC and REST</h2>
     <ul>
       <li class="fragment">Simple and powerful to set up, leaving a foundation of confidence to refactor, test, and maintain.</li>
     </ul>
+    <pre class="fragment md50 prettyprint" style="font-size:18px"><code id="multiple_page_elements">@Inject&#x000A;    private Caller&lt;UserComplaintEndpoint&gt; endpoint;</code></pre>
+    <p class="fragment md50">
+      And with our DataBinder model:
+    </p>
+    <pre class="fragment md50 prettyprint" style="font-size:18px"><code id="multiple_page_elements">endpoint.call().create(model);</code></pre>
   </section>
   <section>
     <h2>Dependency Injection</h2>
@@ -210,6 +229,7 @@
     <h2>Offline mode and data sync</h2>
     <p class="fragment">Stay connected, even when you can't.</p>
     <p class="fragment">Bring ideas together again, satisfy rising demands for collaboration.</p>
+    <pre class="fragment md50 prettyprint" style="font-size:18px"><code id="multiple_page_elements">@Inject private EntityManager em;&#x000A;    @Inject private ClientSyncManager syncManager;</code></pre>
   </section>
 </section>
 <section>
