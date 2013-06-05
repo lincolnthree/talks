@@ -329,6 +329,11 @@ img.bg {
  top: 250px;
 }
 
+.md300 {
+ position: relative;
+ top: 300px;
+}
+
 .ml50 {
  position: relative;
  right: 50px;
