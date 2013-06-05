@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <meta name="description" content=""> 
+    <meta name="author" content="Lincoln Baxter, III">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="lib/google-code-prettify/prettify.css">
+    <link rel="stylesheet" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" href="stylesheets/conf.css">
+    
+    <script src="lib/jquery-1.7.2.min.js"></script>
+    <script src="js/swfobject.js"></script>
+
+    <script type="text/javascript">
+       // This function is automatically called by the player once it loads
+       function onYouTubePlayerReady(playerId) {
+       }
+
+       function loadPlayer(videoId) {
+          // Lets Flash from another domain call JavaScript
+          var params = { allowScriptAccess: "always" };
+          // The element id of the Flash embed
+          var atts = { id: videoId };
+
+          // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
+       $(document).ready(function () {
+          swfobject.embedSWF("http://www.youtube.com/v/" + videoId +
+                             "?version=3&enablejsapi=1&rel=0&hd=1&playerapiid=" + videoId + "_id",
+                             videoId, "800", "600", "9", null, null, params, atts);
+
+          Reveal.addEventListener(videoId, function () {
+             // The player ID comes from the "playerapiid" parameter that was set
+             // when the embedded player was loaded
+             var player = document.getElementById(videoId);
+             player.playVideo();
+          }, false);
+       });
+
+       }
+    </script>
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Used to fade in a background when a specific slide state is reached -->
+<div class="state-background"></div>
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+<section>
+  <section data-state="whiteout">
+    <img class="splash screen" src="assets/images/logos/javaone.png" width="80%">
+    <img class="splash print" src="assets/images/logos/javaone.png">
+  </section>
+  <section>
+    <h1 style="color:#ffffff;">JBoss Forge</h1>
+    <h2 class="capitalize">Productivity, Reliability, Testability</h2>
+    <ul class="intro" style="margin-top: 100px;">
+      <li class="bold">Lincoln Baxter, III</li>
+      <liSenior>Software Engineer, Red Hat</liSenior>
+      <li>
+        <hr>
+      </li>
+      <li class="bold">Paul Bakker</li>
+      <li>Software Engineer, Luminis Technologies</li>
+    </ul>
+  </section>
+  <section>
+    <table width="100%">
+      <tr>
+        <td>
+          <h2>
+            <a href="http://twitter.com/lincolnthree">@lincolnthree</a>
+          </h2>
+          <ul>
+            <li>Forge Project Lead</li>
+          </ul>
+          <div>
+            <img src="assets/images/lincoln_profile.jpg" width="200px">
+          </div>
+        </td>
+        <td>
+          <h2>
+            <a href="http://twitter.com/pbakker">@pbakker</a>
+          </h2>
+          <ul>
+            <li>Forge Committer</li>
+          </ul>
+          <div>
+            <img src="assets/images/profiles/paul_bakker.jpg" width="200px">
+          </div>
+        </td>
+      </tr>
+    </table>
+  </section>
+</section>
+<section>
+  <section>
+    <h2 style="margin-top: 200px;">Wat's this about?</h2>
+  </section>
+  <section>
+    <div style="margin-top: 200px;">Getting started sucks</div>
+  </section>
+  <section>
+    <div style="margin-top: 200px;">Integrating stuff is hard</div>
+  </section>
+  <section>
+    <div style="margin-top: 200px;">Remembering stuff is hard</div>
+  </section>
+  <section>
+    <div style="margin-top: 200px;">Repetitive tasks are:</div>
+  </section>
+  <section>
+    <div style="margin-top: 200px;">Annoying</div>
+  </section>
+  <section>
+    <div style="margin-top: 200px;">Frustrating</div>
+  </section>
+  <section>
+    <div style="margin-top: 200px;">Make you crazy</div>
+  </section>
+  <section>
+    <div style="margin-top: 200px;">Ok, maybe we are already a little crazy</div>
+  </section>
+  <section>
+    <h2>So what do we do about it?</h2>
+  </section>
+  <section data-state="whiteout">
+    <img src="assets/images/googling.png">
+  </section>
+  <section data-state="alert">
+    <h1 class="capitalize">No!</h1>
+  </section>
+</section>
+<section>
+  <section data-state="whiteout">
+    <img src="assets/images/JBoss_Forge_logo.png">
+    <img class="fragment" src="assets/images/JBoss_Community_logo.png" style="float:right; margin-left:300px; margin-top: 150px;" width="250px">
+  </section>
+  <section>
+    <h2>Our tasks for the day</h2>
+    <ol>
+      <li class="fragment">Get started</li>
+      <li class="fragment">Get integrated</li>
+      <li class="fragment">Get mental</li>
+      <li class="fragment">Get efficient</li>
+    </ol>
+  </section>
+</section>
+<section>
+  <section>
+    <div style="text-align: left;">
+      <span>forge $ &nbsp;</span>
+      <span>get-started &nbsp;</span>
+      <span style="text-decoration:blink;">&#9608;</span>
+    </div>
+  </section>
+</section>
+<section>
+  <section>
+    <div style="text-align: left;">
+      <span>forge $ &nbsp;</span>
+      <span>get-integrated &nbsp;</span>
+      <span style="text-decoration:blink;">&#9608;</span>
+    </div>
+    <ul class="notes">
+      <li>rest setup</li>
+      <li>rest endpoint-from-entity</li>
+      <li>arquillian setup --container JBOSS_AS_REMOTE_7.X</li>
+      <li>arquillian create-test com.example.foo</li>
+      <li>
+        <pre class="prettyprint" style="font-size: 8px"></pre>
+        <code id="multiple_page_elements">@RunWith(Arquillian.class)&#x000A;        public class ChildrenBeanTest {&#x000A;        &#x000A;        @Deployment&#x000A;        public static WebArchive createDeployment() {&#x000A;        return ShrinkWrap&#x000A;        .create(WebArchive.class)&#x000A;        .addClasses(RestApplication.class, ChildEndpoint.class,&#x000A;        ChildrenBean.class, Child.class, ViewUtils.class)&#x000A;        .addAsWebInfResource(EmptyAsset.INSTANCE, &quot;beans.xml&quot;)&#x000A;        .addAsResource(&quot;META-INF/persistence.xml&quot;,&#x000A;        &quot;META-INF/persistence.xml&quot;);&#x000A;        }&#x000A;        &#x000A;        @Inject&#x000A;        ChildEndpoint endpoint;&#x000A;        &#x000A;        @PersistenceContext&#x000A;        EntityManager em;&#x000A;        &#x000A;        @Test&#x000A;        public void testIsDeployed() {&#x000A;        Child c = new Child();&#x000A;        endpoint.create(c);&#x000A;        Assert.assertEquals(c, endpoint.findById(c.getId()));&#x000A;        }&#x000A;        }</code>
+      </li>
+      <li>build --profile JBOSS_AS_REMOTE_7.X</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section>
+    <div style="text-align: left;">
+      <span>forge $ &nbsp;</span>
+      <span>get-mental &nbsp;</span>
+      <span style="text-decoration:blink;">&#9608;</span>
+    </div>
+    <ul class="notes">
+      <li>JSF ProjectStage</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section>
+    <div style="text-align: left;">
+      <span>forge $ &nbsp;</span>
+      <span>get-efficient &nbsp;</span>
+      <span style="text-decoration:blink;">&#9608;</span>
+    </div>
+    <ul class="notes">
+      <li>Write a presenter plugin</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section data-state="whiteout">
+    <img src="assets/images/what_happened.png" style="position: absolute; bottom: 0px; left: 0px; border-bottom: 3px solid #888;">
+  </section>
+  <section>
+    <h2 style="margin-bottom: 150px;">We used PLUGINS!</h2>
+    <img src="assets/images/jsf_logo.png" width="250px;">
+    <img src="assets/images/ocpsoft_logo.png" width="150px;">
+    <img src="assets/images/as7_logo.png" width="150px;">
+    <img src="assets/images/openshift_logo.png" width="150px;">
+    <img src="assets/images/gwt_logo.png" style="margin-left: 15px;" width="150px;">
+  </section>
+  <section data-state="whiteout">
+    <h2 style="color:#3c3c3c;">Wrote PLUGINS!</h2>
+    <img src="assets/images/plugins_facets.png">
+  </section>
+  <section data-state="whiteout">
+    <h2 style="color:#333e3e;">Ate PLUGINS!</h2>
+    <img alt="http://www.homestarrunner.com/sbemail.html" src="assets/images/eating_plugins.png">
+  </section>
+  <section></section>
+</section>
+<section>
+  <h2>The end?</h2>
+  <h3 class="fragment" style="margin-top: 160px">The beginning - of your adventure with Forge!</h3>
+</section>
+<section>
+  <h2>"The Eclipse of command shells."</h2>
+  <p>--Dan Allen</p>
+</section>
+<section>
+  <h2>"Is loving Forge!! So much easier than writing Maven plugins."</h2>
+  <p>-James Perkins</p>
+</section>
+<section>
+  <h2>"Forge takes the 'cruft' out of 'CRUD'."</h2>
+  <p>-Ken Finnigan</p>
+</section>
+<section>
+  <h2>"Distributing plugins with Git makes SO much sense!"</h2>
+  <p>-Craig Schwarzwald</p>
+</section>
+<section>
+  <h2>"*Crickets*"</h2>
+  <p>-George Gastaldi</p>
+</section>
+<section>
+  <h2>Credits</h2>
+  <center>
+    <p>
+      <a href="http://jboss.org/">http://jboss.org/</a>
+    </p>
+    <p>
+      <a href="http://homestarrunner.com/">http://homestarrunner.com/</a>
+    </p>
+    <p>
+      <a href="http://ocpsoft.org/">http://ocpsoft.org/</a>
+    </p>
+    <div class="links commons">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">JBoss Forge - Productivity, Reliability, Testability</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ocpsoft.org/" property="cc:attributionName" rel="cc:attributionURL">Lincoln Baxter</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="dct:source">github.com</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="cc:morePermissions">https://github.com/lincolnthree/talks/tree/master/2012-JBW</a>.
+    </div>
+  </center>
+</section>
+<section>
+  <h2 style="margin-bottom:100px;">Additional Resources</h2>
+  <div class="left resources">
+    <p>Quickstarts and guides:</p>
+    <ul class="links">
+      <li>
+        <a href="http://arquillian.org/guides/get_started_faster_with_forge/">Arquillian: Get started faster with Forge</a>
+      </li>
+      <li>
+        <a href="http://www.jboss.org/jdf/quickstarts/jboss-as-quickstart/forge-from-scratch/">JBoss Developer Framework: Forge from scratch quickstart</a>
+      </li>
+      <li>
+        <a href="https://docs.jboss.org/author/display/FORGE/Reference+the+Forge+APIs">Forge plugin-writing guide</a>
+      </li>
+    </ul>
+  </div>
+</section>
+<section>
+  <h2>Stay in the loop</h2>
+  <ul class="links loop">
+    <li>
+      Project website:
+      <a href="http://jboss.org/forge">http://jboss.org/forge</a>
+    </li>
+    <li>
+      Twitter:
+      <a href="https://twitter.com/JBossForge">@JBossForge</a>
+    </li>
+    <li>
+      Forge Forums:
+      <a href="https://community.jboss.org/en/forge">https://community.jboss.org/en/forge</a>
+    </li>
+    <li>
+      Vimeo feed:
+      <a href="https://vimeo.com/channels/jbossforge">https://vimeo.com/channels/jbossforge</a>
+    </li>
+    <li>
+      IRC:
+      <a href="http://webchat.freenode.net?channels=forge">#forge</a>
+    </li>
+  </ul>
+  <p style="margin-top: 50px">Get involved:</p>
+  <ul class="links">
+    <li>
+      Get the source:
+      <a href="https://github.com/forge/core">https://github.com/forge/core</a>
+    </li>
+    <li>
+      Join the discussion:
+      <a href="https://lists.jboss.org/mailman/listinfo/forge-dev">https://lists.jboss.org/mailman/listinfo/forge-dev</a>
+    </li>
+  </ul>
+  <img src="assets/images/JBoss_Forge_logo.png" width="300px">
+</section>
+</div>
+
+<!-- The navigational controls UI -->
+<aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+</aside>
+
+<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+<div class="progress"><span></span></div>
+
+</div>
+
+<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+    <script src="lib/google-code-prettify/prettify.js"></script>
+    <script src="lib/classList.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/code_highlight.js"></script>
+
+<script>
+    // Parse the query string into a key/value object
+    var query = {};
+    location.search.replace(/[A-Z0-9]+?=(\w*)/gi, function (a) {
+        query[ a.split('=').shift() ] = a.split('=').pop();
+    });
+
+    // Fires each time a new slide is activated
+    Reveal.addEventListener('slidechanged', function (event) {
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    });
+
+    $(document).ready(function () {
+    Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls:false,
+
+        // Display a presentation progress bar
+        progress:true,
+
+        // If true; each slide will be pushed to the browser history
+        history:true,
+
+        // Loops the presentation, defaults to false
+        loop:false,
+
+        // Flags if mouse wheel navigation should be enabled
+        mouseWheel:false,
+
+        // Apply a 3D roll to links on hover
+        rollingLinks:false,
+
+        // UI style
+        theme:query.theme || 'default', // default/neon
+
+        // Transition style
+        transition:'linear' // || query.transition || 'default' // default/cube/page/concave/linear(2d)
+    });
+    CodeHighlight.initialize({reveal: Reveal});
+    prettyPrint();
+    });
+
+
+</script>
+</body>
+</html>

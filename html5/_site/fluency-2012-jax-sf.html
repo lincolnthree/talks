@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <meta name="description" content=""> 
+    <meta name="author" content="Lincoln Baxter, III">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="lib/google-code-prettify/prettify.css">
+    <link rel="stylesheet" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" href="stylesheets/conf.css">
+    
+    <script src="lib/jquery-1.7.2.min.js"></script>
+    <script src="js/swfobject.js"></script>
+
+    <script type="text/javascript">
+       // This function is automatically called by the player once it loads
+       function onYouTubePlayerReady(playerId) {
+       }
+
+       function loadPlayer(videoId) {
+          // Lets Flash from another domain call JavaScript
+          var params = { allowScriptAccess: "always" };
+          // The element id of the Flash embed
+          var atts = { id: videoId };
+
+          // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
+       $(document).ready(function () {
+          swfobject.embedSWF("http://www.youtube.com/v/" + videoId +
+                             "?version=3&enablejsapi=1&rel=0&hd=1&playerapiid=" + videoId + "_id",
+                             videoId, "800", "600", "9", null, null, params, atts);
+
+          Reveal.addEventListener(videoId, function () {
+             // The player ID comes from the "playerapiid" parameter that was set
+             // when the embedded player was loaded
+             var player = document.getElementById(videoId);
+             player.playVideo();
+          }, false);
+       });
+
+       }
+    </script>
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Used to fade in a background when a specific slide state is reached -->
+<div class="state-background"></div>
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+<section>
+  <section>
+    <img class="splash screen" src="assets/images/jax_logo.png" width="80%">
+    <img class="splash print" src="assets/images/jax_logo.png">
+  </section>
+  <section>
+    <h1 style="color:#ffffff;">Why oh why, the API</h1>
+    <h2 class="capitalize">What the hell were you thinking?</h2>
+    <ul class="intro" style="margin-top: 100px;">
+      <li>Lincoln Baxter, III</li>
+      <li>Red Hat</li>
+      <li>07.11.12</li>
+    </ul>
+  </section>
+  <section>
+    <h2>
+      <a href="http://twitter.com/lincolnthree">@lincolnthree</a>
+    </h2>
+    <ul>
+      <li>Founder of OCPsoft - Simpler is Better</li>
+    </ul>
+    <div>
+      <img src="assets/images/lincoln_profile.jpg" width="200px">
+    </div>
+  </section>
+</section>
+<section>
+  <section class="invert" data-state="whiteout">
+    <div class="md200">
+      <div>"Judgements prevent us from seeing the good that lies beyond appearances."</div>
+      <p class="md50">-- Wayne Dyer</p>
+    </div>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>Java Calendar API</h2>
+    <pre class="fragment md50 prettyprint" style="font-size:18px"><code id="multiple_page_elements">// set calendar to 1 Jan 2012&#x000A;    Calendar calendar = new GregorianCalendar(2012,Calendar.JANUARY,1);&#x000A;    &#x000A;    // add 2m 1d&#x000A;    calendar.add(Calendar.MONTH,2);&#x000A;    calendar.add(Calendar.DAY_OF_MONTH,1);</code></pre>
+  </section>
+  <section>
+    <h2>Fluent Calendar API</h2>
+    <pre class="prettyprint" style="font-size:18px"><code id="multiple_page_elements">Date date = GregorianCalendar.july(1).year(2012);&#x000A;    Date incremented = date.add(2).months().add(1).day();</code></pre>
+    <div class="fragment">Or...</div>
+    <pre class="fragment prettyprint" style="font-size:18px"><code id="multiple_page_elements">Date date = GregorianCalendar.july(1, 2012);&#x000A;    Date incremented = date.add(Quantity.months(2).days(1)));</code></pre>
+    <div class="fragment">Where</div>
+    <pre class="fragment prettyprint" style="font-size:18px"><code id="multiple_page_elements">public interface Date implements Month, Day, Year</code></pre>
+  </section>
+  <section>
+    <pre class="prettyprint" style="font-size:18px"><code id="multiple_page_elements">Month month = GregorianCalendar.july();&#x000A;    DateTime time = month.year(2012).hour(13).minute(42);&#x000A;    Hour hour = time.getHour();&#x000A;    Minute minute = time.getMinute();</code></pre>
+    <div class="fragment">But what about...</div>
+    <pre class="fragment prettyprint" style="font-size:18px"><code id="multiple_page_elements">Day day = time.getDay();</code></pre>
+    <div class="fragment">?</div>
+    <div class="md100 fragment">0 or StrictTimeNotAvailableException</div>
+  </section>
+  <section>
+    <h2>How do we enforce the inbetween?</h2>
+    <pre class="md150 prettyprint" style="font-size:18px"><code id="multiple_page_elements">Month month = GregorianCalendar.july();&#x000A;    DateTime time = month.year(2012).hour(13).minute(42);&#x000A;    Hour hour = time.getHour();&#x000A;    Minute minute = time.getMinute();</code></pre>
+    <h2 class="fragment md200">Where is 'Day'?</h2>
+  </section>
+  <section>
+    <pre class="md200 prettyprint" style="font-size:18px"><code id="multiple_page_elements">Year year = GregorianCalendar.year(2012);&#x000A;    YearMonthBuilder month = year.july();&#x000A;    Date date = month.day(1);</code></pre>
+  </section>
+  <section>
+    <pre class="md200 prettyprint" style="font-size:18px"><code id="multiple_page_elements">Month month = GregorianCalendar.july();&#x000A;    MonthYearBuilder year = month.year(2012);&#x000A;    Date date = year.day(1);</code></pre>
+  </section>
+  <section>
+    <pre class="md200 prettyprint" style="font-size:18px"><code id="multiple_page_elements">public interface Date implements Month, Day, Year</code></pre>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>But now we have a problem.</h2>
+    <pre class="fragment md150 prettyprint" style="font-size:18px"><code id="multiple_page_elements">MonthYearHourMinuteBuilder k = &#x000A;          GregorianCalendar.july().year(2012).hour(13).minute(42);</code></pre>
+  </section>
+  <section>
+    <h2>Which means</h2>
+    <ol>
+      <li class="fragment">Microsecond</li>
+      <li class="fragment">Millisecond</li>
+      <li class="fragment">Second</li>
+      <li class="fragment">Minute</li>
+      <li class="fragment">Hour</li>
+      <li class="fragment">Day</li>
+      <li class="fragment">Week</li>
+      <li class="fragment">Month</li>
+      <li class="fragment">Year</li>
+    </ol>
+    <div class="fragment">== 9! == 362,880 interfaces...</div>
+  </section>
+  <section>
+    <h2>But we can simplify this</h2>
+    <pre class="fragment md50 prettyprint" style="font-size:18px"><code id="multiple_page_elements">DateTimeBuilder k = &#x000A;          GregorianCalendar.year(2012).minute(42).minute(3);</code></pre>
+    <pre class="fragment md150 prettyprint" style="font-size:18px"><code id="multiple_page_elements">DateTimeBuilder k = &#x000A;          GregorianCalendar.july().year(2012).hour(13).minute(42).hour(2);</code></pre>
+  </section>
+  <section>
+    <h2>Domain specific language issues</h2>
+    <pre class="fragment md50 prettyprint" style="font-size:18px"><code id="multiple_page_elements">DateTimeBuilder k = &#x000A;          GregorianCalendar.year(2012).minute(42);</code></pre>
+    <p class="md150 fragment">What does a year and 42 minutes mean?</p>
+    <pre class="fragment md250 prettyprint" style="font-size:18px"><code id="multiple_page_elements">DateTime k = &#x000A;          GregorianCalendar.year(2012).minute(42).finish();</code></pre>
+  </section>
+</section>
+<section>
+  <section>
+    <div class="md200">
+      <div>How can we improve?</div>
+    </div>
+  </section>
+  <section>
+    <div class="md200">
+      <div>Is our API small enough to become ubiquitous?</div>
+    </div>
+  </section>
+  <section>
+    <div class="md200">
+      <div>With the coming of Modularity in Java, how can we be most efficient?</div>
+    </div>
+  </section>
+  <section>
+    <div class="md200">
+      <div>"Judgements prevent us from seeing the good that lies beyond appearances."</div>
+      <p class="md50">-- Wayne Dyer</p>
+    </div>
+  </section>
+  <section>
+    <div class="md200">
+      <div>There is a lot of good in Java and in the JVM, but it's still hard to achieve.</div>
+    </div>
+  </section>
+</section>
+<section>
+  <h2>Credits</h2>
+  <center>
+    <p>
+      <a href="http://ocpsoft.org/">http://ocpsoft.org/</a>
+    </p>
+    <div class="links commons">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Why oh why, the API; What the hell were you thinking?</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ocpsoft.org/" property="cc:attributionName" rel="cc:attributionURL">Lincoln Baxter</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="dct:source">github.com</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="cc:morePermissions">https://github.com/lincolnthree/talks/tree/master/2012-JBW</a>.
+    </div>
+  </center>
+</section>
+<section>
+  <h2>Stay in the loop</h2>
+  <ul class="links loop">
+    <li>
+      Website:
+      <a href="http://ocpsoft.org/">http://ocpsoft.org/</a>
+    </li>
+    <li>
+      Twitter:
+      <a href="http://twitter.com/%23!ocpsoft">https://twitter.com/#!ocpsoft</a>
+    </li>
+    <li>
+      OCPsoft Forums:
+      <a href="http://ocpsoft.org/support/">http://ocpsoft.org/support/</a>
+    </li>
+  </ul>
+  <p>
+    <img src="assets/images/ocpsoft_logo.png" width="150px">
+  </p>
+</section>
+</div>
+
+<!-- The navigational controls UI -->
+<aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+</aside>
+
+<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+<div class="progress"><span></span></div>
+
+</div>
+
+<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+    <script src="lib/google-code-prettify/prettify.js"></script>
+    <script src="lib/classList.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/code_highlight.js"></script>
+
+<script>
+    // Parse the query string into a key/value object
+    var query = {};
+    location.search.replace(/[A-Z0-9]+?=(\w*)/gi, function (a) {
+        query[ a.split('=').shift() ] = a.split('=').pop();
+    });
+
+    // Fires each time a new slide is activated
+    Reveal.addEventListener('slidechanged', function (event) {
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    });
+
+    $(document).ready(function () {
+    Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls:false,
+
+        // Display a presentation progress bar
+        progress:true,
+
+        // If true; each slide will be pushed to the browser history
+        history:true,
+
+        // Loops the presentation, defaults to false
+        loop:false,
+
+        // Flags if mouse wheel navigation should be enabled
+        mouseWheel:false,
+
+        // Apply a 3D roll to links on hover
+        rollingLinks:false,
+
+        // UI style
+        theme:query.theme || 'default', // default/neon
+
+        // Transition style
+        transition:'linear' // || query.transition || 'default' // default/cube/page/concave/linear(2d)
+    });
+    CodeHighlight.initialize({reveal: Reveal});
+    prettyPrint();
+    });
+
+
+</script>
+</body>
+</html>

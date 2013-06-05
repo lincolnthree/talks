@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <meta name="description" content=""> 
+    <meta name="author" content="Lincoln Baxter, III">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="lib/google-code-prettify/prettify.css">
+    <link rel="stylesheet" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" href="stylesheets/conf.css">
+    
+    <script src="lib/jquery-1.7.2.min.js"></script>
+    <script src="js/swfobject.js"></script>
+
+    <script type="text/javascript">
+       // This function is automatically called by the player once it loads
+       function onYouTubePlayerReady(playerId) {
+       }
+
+       function loadPlayer(videoId) {
+          // Lets Flash from another domain call JavaScript
+          var params = { allowScriptAccess: "always" };
+          // The element id of the Flash embed
+          var atts = { id: videoId };
+
+          // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
+       $(document).ready(function () {
+          swfobject.embedSWF("http://www.youtube.com/v/" + videoId +
+                             "?version=3&enablejsapi=1&rel=0&hd=1&playerapiid=" + videoId + "_id",
+                             videoId, "800", "600", "9", null, null, params, atts);
+
+          Reveal.addEventListener(videoId, function () {
+             // The player ID comes from the "playerapiid" parameter that was set
+             // when the embedded player was loaded
+             var player = document.getElementById(videoId);
+             player.playVideo();
+          }, false);
+       });
+
+       }
+    </script>
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Used to fade in a background when a specific slide state is reached -->
+<div class="state-background"></div>
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+<section>
+  <section>
+    <img class="splash screen" src="assets/images/logos/summit_2013_logo.png" style="width:100%; height:100%; position: absolute; top: 0px; left: 0px; margin: 0px;">
+    <img class="splash print" src="assets/images/logos/summit_2013_logo.png">
+  </section>
+  <section>
+    <img class="splash screen" src="assets/images/logos/summit_2013_intro.png" style="width:100%; height:100%; position: absolute; top: 0px; left: 0px; margin: 0px;">
+    <img class="splash print" src="assets/images/logos/summit_2013_intro.png">
+  </section>
+  <section>
+    <h2 class="fragment">
+      <a href="http://twitter.com/lincolnthree">@csadilek</a>
+    </h2>
+    <ul class="fragment">
+      <li>The smart one</li>
+    </ul>
+    <h2 class="fragment md100">
+      <a href="http://twitter.com/lincolnthree">@lincolnthree</a>
+    </h2>
+    <ul class="fragment md100">
+      <li>The tall one</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section data-state="whiteout">
+    <img src="assets/images/logos/errai_logo.png">
+    <img class="fragment" src="assets/images/JBoss_Community_logo.png">
+  </section>
+  <section>
+    <h2>Our tasks for the day</h2>
+    <ol>
+      <li class="fragment">Why your job is hard.</li>
+      <li class="fragment">How Errai helps.</li>
+      <li class="fragment">Errai core concepts.</li>
+      <li class="fragment">Go mobile today.</li>
+      <li class="fragment md50">Summary.</li>
+      <li class="fragment md50">Questions.</li>
+    </ol>
+  </section>
+</section>
+<section>
+  <section>
+    <h2 class="md200">1. Why Your Job is Hard</h2>
+    <p class="md200 mr100 fragment">we feel you..</p>
+  </section>
+  <section>
+    <h2>Large development teams make things hard</h2>
+    <ul>
+      <li class="fragment">Who is working on what?</li>
+      <li class="fragment">Skill-segregation causes duplicate work.</li>
+      <li class="fragment">Code rots over time (other people mess it up.)</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Large or complex code bases make things hard</h2>
+    <ul>
+      <li class="fragment">Where is code actually used?</li>
+      <li class="fragment">What can safely be changed?</li>
+      <li class="fragment">Code rots over time (it just goes bad.)</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Large customers make things hard</h2>
+    <ul>
+      <li class="fragment">Requests big changes frequently</li>
+      <li class="fragment">Want mobile NOW.</li>
+      <li class="fragment">Want super-high performance NOW.</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section>
+    <h2 class="md200">2. How Errai Helps</h2>
+  </section>
+  <section>
+    <h2>Use the best tools and standards</h2>
+    <ul>
+      <li class="fragment">HTML5 and CSS for layout</li>
+      <li class="fragment">Java for enterprise development</li>
+      <li class="fragment">JavaScript for the nitty-gritty</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Share code more effectively</h2>
+    <ul>
+      <li class="fragment">Share data model and validation logic</li>
+      <li class="fragment">Don't repeat yourself</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Bust that boilerplate!!!</h2>
+    <ul>
+      <li class="fragment">Declarative, simple code</li>
+      <li class="fragment">A little goes a long way</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Seriously, It's real JAVA!</h2>
+    <ul>
+      <li class="fragment">Type-safe language</li>
+      <li class="fragment">Refactoring</li>
+      <li class="fragment">Code analysis</li>
+      <li class="fragment">Extremely Testable</li>
+      <li class="fragment">More people with the right skills</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>3. Errai Core Concepts</h2>
+    <ul>
+      <li class="fragment">HTML5 Templating</li>
+      <li class="fragment">Navigation and Bookmarking</li>
+      <li class="fragment">Data Binding</li>
+      <li class="fragment">Type-safe RPC and REST</li>
+      <li class="fragment">Dependency Injection</li>
+      <li class="fragment">Data-sync / offline mode</li>
+    </ul>
+  </section>
+  <section>
+    <h2>UI Templating</h2>
+    <ul>
+      <li class="fragment">Use HTML5 / CSS templates directly from the designer or brand team.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Two-Way Data Binding</h2>
+    <ul>
+      <li class="fragment">Remove boilerplate code and bring forms to live with a few annotations.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Type-safe RPC and REST</h2>
+    <ul>
+      <li class="fragment">Simple and powerful to set up, leaving a foundation of confidence to refactor, test, and maintain.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Dependency Injection</h2>
+    <ul>
+      <li class="fragment">The bedrock of object oriented programming: why not use it in the browser?</li>
+      <li class="fragment">Use real-time client/server broadcast events and updates.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Offline mode and data sync</h2>
+    <p class="fragment">Stay connected, even when you can't.</p>
+    <p class="fragment">Bring ideas together again, satisfy rising demands for collaboration.</p>
+  </section>
+</section>
+<section>
+  <section>
+    <h2 class="md200">The BIG INSPIRATIONAL DEMO!</h2>
+  </section>
+</section>
+<section>
+  <section>
+    <h2 class="md200">4. Go Mobile Today</h2>
+  </section>
+  <section>
+    <h2>Use native android, iphone, and blackberry features.</h2>
+    <ul>
+      <li class="fragment">Camera</li>
+      <li class="fragment">Location - GPS</li>
+      <li class="fragment">Orientation</li>
+      <li class="fragment">Accelerometer</li>
+      <li class="fragment">Compass</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section>
+    <h2 class="md200">5. Summary</h2>
+  </section>
+  <section>
+    <h2>Our tasks for the day</h2>
+    <ol>
+      <li class="fragment">Your job is hard.</li>
+      <li class="fragment">Errai can help.</li>
+      <li class="fragment">Core concepts FTW.</li>
+      <li class="fragment">Go mobile today.</li>
+    </ol>
+  </section>
+</section>
+<section>
+  <section>
+    <h2 class="md200">Questions</h2>
+    <p class="md200 mr100 fragment">we know you have them...</p>
+    <p class="md200 mr100 fragment">we can tell...</p>
+    <p class="md200 mr100 fragment">there are always questions...</p>
+  </section>
+</section>
+<section>
+  <h2>The end?</h2>
+  <h3 class="fragment" style="margin-top: 160px">The beginning - of your adventure with Errai!</h3>
+</section>
+<section>
+  <h2>"An incredibly comprehensive UI framework solution."</h2>
+</section>
+<section>
+  <h2>"The most maintainable client-side architecture for large projects."</h2>
+</section>
+<section>
+  <h2>"Scalable, secure, and mobile ready."</h2>
+</section>
+<section>
+  <h2>"Provies a Java skillset alternative to JavaScript."</h2>
+</section>
+<section>
+  <h2 style="margin-bottom:100px;">Additional Resources</h2>
+  <div class="left resources">
+    <p>Quickstarts and guides:</p>
+    <ul class="links">
+      <li>
+        <a href="http://erraiproject.org/get-started/">Get started with Errai</a>
+      </li>
+      <li>
+        <a href="http://erraiproject.org/docs/">Errai Project Documentation</a>
+      </li>
+    </ul>
+  </div>
+</section>
+<section>
+  <h2>Stay in the loop</h2>
+  <ul class="links loop">
+    <li>
+      Project website:
+      <a href="http://erraiproject.org/">http://erraiproject.org</a>
+    </li>
+    <li>
+      Twitter:
+      <a href="https://twitter.com/search/%23JBossErrai">https://twitter.com/search/#JBossErrai</a>
+    </li>
+    <li>
+      Errai Forums:
+      <a href="https://community.jboss.org/en/errai">https://community.jboss.org/en/errai</a>
+    </li>
+    <li>
+      IRC:
+      <a href="http://webchat.freenode.net?channels=errai">#errai</a>
+    </li>
+  </ul>
+  <p style="margin-top: 50px">Get involved:</p>
+  <ul class="links">
+    <li>
+      Get the source:
+      <a href="https://github.com/errai/errai">https://github.com/errai/errai</a>
+    </li>
+    <li>
+      Join the discussion:
+      <a href="https://lists.jboss.org/mailman/listinfo/errai-dev">https://lists.jboss.org/mailman/listinfo/errai-dev</a>
+    </li>
+  </ul>
+  <img src="assets/images/logos/errai_logo.png" width="300px">
+</section>
+</div>
+
+<!-- The navigational controls UI -->
+<aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+</aside>
+
+<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+<div class="progress"><span></span></div>
+
+</div>
+
+<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+    <script src="lib/google-code-prettify/prettify.js"></script>
+    <script src="lib/classList.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/code_highlight.js"></script>
+
+<script>
+    // Parse the query string into a key/value object
+    var query = {};
+    location.search.replace(/[A-Z0-9]+?=(\w*)/gi, function (a) {
+        query[ a.split('=').shift() ] = a.split('=').pop();
+    });
+
+    // Fires each time a new slide is activated
+    Reveal.addEventListener('slidechanged', function (event) {
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    });
+
+    $(document).ready(function () {
+    Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls:false,
+
+        // Display a presentation progress bar
+        progress:true,
+
+        // If true; each slide will be pushed to the browser history
+        history:true,
+
+        // Loops the presentation, defaults to false
+        loop:false,
+
+        // Flags if mouse wheel navigation should be enabled
+        mouseWheel:false,
+
+        // Apply a 3D roll to links on hover
+        rollingLinks:false,
+
+        // UI style
+        theme:query.theme || 'default', // default/neon
+
+        // Transition style
+        transition:'linear' // || query.transition || 'default' // default/cube/page/concave/linear(2d)
+    });
+    CodeHighlight.initialize({reveal: Reveal});
+    prettyPrint();
+    });
+
+
+</script>
+</body>
+</html>

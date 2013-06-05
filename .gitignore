@@ -10,7 +10,6 @@ target/
 *.ipr
 *.iws
 bin/
-_site/
 /*/src/main/java/META-INF
 *.swp
 .~lock*

@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <meta name="description" content=""> 
+    <meta name="author" content="Lincoln Baxter, III">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="lib/google-code-prettify/prettify.css">
+    <link rel="stylesheet" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" href="stylesheets/conf.css">
+    
+    <script src="lib/jquery-1.7.2.min.js"></script>
+    <script src="js/swfobject.js"></script>
+
+    <script type="text/javascript">
+       // This function is automatically called by the player once it loads
+       function onYouTubePlayerReady(playerId) {
+       }
+
+       function loadPlayer(videoId) {
+          // Lets Flash from another domain call JavaScript
+          var params = { allowScriptAccess: "always" };
+          // The element id of the Flash embed
+          var atts = { id: videoId };
+
+          // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
+       $(document).ready(function () {
+          swfobject.embedSWF("http://www.youtube.com/v/" + videoId +
+                             "?version=3&enablejsapi=1&rel=0&hd=1&playerapiid=" + videoId + "_id",
+                             videoId, "800", "600", "9", null, null, params, atts);
+
+          Reveal.addEventListener(videoId, function () {
+             // The player ID comes from the "playerapiid" parameter that was set
+             // when the embedded player was loaded
+             var player = document.getElementById(videoId);
+             player.playVideo();
+          }, false);
+       });
+
+       }
+    </script>
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Used to fade in a background when a specific slide state is reached -->
+<div class="state-background"></div>
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+<section>
+  <section data-state="whiteout">
+    <img class="splash screen" src="assets/images/JBoss_Forge_logo.png">
+  </section>
+  <section>
+    <table style="position: relative; left: -200px;" width="140%">
+      <tr>
+        <td>
+          <h4>
+            <a href="http://twitter.com/lincolnthree" style="padding-top: 50px;">Lincoln Baxter, III</a>
+          </h4>
+          <ul>
+            <li>Forge Project Lead</li>
+          </ul>
+          <div>
+            <img src="assets/images/profiles/lincoln_profile.jpg" width="200px">
+          </div>
+        </td>
+        <td>
+          <h4>
+            <a href="http://twitter.com/gegastaldi">George Gastaldi</a>
+          </h4>
+          <ul>
+            <li>Forge Team</li>
+          </ul>
+          <div>
+            <img src="assets/images/profiles/george_gastaldi.jpg" width="150px">
+          </div>
+          <div class="md50">
+            <h4>
+              <a href="">Stale Pedersen</a>
+            </h4>
+            <ul>
+              <li>Forge Team (Perf.)</li>
+            </ul>
+            <div>
+              <img src="assets/images/profiles/stale_pedersen.jpg" width="150px">
+            </div>
+          </div>
+        </td>
+        <td>
+          <h4>
+            <a href="http://twitter.com/koentsje">Koen Aers</a>
+          </h4>
+          <ul>
+            <li>Forge Team (JBDS)</li>
+          </ul>
+          <div>
+            <img src="assets/images/profiles/koen_aers.jpg" width="150px">
+          </div>
+          <h1 class="md150">
+            <span class="fragment">YOU!</span>
+          </h1>
+        </td>
+      </tr>
+    </table>
+  </section>
+</section>
+<section>
+  <section>
+    <h2 class="md200">Elevator Pitch</h2>
+  </section>
+  <section data-state="whiteout">
+    <h1 class="md200" style="color: #333;">We believe...</h1>
+  </section>
+  <section>
+    <div class="md200">Getting started sucks.</div>
+  </section>
+  <section>
+    <div class="md200">Integration is hard.</div>
+  </section>
+  <section>
+    <div class="md200">We make mistakes.</div>
+  </section>
+  <section>
+    <div class="md200">Life is too short.</div>
+  </section>
+  <section data-state="whiteout">
+    <h1 class="md200" style="color: #333;">We address this by...</h1>
+  </section>
+  <section>
+    <ul class="md200">
+      <li class="fragment">Making getting started easy</li>
+      <li class="fragment">Simplifing otherwise complex choices</li>
+      <li class="fragment">Ensuring predictably successful results</li>
+      <li class="fragment">Saving time instead of wasting time</li>
+    </ul>
+  </section>
+  <section data-state="whiteout">
+    <ul class="md150 black">
+      <li>
+        <h2 style="color: #333;">Extendable framework</h2>
+      </li>
+      <li class="fragment mr50">&rarr; Rapid application development</li>
+      <li class="fragment mr50">&rarr; Drop-in extensions that bring Java together</li>
+      <li class="fragment mr50">&rarr; Command-oriented interactions for humans</li>
+      <li class="fragment mr50">&rarr; Real, achievable results</li>
+      <li class="fragment mr50">&rarr; True enjoyment</li>
+    </ul>
+  </section>
+  <section>
+    <h2 class="md200">Brings our communities together</h2>
+    <ul style="text-align: right; position: relative; left: 100px; color: #efafaf">
+      <li class="fragment">Teaching</li>
+      <li class="fragment">Promoting</li>
+      <li class="md100 fragment">Automating</li>
+      <li class="md100 fragment">Enjoying</li>
+      <img class="md100 ml300 fragment" src="assets/images/logos/forge_logo.png">
+    </ul>
+  </section>
+</section>
+<section>
+  <section>
+    <h2 class="md200">Unique Selling Points</h2>
+  </section>
+  <section>
+    <div class="md200">5. Streamlined tutorials and demos.</div>
+  </section>
+  <section>
+    <div class="md200">4. The most productive and familiar way to get our tech into the hands of developers.</div>
+  </section>
+  <section>
+    <div class="md200">3. The easiest way to get started with new Java libraries and frameworks.</div>
+  </section>
+  <section>
+    <div class="md200">2. Write once use everywhere.</div>
+  </section>
+  <section>
+    <div class="md200" style="color: yellow">1. The fastest way to get started with Java EE.</div>
+  </section>
+</section>
+<section>
+  <section>
+    <h2 class="md200">The last 18 months</h2>
+  </section>
+  <section>
+    <ul class="md50">
+      <li class="fragment">* Provide Vanilla Java EE Scaffolding</li>
+      <li class="fragment">* Provide Database Reverse Engineering</li>
+      <li class="fragment">* Deliver with JBoss Developer Studio</li>
+      <li class="fragment">* Generate REST service endpoints</li>
+      <li class="fragment">* Get hosted (http://forge.jboss.org)</li>
+      <li class="fragment">* Integrate with JDF Stacks and BOMs</li>
+      <li class="fragment">* Rapid, monthly release cycle</li>
+      <li class="fragment">* Stabilize the Runtime</li>
+      <li class="fragment">* Integrate with AS7</li>
+      <li class="fragment">* Integrate with OpenShift</li>
+      <li class="fragment">* Configuration and hints</li>
+    </ul>
+  </section>
+  <section>
+    <h2 class="md200">Over 275 pull requests from NON-employees</h2>
+  </section>
+</section>
+<section>
+  <section>
+    <h2 class="md200">The next 18 months</h2>
+  </section>
+  <section>
+    <ul class="md100">
+      <li class="fragment">* Start up faster than AS7</li>
+      <li class="fragment">* More general purpose commands</li>
+      <li class="fragment">* Enable truly reusable addon development</li>
+      <li class="fragment">* Redesign the website and documentation</li>
+      <li class="fragment">* Come up with a cool name for addons</li>
+      <li class="fragment">* To be decided this week...</li>
+      <li class="fragment">* AND!</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section data-state="whiteout">
+    <img src="assets/images/logos/forge_logo.png">
+    <h1 class="fragment" style="color: #ccc; font-size: 800px; position: relative; left: 450px; bottom: 300px; z-index: -10;">2</h1>
+  </section>
+  <section>
+    <h2 class="md200">Truly re-usable addons</h2>
+  </section>
+  <section>
+    <h2 class="md200">Write once, run everywhere.</h2>
+  </section>
+  <section>
+    <h2 class="md200">Bring JBoss to more communities</h2>
+  </section>
+</section>
+<section>
+  <section>
+    <h2 class="md200">This week</h2>
+  </section>
+  <section>
+    <ul class="md100">
+      <li class="fragment">* What does your team need from Forge? (All)</li>
+      <li class="fragment">* Documentation strategy (All)</li>
+      <li class="fragment">* Addon version strategy (Forge Team)</li>
+      <li class="fragment">* Pretend mode "Accept these changes?" (Forge & JBDS)</li>
+      <li class="fragment">* Project manipulation API (Forge Team)</li>
+      <li class="fragment">* Legacy support (Forge Team)</li>
+      <li class="fragment">* Scaffolding (HTML5, Errai, RichFaces, AeroGear, Forge)</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h1 class="md200">DEMO</h1>
+</section>
+<section>
+  <section>
+    <h2 class="mb150">We'll make PLUGINS together!</h2>
+    <img src="assets/images/logos/aerogear_logo.png" width="140px;">
+    <img src="assets/images/logos/richfaces_logo.png" width="150px;">
+    <img src="assets/images/as7_logo.png" width="170px;">
+    <img src="assets/images/logos/arquillian_logo.png" width="170px;">
+    <img src="assets/images/logos/errai_logo.png" width="120px;">
+    <img src="assets/images/logos/jdf_logo.png" style="margin-left: 15px;" width="170px;">
+  </section>
+  <section data-state="whiteout">
+    <h2 style="color:#3c3c3c;">They'll work together!</h2>
+    <img src="assets/images/plugins_facets.png">
+  </section>
+  <section data-state="whiteout">
+    <h2 style="color:#333e3e;">And then we'll eat them...</h2>
+    <img alt="http://www.homestarrunner.com/sbemail.html" src="assets/images/eating_plugins.png">
+  </section>
+</section>
+<section>
+  <h2 class="mr200">The end?</h2>
+</section>
+<section data-state="whiteout">
+  <h2 class="ml150 md200" style="color: #555;">The beginning</h2>
+  <div class="md200 black">of your adventure with forge...</div>
+</section>
+<section>
+  <h2>"*Crickets*"</h2>
+  <p>-George Gastaldi</p>
+</section>
+<section>
+  <h2>Credits</h2>
+  <center>
+    <p>
+      <a href="http://jboss.org/">http://jboss.org/</a>
+    </p>
+    <p>
+      <a href="http://homestarrunner.com/">http://homestarrunner.com/</a>
+    </p>
+    <p>
+      <a href="http://ocpsoft.org/">http://ocpsoft.org/</a>
+    </p>
+    <div class="links commons">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">JBoss Forge - Productivity, Reliability, Testability</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ocpsoft.org/" property="cc:attributionName" rel="cc:attributionURL">Lincoln Baxter</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="dct:source">github.com</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="cc:morePermissions">https://github.com/lincolnthree/talks/tree/master/2012-JBW</a>.
+    </div>
+  </center>
+</section>
+<section>
+  <h2>Stay in the loop</h2>
+  <ul class="links loop">
+    <li>
+      Project website:
+      <a href="http://forge.jboss.org">http://forge.jboss.org</a>
+    </li>
+    <li>
+      Twitter:
+      <a href="https://twitter.com/JBossForge">@JBossForge</a>
+    </li>
+    <li>
+      Forge Forums:
+      <a href="https://community.jboss.org/en/forge">https://community.jboss.org/en/forge</a>
+    </li>
+    <li>
+      Vimeo feed:
+      <a href="https://vimeo.com/channels/jbossforge">https://vimeo.com/channels/jbossforge</a>
+    </li>
+    <li>
+      IRC:
+      <a href="http://webchat.freenode.net?channels=forge">#forge</a>
+    </li>
+  </ul>
+  <div class="md50">
+    <p>Get involved:</p>
+    <ul class="links">
+      <li>
+        Get the source:
+        <a href="https://github.com/forge/core">https://github.com/forge/core</a>
+      </li>
+      <li>
+        Join the discussion:
+        <a href="https://lists.jboss.org/mailman/listinfo/forge-dev">https://lists.jboss.org/mailman/listinfo/forge-dev</a>
+      </li>
+    </ul>
+    <img src="assets/images/JBoss_Forge_logo.png" width="300px">
+  </div>
+</section>
+</div>
+
+<!-- The navigational controls UI -->
+<aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+</aside>
+
+<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+<div class="progress"><span></span></div>
+
+</div>
+
+<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+    <script src="lib/google-code-prettify/prettify.js"></script>
+    <script src="lib/classList.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/code_highlight.js"></script>
+
+<script>
+    // Parse the query string into a key/value object
+    var query = {};
+    location.search.replace(/[A-Z0-9]+?=(\w*)/gi, function (a) {
+        query[ a.split('=').shift() ] = a.split('=').pop();
+    });
+
+    // Fires each time a new slide is activated
+    Reveal.addEventListener('slidechanged', function (event) {
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    });
+
+    $(document).ready(function () {
+    Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls:false,
+
+        // Display a presentation progress bar
+        progress:true,
+
+        // If true; each slide will be pushed to the browser history
+        history:true,
+
+        // Loops the presentation, defaults to false
+        loop:false,
+
+        // Flags if mouse wheel navigation should be enabled
+        mouseWheel:false,
+
+        // Apply a 3D roll to links on hover
+        rollingLinks:false,
+
+        // UI style
+        theme:query.theme || 'default', // default/neon
+
+        // Transition style
+        transition:'linear' // || query.transition || 'default' // default/cube/page/concave/linear(2d)
+    });
+    CodeHighlight.initialize({reveal: Reveal});
+    prettyPrint();
+    });
+
+
+</script>
+</body>
+</html>
