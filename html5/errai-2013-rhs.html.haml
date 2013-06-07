@@ -42,13 +42,17 @@ layout: reveal
     %ul
       %li.fragment Who is working on what?
       %li.fragment Skill-segregation causes duplicate work.
-      %li.fragment Code rots over time (other people mess it up.)
+      %li.fragment 
+        %span Code rots over time
+        %span.fragment.red (other people mess it up.)
   %section
     %h2 Large or complex code bases make things hard
     %ul
       %li.fragment Where is code actually used?
       %li.fragment What can safely be changed?
-      %li.fragment Code rots over time (it just goes bad.)
+      %li.fragment 
+        %span Code rots over time
+        %span.fragment.red (it just goes bad.)
   %section
     %h2 Large customers make things hard
     %ul
@@ -70,11 +74,13 @@ layout: reveal
     %ul
       %li.fragment Share data model and validation logic
       %li.fragment Don't repeat yourself
+      %li.fragment Don't re-write other's
   %section
     %h2 Bust that boilerplate!!!
     %ul
       %li.fragment Declarative, simple code
       %li.fragment A little goes a long way
+      %li.fragment Less code == more time
   %section
     %h2 Seriously, It's real JAVA!
     %ul
@@ -112,6 +118,16 @@ layout: reveal
     %pre.fragment.md50{:class => "prettyprint", :style => "font-size:14px"}
       %code{:id => "multiple_page_elements"}
         :escaped 
+          @Templated("Admin.html#app-template")
+          public class Admin extends Composite
+
+  %section
+    %h2 Navigation and Bookmarking
+    %p.fragment.md50
+      It's simple:
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:14px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
           @Page
           @Templated("Admin.html#app-template")
           public class Admin extends Composite
@@ -121,7 +137,7 @@ layout: reveal
       %code{:id => "multiple_page_elements"}
         :escaped 
           @Inject
-          private TransitionTo<ComplaintSubmitted> complaintSubmittedPage;
+          private TransitionTo<Admin> adminPage;
 
   %section
     %h2 Two-Way Data Binding

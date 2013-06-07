@@ -112,7 +112,10 @@
     <ul>
       <li class="fragment">Who is working on what?</li>
       <li class="fragment">Skill-segregation causes duplicate work.</li>
-      <li class="fragment">Code rots over time (other people mess it up.)</li>
+      <li class="fragment">
+        <span>Code rots over time</span>
+        <span class="fragment red">(other people mess it up.)</span>
+      </li>
     </ul>
   </section>
   <section>
@@ -120,7 +123,10 @@
     <ul>
       <li class="fragment">Where is code actually used?</li>
       <li class="fragment">What can safely be changed?</li>
-      <li class="fragment">Code rots over time (it just goes bad.)</li>
+      <li class="fragment">
+        <span>Code rots over time</span>
+        <span class="fragment red">(it just goes bad.)</span>
+      </li>
     </ul>
   </section>
   <section>
@@ -149,6 +155,7 @@
     <ul>
       <li class="fragment">Share data model and validation logic</li>
       <li class="fragment">Don't repeat yourself</li>
+      <li class="fragment">Don't re-write other's</li>
     </ul>
   </section>
   <section>
@@ -156,6 +163,7 @@
     <ul>
       <li class="fragment">Declarative, simple code</li>
       <li class="fragment">A little goes a long way</li>
+      <li class="fragment">Less code == more time</li>
     </ul>
   </section>
   <section>
@@ -190,11 +198,18 @@
     <p class="fragment md50">
       Just attach it!
     </p>
+    <pre class="fragment md50 prettyprint" style="font-size:14px"><code id="multiple_page_elements">@Templated(&quot;Admin.html#app-template&quot;)&#x000A;    public class Admin extends Composite</code></pre>
+  </section>
+  <section>
+    <h2>Navigation and Bookmarking</h2>
+    <p class="fragment md50">
+      It's simple:
+    </p>
     <pre class="fragment md50 prettyprint" style="font-size:14px"><code id="multiple_page_elements">@Page&#x000A;    @Templated(&quot;Admin.html#app-template&quot;)&#x000A;    public class Admin extends Composite</code></pre>
     <p class="fragment md50">
       And navigate:
     </p>
-    <pre class="fragment md50 prettyprint" style="font-size:14px"><code id="multiple_page_elements">@Inject&#x000A;    private TransitionTo&lt;ComplaintSubmitted&gt; complaintSubmittedPage;</code></pre>
+    <pre class="fragment md50 prettyprint" style="font-size:14px"><code id="multiple_page_elements">@Inject&#x000A;    private TransitionTo&lt;Admin&gt; adminPage;</code></pre>
   </section>
   <section>
     <h2>Two-Way Data Binding</h2>
