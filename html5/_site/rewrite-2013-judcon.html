@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <meta name="description" content=""> 
+    <meta name="author" content="Lincoln Baxter, III">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="lib/google-code-prettify/prettify.css">
+    <link rel="stylesheet" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" href="stylesheets/conf.css">
+    
+    <script src="lib/jquery-1.7.2.min.js"></script>
+    <script src="js/swfobject.js"></script>
+
+    <script type="text/javascript">
+       // This function is automatically called by the player once it loads
+       function onYouTubePlayerReady(playerId) {
+       }
+
+       function loadPlayer(videoId) {
+          // Lets Flash from another domain call JavaScript
+          var params = { allowScriptAccess: "always" };
+          // The element id of the Flash embed
+          var atts = { id: videoId };
+
+          // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
+       $(document).ready(function () {
+          swfobject.embedSWF("http://www.youtube.com/v/" + videoId +
+                             "?version=3&enablejsapi=1&rel=0&hd=1&playerapiid=" + videoId + "_id",
+                             videoId, "800", "600", "9", null, null, params, atts);
+
+          Reveal.addEventListener(videoId, function () {
+             // The player ID comes from the "playerapiid" parameter that was set
+             // when the embedded player was loaded
+             var player = document.getElementById(videoId);
+             player.playVideo();
+          }, false);
+       });
+
+       }
+    </script>
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Used to fade in a background when a specific slide state is reached -->
+<div class="state-background"></div>
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+<section>
+  <section>
+    <img class="splash screen" src="assets/images/JUDCon_logo.png" width="80%">
+    <img class="splash print" src="assets/images/JUDCon_logo.png">
+  </section>
+  <section>
+    <h1 style="color:#ffffff;">URL-rewriting</h1>
+    <h2 class="capitalize">Enhance developer productivity, usability, and security</h2>
+    <ul class="intro" style="margin-top: 100px;">
+      <li>Lincoln Baxter, III</li>
+      <li>Senior Software Engineer, Red Hat</li>
+      <li>06.10.13</li>
+    </ul>
+    <ul class="notes">
+      <li>Welcome!</li>
+    </ul>
+  </section>
+  <section>
+    <h2>
+      <a href="http://twitter.com/lincolnthree">@lincolnthree</a>
+    </h2>
+    <ul>
+      <li>Founder of OCPsoft</li>
+    </ul>
+    <div>
+      <img src="assets/images/profiles/lincoln_profile.jpg" width="200px">
+    </div>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>What is URL-rewriting?</h2>
+    <p class="fragment md200">Any manipulation of the HTTP Request/Response lifecycle.</p>
+  </section>
+  <section class="invert" data-state="whiteout">
+    <div class="md200">
+      <div>"Judgements prevent us from seeing the good that lies beyond appearances."</div>
+      <p class="md50">-- Wayne Dyer</p>
+    </div>
+  </section>
+  <section>
+    <h2>We've got problems:</h2>
+    <ol class="md100">
+      <li class="fragment">Missing or relocated resources</li>
+      <li class="fragment">Readability & clutter</li>
+      <li class="fragment">Formatting of useful information</li>
+      <li class="fragment">Revealing sensitive information</li>
+      <li class="fragment">Validation of user input</li>
+    </ol>
+  </section>
+  <section>
+    <div class="md250">And many more.</div>
+  </section>
+  <section>
+    <div class="md250">
+      <div>"URL-rewriting - not a good choice for doing it wrong."</div>
+    </div>
+  </section>
+</section>
+<section>
+  <section class="invert" data-state="whiteout">
+    <h2 class="md200">1. Missing or relocated resources</h2>
+  </section>
+  <section data-state="alert">
+    <h1 class="fl">404</h1>
+    <p class="fl">Slide not found.</p>
+  </section>
+  <section class="invert" data-state="whiteout">
+    <p class="fragment red fr">Wtf?</p>
+    <img class="md100" src="assets/images/rewrite/404oracle.png" width="800px">
+  </section>
+  <section class="invert" data-state="whiteout">
+    <img class="md100" src="assets/images/rewrite/404bummer.png" width="800px">
+  </section>
+  <section class="invert" data-state="whiteout">
+    <img src="assets/images/rewrite/404kitten.png" width="800px">
+  </section>
+  <section>
+    <img src="assets/images/rewrite/404blizzard.png" width="800px">
+  </section>
+  <section class="invert" data-state="whiteout">
+    <img src="assets/images/rewrite/404ohsnap.png" width="800px">
+  </section>
+  <section class="invert" data-state="whiteout">
+    <img src="assets/images/rewrite/404whoopsie.png" width="800px">
+  </section>
+  <section class="invert" data-state="whiteout">
+    <img src="assets/images/rewrite/404birds.png" width="800px">
+  </section>
+  <section class="invert" data-state="whiteout">
+    <img src="assets/images/rewrite/404shark.png" width="800px">
+  </section>
+  <section data-state="hGr5wzbh2vU">
+    <p>robo.to</p>
+    <div id="hGr5wzbh2vU"></div>
+    <script type="text/javascript">
+      loadPlayer("hGr5wzbh2vU");
+    </script>
+  </section>
+  <section data-state="QQBjuyNPdDY">
+    <p>github.com</p>
+    <div id="QQBjuyNPdDY"></div>
+    <script type="text/javascript">
+      loadPlayer("QQBjuyNPdDY");
+    </script>
+  </section>
+  <section data-state="pRj2UWOy7eY">
+    <p>tosh.com</p>
+    <div id="pRj2UWOy7eY"></div>
+    <script type="text/javascript">
+      loadPlayer("pRj2UWOy7eY");
+    </script>
+  </section>
+  <section data-state="cnpjRZ_Kxh8">
+    <p>blippy.com</p>
+    <div id="cnpjRZ_Kxh8"></div>
+    <script type="text/javascript">
+      loadPlayer("cnpjRZ_Kxh8");
+    </script>
+  </section>
+</section>
+<section>
+  <section>
+    <div class="md250">"What does it mean?"</div>
+  </section>
+  <section>
+    <div class="md250">It's a distraction from failure.</div>
+  </section>
+  <section>
+    <h2>There are two ways to have a magical 404 experience.</h2>
+    <ol class="md100">
+      <li class="fragment">
+        <span>The page existed and now does not</span>
+        <span class="red fragment">( the website sucks )</span>
+      </li>
+      <li class="fragment">
+        <span>The page never existed</span>
+        <span class="red fragment">( you suck )</span>
+      </li>
+    </ol>
+  </section>
+  <section>
+    <div class="md250">Neither is going to make anyone happy.</div>
+  </section>
+  <section>
+    <div class="md200">
+      <h3>
+        <span>What do we do about it?</span>
+        <span class="red fragmenet">(easy)</span>
+      </h3>
+      <ul>
+        <li class="fragment">301 MOVED PERMANENTLY</li>
+        <li class="fragment">302 MOVED TEMPORARILY</li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <div class="md250">180 Days.</div>
+  </section>
+  <section>
+    <img src="assets/images/rewrite/404kenny.png" width="800px">
+  </section>
+  <section>
+    <div class="md200">
+      <h3>
+        <span>Several options</span>
+      </h3>
+      <div class="fragment">Apache mod_rewrite</div>
+      <div class="fragment">Tuckey URLRewriteFilter</div>
+      <div class="fragment">OCPsoft Rewrite</div>
+    </div>
+  </section>
+</section>
+<section>
+  <section class="invert" data-state="whiteout">
+    <h2 class="md200">2. URL-readability</h2>
+  </section>
+  <section>
+    <img src="assets/images/rewrite/kindle.png" width="400px">
+    <p class="fragment small">
+      http://www.amazon.com/Kindle-Touch-Wi-Fi-Ink-Display/dp/B005890G8Y/ref=amb_link_357575542_6?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=gateway-center-column&pf_rd_r=1T2J5PYBVZZWBHWN1BP1
+      &pf_rd_t=101&pf_rd_p=1321408942&pf_rd_i=507846
+    </p>
+    <div class="fragment red fr mu200 ml100">wtf?</div>
+  </section>
+  <section class="invert" data-state="whiteout">
+    <img class="fragment mu50" src="assets/images/rewrite/logo-amazon.png" width="400">
+    <img class="fragment mu50" src="assets/images/rewrite/logo-tux.png" width="400">
+    <h2 class="fragment">We are friends.</h2>
+  </section>
+  <section data-state="soothe">
+    <h3 class="md250">http://amazon.com/shop/kindle-touch</h3>
+  </section>
+  <section data-state="blackout">
+    <h2>Tired of trash in your face?</h2>
+    <img class="mu50" src="assets/images/rewrite/URLtrash.png" width="800">
+    <img class="mu50" src="assets/images/rewrite/starwars.png" width="800">
+  </section>
+  <section data-state="blackout" style="background: url(assets/images/rewrite/bg-space.png) no-repeat top left;">
+    <div class="fragment">
+      <h2>There's plenty of space out in space!</h2>
+      <p class="md300" style="font-family: courier-new,monospace; font-size: .9em;">
+        <span style="display:inline;">http://amazon.com/shop/kindle-touch</span>
+        <span style="color: orange;">?</span>
+        <span style="color: red;">tracker=AAasfds3r32ydk16fd854kdjf84hfidb gv64n0curnoxydkl6l6fd854kdjf84h fidbdgv64n0ge8nfbh...</span>
+      </p>
+      <!-- /%img.md250{:src => "assets/images/rewrite/URLcomposite.png", :width=>"800"} -->
+    </div>
+  </section>
+</section>
+<section>
+  <section class="invert" data-state="whiteout">
+    <h2 class="md200">3. Formatting useful information</h2>
+  </section>
+  <section>
+    <p class="md250">http://example.com?c=shoes&app=store&pid=1&buy=true</p>
+  </section>
+  <section class="invert" data-state="whiteout">
+    <h2>Be cool.</h2>
+    <img class="bg" src="assets/images/rewrite/bg-travolta.png">
+  </section>
+  <section>
+    <p class="md250">http://example.com?c=shoes&app=store&pid=1&buy=true</p>
+  </section>
+  <section>
+    <p class="md250">
+      <span class="fragment">http://example.com</span>
+      <span class="fragment">/ store</span>
+      <span class="fragment">/ shoes</span>
+      <span class="fragment">/ 1</span>
+      <span class="fragment">? buy=true</span>
+    </p>
+  </section>
+  <section>
+    <h2 class="md200">What are you most afraid of when you buy a used car?</h2>
+  </section>
+  <section>
+    <img class="bg" src="assets/images/rewrite/bg-junker.png" width="100%">
+    <h2>You never know what you are going to get.</h2>
+  </section>
+  <section>
+    <div class="md200">
+      <h2>Do you trust me?</h2>
+      <a class="fragment" href="http://www.youtube.com/watch?v=oHg5SJYRHA0">http://www.youtube.com/watch?v=oHg5SJYRHA0</a>
+    </div>
+  </section>
+  <section>
+    <div class="md200">
+      <h2>Build trust by reducing clutter. Use clean, transparent URLs.</h2>
+      <a class="fragment" href="http://www.youtube.com/watch?v=oHg5SJYRHA0">
+        <span>http://www.youtube.com/watch/rick-rolld-again</span>
+      </a>
+    </div>
+  </section>
+</section>
+<section>
+  <section class="invert" data-state="whiteout">
+    <h2 class="md200">4. Revealing sensitive information</h2>
+  </section>
+  <section data-state="-paKBxiPI9A">
+    <p>microsoft.com FAQ</p>
+    <div id="-paKBxiPI9A"></div>
+    <script type="text/javascript">
+      loadPlayer("-paKBxiPI9A");
+    </script>
+  </section>
+  <section data-state="soothe">
+    <h2 class="md200">*Blush*</h2>
+  </section>
+  <section data-state="alert">
+    <ul class="center md100">
+      <li class="fragment">.jsf</li>
+      <li class="fragment">.do</li>
+      <li class="fragment">.php</li>
+      <li class="fragment">.seam</li>
+      <li class="fragment">.rb</li>
+      <li class="fragment">.cgi</li>
+      <li class="fragment">.faces</li>
+      <li class="fragment">.asp</li>
+      <li class="fragment">.jsp</li>
+      <li class="fragment">.*</li>
+    </ul>
+  </section>
+  <section data-state="whiteout">
+    <h1 class="md200" style="color: rgb(103, 181, 221)">/</h1>
+  </section>
+  <section data-state="blackout" style="background: url(assets/images/rewrite/bg-shawshank.png) no-repeat top left;">
+    <h2>A good magician never reveals their implementation.</h2>
+  </section>
+  <section>
+    <div class="md250">"Served by: Apache HTTPd 2.0.15 (build #3312 - 08/12/2011)"</div>
+  </section>
+  <section>
+    <div class="md250">Clean unnecessary information from headers and error pages!</div>
+  </section>
+</section>
+<section>
+  <section class="invert" data-state="whiteout">
+    <h2 class="md200">5. Validation of user input</h2>
+  </section>
+  <section>
+    <p class="md250">
+      <span>If you have to expose data, remember that URLs and headers are USER INPUT and are</span>
+      <span class="red">VULNERABLE.</span>
+    </p>
+  </section>
+  <section>
+    <h2>Aspect Security says:</h2>
+    <p class="md200">
+      <span class="bold">Two of three</span>
+      <span>recent</span>
+      <span class="red">security vulnerabilities</span>
+      <span>in web-frameworks are</span>
+      <span class="bold">URL-based</span>
+      <span>.*</span>
+    </p>
+    <p class="md100">
+      <a class="footnote md250 fl" href="https://www.aspectsecurity.com/uploads/downloads/2012/03/Aspect-Security-The-Unfortunate-Reality-of-Insecure-Libraries.pdf">* Aspect-Security-The-Unfortunate-Reality-of-Insecure-Libraries</a>
+    </p>
+  </section>
+  <section data-state="whiteout">
+    <img class="bg md50" src="assets/images/rewrite/aspect-struts2.png">
+  </section>
+  <section data-state="whiteout">
+    <img class="bg md50" src="assets/images/rewrite/aspect-spring.png">
+  </section>
+  <section>
+    <h2>You can secure existing applications</h2>
+    <pre class="md50 prettyprint" style="font-size:18px"><code id="multiple_page_elements">.addRule()&#x000A;    .when(Direction.isInbound()&#x000A;       .and(URL.matches(&quot;{badthings}&quot;)&#x000A;           .or(Header.exists(&quot;{badthings}&quot;))&#x000A;           .or(Header.valueExists(&quot;{badthings}&quot;))&#x000A;       )&#x000A;    )&#x000A;    .perform(SendStatus.error(404)) // or take some protective action&#x000A;    .where(&quot;badthings&quot;).constrainedBy(selectedCharacters)</code></pre>
+  </section>
+  <section>
+    <pre class="md50 prettyprint" style="font-size:18px"><code id="multiple_page_elements">Constraint&lt;String&gt; selectedCharacters = new Constraint&lt;String&gt;() {&#x000A;      @Override&#x000A;      public boolean isSatisfiedBy(Rewrite event, EvaluationContext context, String value)&#x000A;      {&#x000A;        return value.matches(&quot;.*[+%'\&quot;^$#\\\\(\\\\)*&lt;&gt;].*&quot;);&#x000A;        // Don't forget unicode!&#x000A;      }&#x000A;    }</code></pre>
+  </section>
+  <section>
+    <h2>Real life.</h2>
+    <p class="md150">http://www.llbean.com/webapp/wcs/stores/servlet/CategoryDisplay?categoryId=28&storeId=1&catalogId=1&langId=-1&nav=hp-gndp</p>
+  </section>
+  <section>
+    <img class="bg" src="assets/images/rewrite/bg-kids.png">
+    <h2 class="fragment">http://llbean.com/kids</h2>
+  </section>
+  <section>
+    <h2>Another look.</h2>
+    <p class="md150">
+      <span class="fragment">http://www.llbean.com</span>
+      <span class="fragment">/</span>
+      <span class="fragment">webapp</span>
+      <span class="fragment">/</span>
+      <span class="fragment red">wcs</span>
+      <span class="fragment">/</span>
+      <span class="fragment red">servlet</span>
+      <span class="fragment">/ CategoryDisplay</span>
+      <span class="fragment">?</span>
+      <span class="fragment red">categoryId=28</span>
+      <span class="fragment">&</span>
+      <span class="fragment red">storeId=1</span>
+      <span class="fragment">&</span>
+      <span class="fragment red">catalogId=1</span>
+      <span class="fragment">&</span>
+      <span class="fragment red">langId=-1</span>
+      <span class="fragment">&</span>
+      <span class="fragment red">&nav=hp-gndp</span>
+    </p>
+  </section>
+  <section data-state="alert">
+    <h1 class="md200">Clean and Validate!</h1>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>A brief interlude.</h2>
+    <p class="md200">
+      <span class="fragment">HTTP/1.1: 418</span>
+      <span class="fragment">- I'm a teapot; the resulting entity may be short and stout.</span>
+    </p>
+  </section>
+  <section data-state="soothe">
+    <h1 class="md200">Okay.</h1>
+  </section>
+</section>
+<section>
+  <section class="invert" data-state="whiteout">
+    <h2>We've got problems:</h2>
+    <ol class="md100">
+      <li class="fragment">Missing or relocated resources</li>
+      <li class="fragment">Readability & clutter</li>
+      <li class="fragment">Formatting of useful information</li>
+      <li class="fragment">Revealing sensitive information</li>
+      <li class="fragment">Validation of user input</li>
+    </ol>
+  </section>
+  <section>
+    <h2>URL-rewriting!</h2>
+    <img class="bg md50" src="assets/images/rewrite/bg-superman.png">
+  </section>
+  <section>
+    <h2>Two types of rewriting tools.</h2>
+    <ol class="md150">
+      <li class="fragment">Proxy-based - Apache (inbound only)</li>
+      <li class="fragment">Filter-based - Java (inbound and outbound)</li>
+    </ol>
+  </section>
+  <section class="invert" data-state="whiteout">
+    <h2 class="md250">Basic things we can do with all types of URL-rewriting.</h2>
+  </section>
+  <section>
+    <h2>Redirection and relocation:</h2>
+    <img src="assets/images/rewrite/rw-relocation.png">
+  </section>
+  <section>
+    <h2>Inbound parameterization</h2>
+    <img class="md150" src="assets/images/rewrite/rw-parameterization.png">
+  </section>
+  <section>
+    <h2>Simple URL validation</h2>
+    <img class="md150" src="assets/images/rewrite/rw-validate.png">
+  </section>
+  <section>
+    <h2>Header validation and modification</h2>
+    <img class="md150" src="assets/images/rewrite/rw-header.png">
+  </section>
+  <section>
+    <h2>"I have no personal investment in any of these tools."</h2>
+    <p class="fragment">-- blatant lie</p>
+  </section>
+  <section class="invert" data-state="whiteout">
+    <h2 class="md250">Cool things we can do with Filter-based Java URL-rewriting</h2>
+  </section>
+  <section>
+    <h2>Transformation and canonicalization</h2>
+    <pre class="fragment md50 prettyprint" style="font-size:18px"><code id="multiple_page_elements">.addRule()&#x000A;    .when(Path.matches(&quot;/{path}.css&quot;))&#x000A;    .perform(Forward.to(&quot;/styles/{path}.less&quot;)&#x000A;             .and(Transform.with(Less.class)))</code></pre>
+    <pre class="fragment md100 prettyprint" style="font-size:18px"><code id="multiple_page_elements">.addRule()&#x000A;    .when(Path.matches(&quot;/foo/{bar}&quot;)&#x000A;    .perform(Forward.to(&quot;/foo/{bar}&quot;))&#x000A;    .where(&quot;bar&quot;).transposedBy(ToLowercase.class))</code></pre>
+  </section>
+  <section>
+    <h2>Complex conversion and validation</h2>
+    <pre class="fragment md150 prettyprint" style="font-size:18px"><code id="multiple_page_elements">.when(Path.matches(&quot;/store/product/{pid}&quot;)&#x000A;    .where(&quot;pid&quot;)&#x000A;    .matches(&quot;\\d+\\w{3}\\d+&quot;)&#x000A;    .bindsTo(El.property(&quot;productBean.product&quot;)&#x000A;    .convertedBy(ProductConverter.class)&#x000A;    .validatedBy(ProductValidator.class)))</code></pre>
+  </section>
+  <section>
+    <h2>Request interception</h2>
+    <pre class="fragment prettyprint" style="font-size:18px"><code id="multiple_page_elements">public class AccountVerifyInterceptor extends HttpConfigurationProvider &#x000A;    {&#x000A;    &#x000A;    @Inject private Account account;&#x000A;    @PersistenceContext private EntityManager em;&#x000A;    &#x000A;    @Override&#x000A;    public Configuration getConfiguration(final ServletContext context) {&#x000A;       ConfigurationBuilder config = ConfigurationBuilder.begin();&#x000A;       account.setEntityManager(em);&#x000A;       Profile current = account.getLoggedIn();&#x000A;       if (current.isPersistent() &amp;&amp; !current.isUsernameConfirmed()) {&#x000A;          return config&#x000A;             .addRule().when(DispatchType.isRequest()&#x000A;                       .and(Direction.isInbound())&#x000A;             .perform(Forward.to(&quot;/account/confirm&quot;))&#x000A;    &#x000A;             .addRule(Join.path(&quot;/account/confirm&quot;)&#x000A;                       .to(&quot;/pages/accountConfirm.xhtml&quot;));&#x000A;       }&#x000A;       return config;&#x000A;    }</code></pre>
+  </section>
+  <section data-state="alert">
+    <h2 class="md200">Some things you should NOT do with Java URL-rewriting</h2>
+  </section>
+  <section>
+    <div class="md250">If it needs to run when your app is not, then don't run it in your app.</div>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>It's DEMO time.</h2>
+    <div class="md100">
+      <img src="assets/images/jsf_logo.png" width="250px;">
+      <img src="assets/images/ocpsoft_logo.png" width="150px;">
+      <img src="assets/images/as7_logo.png" width="150px;">
+      <img src="assets/images/openshift_logo.png" width="150px;">
+      <img src="assets/images/gwt_logo.png" style="margin-left: 15px;" width="150px;">
+    </div>
+  </section>
+  <section>
+    <h2>Access Control Demo</h2>
+    <a href="http://access-rewrite.rhcloud.com/">http://access-rewrite.rhcloud.com/</a>
+    <div class="md100"></div>
+    <img src="assets/images/rewrite/bc-access.png" width="250px;">
+  </section>
+  <section>
+    <h2>Rest Validation & Conversion Demo</h2>
+    <a href="http://rest-rewrite.rhcloud.com/">http://rest-rewrite.rhcloud.com/</a>
+    <div class="md100"></div>
+    <img src="assets/images/rewrite/bc-rest.png" width="250px;">
+  </section>
+  <section>
+    <h2>Composite Query Demo</h2>
+    <a href="http://composite-rewrite.rhcloud.com/">http://composite-rewrite.rhcloud.com/</a>
+    <div class="md100"></div>
+    <img src="assets/images/rewrite/bc-composite.png" width="250px;">
+  </section>
+  <section data-state="whiteout">
+    <img src="assets/images/what_happened.png" style="position: absolute; bottom: 0px; left: 0px; border-bottom: 3px solid #888;">
+  </section>
+</section>
+<section>
+  <section class="invert" data-state="whiteout">
+    <h2>We've got problems:</h2>
+    <ol class="md100">
+      <li class="fragment">Missing or relocated resources</li>
+      <li class="fragment">Readability & clutter</li>
+      <li class="fragment">Formatting of useful information</li>
+      <li class="fragment">Revealing sensitive information</li>
+      <li class="fragment">Validation of user input</li>
+      <li class="fragment bold">(And many more.)</li>
+    </ol>
+  </section>
+  <section>
+    <div class="md250">
+      <div>"URL-rewriting - not a good choice for doing it wrong."</div>
+    </div>
+  </section>
+</section>
+<section>
+  <h2>The end?</h2>
+  <h3 class="fragment" style="margin-top: 160px">The beginning - of your adventure with URL-rewriting!</h3>
+</section>
+<section>
+  <h2>Credits</h2>
+  <center>
+    <p>
+      <a href="http://ocpsoft.org/">http://ocpsoft.org/</a>
+    </p>
+    <div class="links commons">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">URL-rewriting: Enhance developer productivity, usability, and security</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ocpsoft.org/" property="cc:attributionName" rel="cc:attributionURL">Lincoln Baxter</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="dct:source">github.com</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="cc:morePermissions">https://github.com/lincolnthree/talks/tree/master/2012-JBW</a>.
+    </div>
+  </center>
+</section>
+<section>
+  <h2>Stay in the loop</h2>
+  <ul class="links loop">
+    <li>
+      Project website:
+      <a href="http://ocpsoft.org/rewrite">http://ocpsoft.org/rewrite</a>
+    </li>
+    <li>
+      Twitter:
+      <a href="http://twitter.com/%23!ocpsoft">https://twitter.com/#!ocpsoft</a>
+    </li>
+    <li>
+      OCPsoft Forums:
+      <a href="http://ocpsoft.org/support/">http://ocpsoft.org/support/</a>
+    </li>
+  </ul>
+  <p style="margin-top: 50px">Get involved:</p>
+  <ul class="links">
+    <li>
+      Get the source:
+      <a href="https://github.com/ocpsoft/rewrite">https://github.com/ocpsoft/rewrite</a>
+    </li>
+    <li>
+      Join the discussion:
+      <a href="http://groups.google.com/group/rewrite-dev">http://groups.google.com/group/rewrite-dev</a>
+    </li>
+  </ul>
+  <p>
+    <a href="http://ocpsoft.org">
+      <img src="assets/images/ocpsoft_logo.png" width="150px">
+    </a>
+  </p>
+</section>
+</div>
+
+<!-- The navigational controls UI -->
+<aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+</aside>
+
+<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+<div class="progress"><span></span></div>
+
+</div>
+
+<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+    <script src="lib/google-code-prettify/prettify.js"></script>
+    <script src="lib/classList.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/code_highlight.js"></script>
+
+<script>
+    // Parse the query string into a key/value object
+    var query = {};
+    location.search.replace(/[A-Z0-9]+?=(\w*)/gi, function (a) {
+        query[ a.split('=').shift() ] = a.split('=').pop();
+    });
+
+    // Fires each time a new slide is activated
+    Reveal.addEventListener('slidechanged', function (event) {
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    });
+
+    $(document).ready(function () {
+    Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls:false,
+
+        // Display a presentation progress bar
+        progress:true,
+
+        // If true; each slide will be pushed to the browser history
+        history:true,
+
+        // Loops the presentation, defaults to false
+        loop:false,
+
+        // Flags if mouse wheel navigation should be enabled
+        mouseWheel:false,
+
+        // Apply a 3D roll to links on hover
+        rollingLinks:false,
+
+        // UI style
+        theme:query.theme || 'default', // default/neon
+
+        // Transition style
+        transition:'linear' // || query.transition || 'default' // default/cube/page/concave/linear(2d)
+    });
+    CodeHighlight.initialize({reveal: Reveal});
+    prettyPrint();
+    });
+
+
+</script>
+</body>
+</html>

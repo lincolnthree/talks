@@ -1,0 +1,487 @@
+---
+layout: reveal
+---
+
+%section
+  %section
+    %img.splash.screen{:src => "assets/images/JUDCon_logo.png", :width=>"80%"}
+    %img.splash.print{:src => "assets/images/JUDCon_logo.png"}
+  %section
+    %h1{:style=>"color:#ffffff;"} URL-rewriting
+    %h2.capitalize Enhance developer productivity, usability, and security
+    %ul.intro{:style=>"margin-top: 100px;"}
+      %li Lincoln Baxter, III
+      %li Senior Software Engineer, Red Hat
+      %li 06.10.13
+    %ul.notes
+      %li Welcome!
+  %section
+    %h2 
+      %a{:href=>"http://twitter.com/lincolnthree"} @lincolnthree
+    %ul
+      %li Founder of OCPsoft
+    %div
+      %img{:src => "assets/images/profiles/lincoln_profile.jpg", :width=>"200px"}
+
+%section
+  %section
+    %h2 What is URL-rewriting?
+    %p.fragment.md200 Any manipulation of the HTTP Request/Response lifecycle.
+  %section.invert{:"data-state"=>"whiteout"}
+    %div.md200
+      %div "Judgements prevent us from seeing the good that lies beyond appearances."
+      %p.md50 -- Wayne Dyer
+  %section
+    %h2 We've got problems:
+    %ol.md100
+      %li.fragment Missing or relocated resources
+      %li.fragment Readability & clutter
+      %li.fragment Formatting of useful information
+      %li.fragment Revealing sensitive information
+      %li.fragment Validation of user input
+  %section
+    %div.md250 And many more.
+  %section
+    %div.md250
+      %div "URL-rewriting - not a good choice for doing it wrong."
+
+%section
+  %section.invert{:"data-state" => "whiteout" }
+    %h2.md200 1. Missing or relocated resources
+  %section{:"data-state" => "alert" }
+    %h1.fl 404
+    %p.fl Slide not found.
+  %section.invert{:"data-state" => "whiteout" }
+    %p.fragment.red.fr Wtf?
+    %img.md100{:src => "assets/images/rewrite/404oracle.png", :width=>"800px"}
+  %section.invert{:"data-state" => "whiteout" }
+    %img.md100{:src => "assets/images/rewrite/404bummer.png", :width=>"800px"}
+  %section.invert{:"data-state" => "whiteout" }
+    %img{:src => "assets/images/rewrite/404kitten.png", :width=>"800px"}
+  %section
+    %img{:src => "assets/images/rewrite/404blizzard.png", :width=>"800px"}
+  %section.invert{:"data-state" => "whiteout" }
+    %img{:src => "assets/images/rewrite/404ohsnap.png", :width=>"800px"}
+  %section.invert{:"data-state" => "whiteout" }
+    %img{:src => "assets/images/rewrite/404whoopsie.png", :width=>"800px"}
+  %section.invert{:"data-state" => "whiteout" }
+    %img{:src => "assets/images/rewrite/404birds.png", :width=>"800px"}
+  %section.invert{:"data-state" => "whiteout" }
+    %img{:src => "assets/images/rewrite/404shark.png", :width=>"800px"}
+  %section{:"data-state"=>"hGr5wzbh2vU"}
+    %p robo.to
+    %div{:id=>"hGr5wzbh2vU"}
+    %script{:type=>"text/javascript"}
+      :plain
+        loadPlayer("hGr5wzbh2vU");
+  %section{:"data-state"=>"QQBjuyNPdDY"}
+    %p github.com
+    %div{:id=>"QQBjuyNPdDY"}
+    %script{:type=>"text/javascript"}
+      :plain
+        loadPlayer("QQBjuyNPdDY");
+  %section{:"data-state"=>"pRj2UWOy7eY"}
+    %p tosh.com
+    %div{:id=>"pRj2UWOy7eY"}
+    %script{:type=>"text/javascript"}
+      :plain
+        loadPlayer("pRj2UWOy7eY");
+  %section{:"data-state"=>"cnpjRZ_Kxh8"}
+    %p blippy.com
+    %div{:id=>"cnpjRZ_Kxh8"}
+    %script{:type=>"text/javascript"}
+      :plain
+        loadPlayer("cnpjRZ_Kxh8");
+
+%section
+  %section
+    %div.md250 "What does it mean?"
+  %section
+    %div.md250 It's a distraction from failure.
+  %section
+    %h2 There are two ways to have a magical 404 experience.
+    %ol.md100
+      %li.fragment
+        %span The page existed and now does not 
+        %span.red.fragment ( the website sucks )
+      %li.fragment
+        %span The page never existed
+        %span.red.fragment ( you suck )
+  %section
+    %div.md250 Neither is going to make anyone happy.
+  %section
+    %div.md200
+      %h3
+        %span What do we do about it?
+        %span.red.fragmenet (easy)
+      %ul
+        %li.fragment 301 MOVED PERMANENTLY
+        %li.fragment 302 MOVED TEMPORARILY
+  %section
+    %div.md250 180 Days.
+  %section
+    %img{:src => "assets/images/rewrite/404kenny.png", :width=>"800px"}
+  %section
+    %div.md200
+      %h3
+        %span Several options
+      %div.fragment Apache mod_rewrite
+      %div.fragment Tuckey URLRewriteFilter
+      %div.fragment OCPsoft Rewrite
+
+
+%section
+  %section.invert{:"data-state" => "whiteout" }
+    %h2.md200 2. URL-readability
+  %section
+    %img{:src => "assets/images/rewrite/kindle.png", :width=>"400px"}
+    %p.fragment.small 
+      http://www.amazon.com/Kindle-Touch-Wi-Fi-Ink-Display/dp/B005890G8Y/ref=amb_link_357575542_6?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=gateway-center-column&pf_rd_r=1T2J5PYBVZZWBHWN1BP1
+      &pf_rd_t=101&pf_rd_p=1321408942&pf_rd_i=507846
+    %div.fragment.red.fr.mu200.ml100 wtf?
+  %section.invert{:"data-state"=>"whiteout"}
+    %img.fragment.mu50{:src => "assets/images/rewrite/logo-amazon.png", :width=>"400"}
+    %img.fragment.mu50{:src => "assets/images/rewrite/logo-tux.png", :width=>"400"}
+    %h2.fragment We are friends.
+  %section{:"data-state"=>"soothe"}
+    %h3.md250 http://amazon.com/shop/kindle-touch 
+  %section{:"data-state" => "blackout" }
+    %h2 Tired of trash in your face?
+    %img.mu50{:src => "assets/images/rewrite/URLtrash.png", :width=>"800"}
+    %img.mu50{:src => "assets/images/rewrite/starwars.png", :width=>"800"}
+  %section{:"data-state" => "blackout", :style=>"background: url(assets/images/rewrite/bg-space.png) no-repeat top left;" }
+    %div.fragment
+      %h2 There's plenty of space out in space!
+      %p.md300{:style=>"font-family: courier-new,monospace; font-size: .9em;"}
+        %span{:style=>"display:inline;"} http://amazon.com/shop/kindle-touch
+        %span{:style=>"color: orange;"}?
+        %span{:style=>"color: red;"}tracker=AAasfds3r32ydk16fd854kdjf84hfidb gv64n0curnoxydkl6l6fd854kdjf84h fidbdgv64n0ge8nfbh...
+      //%img.md250{:src => "assets/images/rewrite/URLcomposite.png", :width=>"800"}
+
+
+%section
+  %section.invert{:"data-state" => "whiteout" }
+    %h2.md200 3. Formatting useful information
+  %section
+    %p.md250 http://example.com?c=shoes&app=store&pid=1&buy=true
+  %section.invert{:"data-state" => "whiteout" }
+    %h2 Be cool.
+    %img.bg{:src => "assets/images/rewrite/bg-travolta.png"}
+  %section
+    %p.md250 http://example.com?c=shoes&app=store&pid=1&buy=true
+  %section
+    %p.md250
+      %span.fragment http://example.com
+      %span.fragment / store
+      %span.fragment / shoes
+      %span.fragment / 1
+      %span.fragment ? buy=true
+  %section
+    %h2.md200 What are you most afraid of when you buy a used car?
+  %section
+    %img.bg{:src => "assets/images/rewrite/bg-junker.png", :width=>"100%"}
+    %h2 You never know what you are going to get.
+  %section
+    %div.md200
+      %h2 Do you trust me?
+      %a.fragment{:href => "http://www.youtube.com/watch?v=oHg5SJYRHA0"} http://www.youtube.com/watch?v=oHg5SJYRHA0
+  %section
+    %div.md200
+      %h2 Build trust by reducing clutter. Use clean, transparent URLs.
+      %a.fragment{:href => "http://www.youtube.com/watch?v=oHg5SJYRHA0"} 
+        %span http://www.youtube.com/watch/rick-rolld-again
+      
+
+%section
+  %section.invert{:"data-state" => "whiteout" }
+    %h2.md200 4. Revealing sensitive information
+  %section{:"data-state"=>"-paKBxiPI9A"}
+    %p microsoft.com FAQ
+    %div{:id=>"-paKBxiPI9A"}
+    %script{:type=>"text/javascript"}
+      :plain
+        loadPlayer("-paKBxiPI9A");
+  %section{:"data-state" => "soothe" }
+    %h2.md200 *Blush*
+  %section{:"data-state" => "alert" }
+    %ul.center.md100
+      %li.fragment .jsf
+      %li.fragment .do
+      %li.fragment .php
+      %li.fragment .seam
+      %li.fragment .rb
+      %li.fragment .cgi
+      %li.fragment .faces
+      %li.fragment .asp
+      %li.fragment .jsp
+      %li.fragment .*
+  %section{:"data-state" => "whiteout" }
+    %h1.md200{:style=>"color: rgb(103, 181, 221)"} /
+  %section{:"data-state" => "blackout", :style=>"background: url(assets/images/rewrite/bg-shawshank.png) no-repeat top left;" }
+    %h2 A good magician never reveals their implementation.
+  %section
+    %div.md250 "Served by: Apache HTTPd 2.0.15 (build #3312 - 08/12/2011)"
+  %section
+    %div.md250 Clean unnecessary information from headers and error pages!
+    
+
+%section
+  %section.invert{:"data-state" => "whiteout" }
+    %h2.md200 5. Validation of user input
+  %section
+    %p.md250
+      %span If you have to expose data, remember that URLs and headers are USER INPUT and are 
+      %span.red VULNERABLE.
+  %section
+    %h2 Aspect Security says:
+    %p.md200
+      %span.bold Two of three 
+      %span recent 
+      %span.red security vulnerabilities 
+      %span in web-frameworks are 
+      %span.bold URL-based
+      %span .*
+    %p.md100
+      %a.footnote.md250.fl{:href=>"https://www.aspectsecurity.com/uploads/downloads/2012/03/Aspect-Security-The-Unfortunate-Reality-of-Insecure-Libraries.pdf"} * Aspect-Security-The-Unfortunate-Reality-of-Insecure-Libraries
+  %section{:"data-state" => "whiteout" }
+    %img.bg.md50{:src => "assets/images/rewrite/aspect-struts2.png"}
+  %section{:"data-state" => "whiteout" }
+    %img.bg.md50{:src => "assets/images/rewrite/aspect-spring.png"}
+  %section
+    %h2 You can secure existing applications
+    %pre.md50{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          .addRule()
+          .when(Direction.isInbound()
+             .and(URL.matches("{badthings}")
+                 .or(Header.exists("{badthings}"))
+                 .or(Header.valueExists("{badthings}"))
+             )
+          )
+          .perform(SendStatus.error(404)) // or take some protective action
+          .where("badthings").constrainedBy(selectedCharacters)
+
+  %section
+    %pre.md50{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          Constraint<String> selectedCharacters = new Constraint<String>() {
+            @Override
+            public boolean isSatisfiedBy(Rewrite event, EvaluationContext context, String value)
+            {
+              return value.matches(".*[+%'\"^$#\\\\(\\\\)*<>].*");
+              // Don't forget unicode!
+            }
+          }
+  %section
+    %h2 Real life.
+    %p.md150 http://www.llbean.com/webapp/wcs/stores/servlet/CategoryDisplay?categoryId=28&storeId=1&catalogId=1&langId=-1&nav=hp-gndp
+  %section
+    %img.bg{:src => "assets/images/rewrite/bg-kids.png"}
+    %h2.fragment http://llbean.com/kids
+  %section
+    %h2 Another look.
+    %p.md150 
+      %span.fragment http://www.llbean.com
+      %span.fragment /
+      %span.fragment webapp
+      %span.fragment /
+      %span.fragment.red wcs
+      %span.fragment /
+      %span.fragment.red servlet
+      %span.fragment / CategoryDisplay
+      %span.fragment ?
+      %span.fragment.red categoryId=28
+      %span.fragment &
+      %span.fragment.red storeId=1
+      %span.fragment &
+      %span.fragment.red catalogId=1
+      %span.fragment &
+      %span.fragment.red langId=-1
+      %span.fragment &
+      %span.fragment.red &nav=hp-gndp
+  %section{:"data-state" => "alert" }
+    %h1.md200 Clean and Validate!
+
+%section
+  %section
+    %h2 A brief interlude.
+    %p.md200 
+      %span.fragment HTTP/1.1: 418
+      %span.fragment - I'm a teapot; the resulting entity may be short and stout.
+  %section{:"data-state" => "soothe" }
+    %h1.md200 Okay.
+
+%section
+  %section.invert{:"data-state" => "whiteout" }
+    %h2 We've got problems:
+    %ol.md100
+      %li.fragment Missing or relocated resources
+      %li.fragment Readability & clutter
+      %li.fragment Formatting of useful information
+      %li.fragment Revealing sensitive information
+      %li.fragment Validation of user input
+  %section
+    %h2 URL-rewriting!
+    %img.bg.md50{:src => "assets/images/rewrite/bg-superman.png"}
+  %section
+    %h2 Two types of rewriting tools.
+    %ol.md150
+      %li.fragment Proxy-based - Apache (inbound only)
+      %li.fragment Filter-based - Java (inbound and outbound)
+  %section.invert{:"data-state" => "whiteout" }
+    %h2.md250 Basic things we can do with all types of URL-rewriting.
+  %section
+    %h2 Redirection and relocation:
+    %img{:src => "assets/images/rewrite/rw-relocation.png"}
+  %section
+    %h2 Inbound parameterization
+    %img.md150{:src => "assets/images/rewrite/rw-parameterization.png"}
+  %section
+    %h2 Simple URL validation
+    %img.md150{:src => "assets/images/rewrite/rw-validate.png"}
+  %section
+    %h2 Header validation and modification
+    %img.md150{:src => "assets/images/rewrite/rw-header.png"}
+  %section
+    %h2 "I have no personal investment in any of these tools."
+    %p.fragment -- blatant lie
+  %section.invert{:"data-state" => "whiteout" }
+    %h2.md250 Cool things we can do with Filter-based Java URL-rewriting
+  %section
+    %h2 Transformation and canonicalization
+    %pre.fragment.md50{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          .addRule()
+          .when(Path.matches("/{path}.css"))
+          .perform(Forward.to("/styles/{path}.less")
+                   .and(Transform.with(Less.class)))
+    %pre.fragment.md100{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          .addRule()
+          .when(Path.matches("/foo/{bar}")
+          .perform(Forward.to("/foo/{bar}"))
+          .where("bar").transposedBy(ToLowercase.class))
+  %section
+    %h2 Complex conversion and validation
+    %pre.fragment.md150{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          .when(Path.matches("/store/product/{pid}")
+          .where("pid")
+          .matches("\\d+\\w{3}\\d+")
+          .bindsTo(El.property("productBean.product")
+          .convertedBy(ProductConverter.class)
+          .validatedBy(ProductValidator.class)))
+
+  %section
+    %h2 Request interception
+    %pre.fragment{:class => "prettyprint", :style => "font-size:18px"}
+      %code{:id => "multiple_page_elements"}
+        :escaped 
+          public class AccountVerifyInterceptor extends HttpConfigurationProvider 
+          {
+
+          @Inject private Account account;
+          @PersistenceContext private EntityManager em;
+          
+          @Override
+          public Configuration getConfiguration(final ServletContext context) {
+             ConfigurationBuilder config = ConfigurationBuilder.begin();
+             account.setEntityManager(em);
+             Profile current = account.getLoggedIn();
+             if (current.isPersistent() && !current.isUsernameConfirmed()) {
+                return config
+                   .addRule().when(DispatchType.isRequest()
+                             .and(Direction.isInbound())
+                   .perform(Forward.to("/account/confirm"))
+
+                   .addRule(Join.path("/account/confirm")
+                             .to("/pages/accountConfirm.xhtml"));
+             }
+             return config;
+          }
+  %section{:"data-state" => "alert" }
+    %h2.md200 Some things you should NOT do with Java URL-rewriting
+  %section
+    %div.md250 If it needs to run when your app is not, then don't run it in your app.
+
+%section
+  %section
+    %h2 It's DEMO time.
+    %div.md100
+      %img{:src=>"assets/images/jsf_logo.png", :width=>"250px;"}
+      %img{:src=>"assets/images/ocpsoft_logo.png", :width=>"150px;"}
+      %img{:src=>"assets/images/as7_logo.png", :width=>"150px;"}
+      %img{:src=>"assets/images/openshift_logo.png", :width=>"150px;"}
+      %img{:src=>"assets/images/gwt_logo.png", :width=>"150px;", :style=>"margin-left: 15px;"}
+  %section
+    %h2 Access Control Demo
+    %a{:href=>"http://access-rewrite.rhcloud.com/"} http://access-rewrite.rhcloud.com/
+    %div.md100
+    %img{:src=>"assets/images/rewrite/bc-access.png", :width=>"250px;"}
+  %section
+    %h2 Rest Validation & Conversion Demo
+    %a{:href=>"http://rest-rewrite.rhcloud.com/"} http://rest-rewrite.rhcloud.com/
+    %div.md100
+    %img{:src=>"assets/images/rewrite/bc-rest.png", :width=>"250px;"}
+  %section
+    %h2 Composite Query Demo
+    %a{:href=>"http://composite-rewrite.rhcloud.com/"} http://composite-rewrite.rhcloud.com/
+    %div.md100
+    %img{:src=>"assets/images/rewrite/bc-composite.png", :width=>"250px;"}
+  %section{:"data-state"=>"whiteout"}
+    %img{:src=>"assets/images/what_happened.png", :style=>"position: absolute; bottom: 0px; left: 0px; border-bottom: 3px solid #888;"}
+
+%section
+  %section.invert{:"data-state" => "whiteout" }
+    %h2 We've got problems:
+    %ol.md100
+      %li.fragment Missing or relocated resources
+      %li.fragment Readability & clutter
+      %li.fragment Formatting of useful information
+      %li.fragment Revealing sensitive information
+      %li.fragment Validation of user input
+      %li.fragment.bold (And many more.)
+  %section
+    %div.md250
+      %div "URL-rewriting - not a good choice for doing it wrong."
+
+%section
+  %h2 The end?
+  %h3.fragment{:style => "margin-top: 160px"} The beginning - of your adventure with URL-rewriting!
+%section
+  %h2 Credits
+  %center
+    %p
+      %a{:href => "http://ocpsoft.org/"} http://ocpsoft.org/
+    .links.commons
+      :plain
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">URL-rewriting: Enhance developer productivity, usability, and security</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ocpsoft.org/" property="cc:attributionName" rel="cc:attributionURL">Lincoln Baxter</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="dct:source">github.com</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/lincolnthree/talks/tree/master/2012-JBW" rel="cc:morePermissions">https://github.com/lincolnthree/talks/tree/master/2012-JBW</a>.
+
+%section
+  %h2 Stay in the loop
+  %ul.links.loop
+    %li
+      Project website:
+      %a{:href => "http://ocpsoft.org/rewrite"} http://ocpsoft.org/rewrite
+    %li
+      Twitter:
+      %a{:href => "http://twitter.com/%23!ocpsoft"} https://twitter.com/#!ocpsoft
+    %li
+      OCPsoft Forums:
+      %a{:href => "http://ocpsoft.org/support/"} http://ocpsoft.org/support/
+  %p{:style => "margin-top: 50px" } Get involved:
+  %ul.links
+    %li
+      Get the source:
+      %a{:href => "https://github.com/ocpsoft/rewrite"} https://github.com/ocpsoft/rewrite
+    %li
+      Join the discussion:
+      %a{:href => "http://groups.google.com/group/rewrite-dev"} http://groups.google.com/group/rewrite-dev
+  %p
+    %a{:href=>"http://ocpsoft.org"}
+      %img{:src=>"assets/images/ocpsoft_logo.png", :width=>"150px"}
