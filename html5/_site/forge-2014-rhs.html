@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <meta name="description" content=""> 
+    <meta name="author" content="Lincoln Baxter, III">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="lib/google-code-prettify/prettify.css">
+    <link rel="stylesheet" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" href="stylesheets/conf.css">
+    
+    <script src="lib/jquery-1.7.2.min.js"></script>
+    <script src="js/swfobject.js"></script>
+
+    <script type="text/javascript">
+       // This function is automatically called by the player once it loads
+       function onYouTubePlayerReady(playerId) {
+       }
+
+       function loadPlayer(videoId) {
+          // Lets Flash from another domain call JavaScript
+          var params = { allowScriptAccess: "always" };
+          // The element id of the Flash embed
+          var atts = { id: videoId };
+
+          // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
+       $(document).ready(function () {
+          swfobject.embedSWF("http://www.youtube.com/v/" + videoId +
+                             "?version=3&enablejsapi=1&rel=0&hd=1&playerapiid=" + videoId + "_id",
+                             videoId, "800", "600", "9", null, null, params, atts);
+
+          Reveal.addEventListener(videoId, function () {
+             // The player ID comes from the "playerapiid" parameter that was set
+             // when the embedded player was loaded
+             var player = document.getElementById(videoId);
+             player.playVideo();
+          }, false);
+       });
+
+       }
+    </script>
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Used to fade in a background when a specific slide state is reached -->
+<div class="state-background"></div>
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+<section>
+  <section>
+    <img class="splash screen" src="assets/images/2014_summit_intro_slide.jpg" style="width:100%; height:100%; position: absolute; top: 0px; left: 0px; margin: 0px;">
+    <img class="splash print" src="assets/images/2014_summit_intro_slide.jpg">
+  </section>
+  <section>
+    <ul>
+      <li class="fragment">
+        <a href="http://twitter.com/lincolnthree">@lincolnthree</a>
+      </li>
+      <li class="fragment">
+        <img src="assets/images/profiles/lincoln_profile.jpg" style="width:50%; height:50%;">
+      </li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section data-state="whiteout">
+    <h1 class="md200" style="color: #333;">Our Objectives</h1>
+  </section>
+  <section>
+    <ol class="md200">
+      <li class="fragment"><i>Learn - </i> Why Forge?</li>
+      <li class="fragment"><i>Use - </i> Crowdsource an application</li>
+      <li class="fragment"><i>Extend - </i> Quickly build and share tools</li>
+      <li class="fragment"><i>Reuse - </i> Embed the Future&lt;?&gt;</li>
+    </ol>
+  </section>
+  <section>
+    <h2 class="md200">Why Forge?</h2>
+  </section>
+  <section>
+    <ul class="md200">
+      <li>We believe that programming should be fun, productive, and personal ...</li>
+    </ul>
+  </section>
+  <section>
+    <ul class="md200">
+      <li>... and by creating a tool that encourage creative and collaborative solutions ...</li>
+    </ul>
+  </section>
+  <section>
+    <ul class="md200">
+      <li>... we can build a <i>community-driven</i> ecosystem that makes us <i>all</i> more effective.</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section data-state="whiteout">
+    <img src="assets/images/logos/forge2_logo.png">
+    <img class="fragment mu50 mr100" src="assets/images/JBoss_Community_logo.png">
+  </section>
+  <section>
+    <table style="position: relative; left: -200px;" width="140%">
+      <tr>
+        <td class="fragment">
+          <h4>
+            <a href="http://twitter.com/lincolnthree" style="padding-top: 50px;">Lincoln Baxter, III</a>
+          </h4>
+          <ul>
+            <li>Forge Project Lead</li>
+          </ul>
+          <div>
+            <img src="assets/images/profiles/lincoln_profile.jpg" width="200px">
+          </div>
+        </td>
+        <td class="fragment">
+          <h4>
+            <a href="http://twitter.com/gegastaldi">George Gastaldi</a>
+          </h4>
+          <ul>
+            <li>Addon Development Lead</li>
+          </ul>
+          <div>
+            <img src="assets/images/profiles/george_gastaldi.jpg" width="150px">
+          </div>
+          <div class="md50 fragment">
+            <h4>
+              <a href="">Stale Pedersen</a>
+            </h4>
+            <ul>
+              <li>Shell CLI Lead</li>
+            </ul>
+            <div>
+              <img src="assets/images/profiles/stale_pedersen.jpg" width="150px">
+            </div>
+          </div>
+        </td>
+        <td class="fragment">
+          <h4>
+            <a href="http://twitter.com/koentsje">Koen Aers</a>
+          </h4>
+          <ul>
+            <li>Eclipse Integration Lead</li>
+          </ul>
+          <div>
+            <img src="assets/images/profiles/koen_aers.jpg" width="150px">
+          </div>
+          <h1 class="md150">
+            <span class="fragment">YOU!</span>
+          </h1>
+        </td>
+      </tr>
+    </table>
+  </section>
+</section>
+<section data-state="whiteout">
+  <section>
+    <h2 class="md200" style="color: #333;">Crowdsource an Application</h2>
+  </section>
+</section>
+<section data-state="whiteout">
+  <section>
+    <h2 class="md200" style="color: #333;">Quickly build and share tools</h2>
+  </section>
+</section>
+<section data-state="whiteout">
+  <section>
+    <h2 class="md200" style="color: #333;">Embed the Future&lt;?&gt;</h2>
+  </section>
+</section>
+<section>
+  <h2 style="margin-bottom:100px;">Additional Resources</h2>
+  <div class="left resources">
+    <p>Quickstarts and guides:</p>
+    <ul class="links">
+      <li>
+        <a href="https://github.com/forge/core#jboss-forge-20">JBoss Forge 2.0</a>
+      </li>
+      <li>
+        <a href="https://github.com/forge/docs">Forge 2 Documentation</a>
+      </li>
+    </ul>
+  </div>
+</section>
+<section>
+  <h2>Stay in the loop</h2>
+  <ul class="links loop">
+    <li>
+      Project website:
+      <a href="http://forge.jboss.org/">http://forge.jboss.org</a>
+    </li>
+    <li>
+      Twitter:
+      <a href="https://twitter.com/search/%23JBossForge">https://twitter.com/search/#JBossForge</a>
+    </li>
+    <li>
+      Forge Forums:
+      <a href="https://community.jboss.org/en/forge">https://community.jboss.org/en/forge</a>
+    </li>
+    <li>
+      IRC:
+      <a href="http://webchat.freenode.net?channels=forge">#forge on irc.freenode.net</a>
+    </li>
+  </ul>
+  <p style="margin-top: 50px">Get involved:</p>
+  <center>
+    <img src="assets/images/logos/forge_logo.png" width="150px">
+  </center>
+  <ul class="links">
+    <li>
+      Get the source:
+      <a href="https://github.com/forge/core">https://github.com/forge/core</a>
+    </li>
+    <li>
+      Join the discussion:
+      <a href="https://lists.jboss.org/mailman/listinfo/forge-dev">https://lists.jboss.org/mailman/listinfo/forge-dev</a>
+    </li>
+  </ul>
+</section>
+</div>
+
+<!-- The navigational controls UI -->
+<aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+</aside>
+
+<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+<div class="progress"><span></span></div>
+
+</div>
+
+<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+    <script src="lib/google-code-prettify/prettify.js"></script>
+    <script src="lib/classList.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/code_highlight.js"></script>
+
+<script>
+    // Parse the query string into a key/value object
+    var query = {};
+    location.search.replace(/[A-Z0-9]+?=(\w*)/gi, function (a) {
+        query[ a.split('=').shift() ] = a.split('=').pop();
+    });
+
+    // Fires each time a new slide is activated
+    Reveal.addEventListener('slidechanged', function (event) {
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    });
+
+    $(document).ready(function () {
+    Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls:false,
+
+        // Display a presentation progress bar
+        progress:true,
+
+        // If true; each slide will be pushed to the browser history
+        history:true,
+
+        // Loops the presentation, defaults to false
+        loop:false,
+
+        // Flags if mouse wheel navigation should be enabled
+        mouseWheel:false,
+
+        // Apply a 3D roll to links on hover
+        rollingLinks:false,
+
+        // UI style
+        theme:query.theme || 'default', // default/neon
+
+        // Transition style
+        transition:'linear' // || query.transition || 'default' // default/cube/page/concave/linear(2d)
+    });
+    CodeHighlight.initialize({reveal: Reveal});
+    prettyPrint();
+    });
+
+
+</script>
+</body>
+</html>
