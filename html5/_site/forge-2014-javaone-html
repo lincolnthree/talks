@@ -1,0 +1,21 @@
+Like:q:q<h1>undefined method `to_sym' for nil:NilClass</h1>
+<h2>Rendering file /Users/lb3/projects/talks/html5/forge-2014-javaone-html.haml resulted in a failure.</h2>
+<p>Line: unknown</p>
+<p>Backtrace:</p>
+<pre>/Users/lb3/.rvm/gems/ruby-1.9.3-p448/gems/awestruct-0.5.5/lib/awestruct/handlers/base_tilt_handler.rb:92:in `options'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/gems/awestruct-0.5.5/lib/awestruct/handlers/base_tilt_handler.rb:132:in `rendered_content'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/gems/awestruct-0.5.5/lib/awestruct/handlers/layout_handler.rb:47:in `rendered_content'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/gems/awestruct-0.5.5/lib/awestruct/page.rb:143:in `rendered_content'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/gems/awestruct-0.5.5/lib/awestruct/engine.rb:285:in `generate_page'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/gems/awestruct-0.5.5/lib/awestruct/engine.rb:273:in `block in generate_output'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/gems/awestruct-0.5.5/lib/awestruct/engine.rb:270:in `each'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/gems/awestruct-0.5.5/lib/awestruct/engine.rb:270:in `generate_output'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/gems/awestruct-0.5.5/lib/awestruct/engine.rb:79:in `run'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/gems/awestruct-0.5.5/lib/awestruct/cli/generate.rb:21:in `run'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/gems/awestruct-0.5.5/lib/awestruct/cli/invoker.rb:125:in `invoke_generate'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/gems/awestruct-0.5.5/lib/awestruct/cli/invoker.rb:49:in `invoke!'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/gems/awestruct-0.5.5/bin/awestruct:9:in `<top (required)>'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/bin/awestruct:23:in `load'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/bin/awestruct:23:in `<main>'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/bin/ruby_noexec_wrapper:14:in `eval'
+/Users/lb3/.rvm/gems/ruby-1.9.3-p448/bin/ruby_noexec_wrapper:14:in `<main>'</pre>

@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <meta name="description" content=""> 
+    <meta name="author" content="Lincoln Baxter, III">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="lib/google-code-prettify/prettify.css">
+    <link rel="stylesheet" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" href="stylesheets/conf.css">
+    
+    <script src="lib/jquery-1.7.2.min.js"></script>
+    <script src="js/swfobject.js"></script>
+
+    <script type="text/javascript">
+       // This function is automatically called by the player once it loads
+       function onYouTubePlayerReady(playerId) {
+       }
+
+       function loadPlayer(videoId) {
+          // Lets Flash from another domain call JavaScript
+          var params = { allowScriptAccess: "always" };
+          // The element id of the Flash embed
+          var atts = { id: videoId };
+
+          // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
+       $(document).ready(function () {
+          swfobject.embedSWF("http://www.youtube.com/v/" + videoId +
+                             "?version=3&enablejsapi=1&rel=0&hd=1&playerapiid=" + videoId + "_id",
+                             videoId, "800", "600", "9", null, null, params, atts);
+
+          Reveal.addEventListener(videoId, function () {
+             // The player ID comes from the "playerapiid" parameter that was set
+             // when the embedded player was loaded
+             var player = document.getElementById(videoId);
+             player.playVideo();
+          }, false);
+       });
+
+       }
+    </script>
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Used to fade in a background when a specific slide state is reached -->
+<div class="state-background"></div>
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+<section>
+  <section>
+    <img class="splash screen" src="assets/images/forge_bg.png" style="width:100%; height:100%; position: absolute; top: 0px; left: 0px; margin: 0px; z-index: -1000">
+    <h2 class="md100">CON2675 - Take back your IDE: Tools you can share, with Forge</h2>
+    <ul class="md100">
+      <li>Lincoln Baxter, III</li>
+      <li>George Gastaldi</li>
+      <li>Red Hat</li>
+    </ul>
+  </section>
+  <section>
+    <ul>
+      <li class="fragment">
+        <a href="http://twitter.com/lincolnthree">@lincolnthree</a>
+      </li>
+      <li class="fragment">
+        <img src="assets/images/profiles/lincoln_profile.jpg" style="width:50%; height:50%;">
+      </li>
+    </ul>
+  </section>
+  <section>
+    <ul class="mr200 md100">
+      <li class="fragment">
+        <a href="http://twitter.com/gegastaldi">@gegastaldi</a>
+      </li>
+      <li class="fragment">
+        <img src="assets/images/profiles/george_gastaldi.jpg" style="width:50%; height:50%;">
+      </li>
+    </ul>
+  </section>
+  <section data-state="whiteout">
+    <img src="assets/images/logos/forge_logo.png">
+    <img class="fragment mr100" src="assets/images/JBoss_Community_logo.png">
+  </section>
+  <section>
+    <h2>Agenda</h2>
+    <ol class="md100">
+      <li class="fragment">A verbose explanation of <font color="red">why</font> we created a new tool</li>
+      <li class="fragment"><font color="red">What</font> it does</li>
+      <li class="fragment"><font color="red">How</font> it works</li>
+      <li class="fragment">Where <font color="red">YOU</font> fit in.</li>
+    </ol>
+  </section>
+</section>
+<section>
+  <section class="invert" data-state="whiteout">
+    <h2>A verbose explanation of <font color="red">why</font> we created a “new” tool, which really seems a little pointless because there are already so <font color="red">many tools</font> out there, but we felt like we needed to do <font color="red">better</font>, so there you are, I guess.</h2>
+  </section>
+  <section data-state="TtmLVP0HvDg">
+    <p>Necessity is the mother of Innovation</p>
+    <div id="TtmLVP0HvDg"></div>
+    <script type="text/javascript">
+      loadPlayer("TtmLVP0HvDg");
+    </script>
+  </section>
+  <section>
+    <h2>You need the right tool for the job.</h2>
+  </section>
+  <section>
+    <h2>If the right tool doesn't exist, ask a crow to make it.</h2>
+    <ul class="md100">
+      <li class="fragment">(We'll show you how to do that later.)</li>
+    </ul>
+  </section>
+  <section data-state="whiteout">
+    <img src="assets/images/logos/forge_logo.png">
+  </section>
+  <section class="invert">
+    <img src="assets/images/tools.jpg" style="width:100%; height:100%; position: absolute; top: 0px; left: 0%; z-index: -1000">
+    <h1 class="md150" style="background-color: #eee; opacity: .9">Tools</h1>
+  </section>
+  <section class="invert">
+    <img src="assets/images/ides.png" style="width:100%; height:100%; position: absolute; top: 0px; left: 0%; z-index: -1000">
+  </section>
+  <section class="invert">
+    <h1 style="background-color: #eee; opacity: .9">Tools</h1>
+    <ul class="md100 white">
+      <li class="fragment">Multiple host environments and platforms</li>
+      <li class="fragment">Multiple forms of interaction</li>
+    </ul>
+  </section>
+  <section data-state="NHBF2I4WQi4">
+    <p>Leap Motion</p>
+    <div id="NHBF2I4WQi4"></div>
+    <script type="text/javascript">
+      loadPlayer("NHBF2I4WQi4");
+    </script>
+  </section>
+  <section>
+    <ul>
+      <li class="fragment">Graphical Interface (IDE)</li>
+      <li class="fragment">Command Line (Shell)</li>
+      <li class="fragment">Magical hand-waving (Magic)</li>
+      <li class="fragment">Some other sorcery?</li>
+    </ul>
+  </section>
+  <section>
+    <h2>As <font color="red">human</font> input technology continues to <font color="red">advance</font>, and needs change, how will our tools <font color="red">bend</font>?</h2>
+  </section>
+</section>
+<section>
+  <section data-state="whiteout">
+    <h1 class="md200" style="color: #333;">What it does</h1>
+  </section>
+  <section>
+    <ul class="md100">
+      <li class="fragment">Aids in <font color="red">automation</font> of common development <font color="red">tasks</font></li>
+      <li class="fragment">Performs <font color="red">setup</font> of boilerplate <font color="red">code</font> and <font color="red">configuration</font>.</li>
+      <li class="fragment">Helps you <font color="red">focus</font> on business-centric activities.</li>
+      <li class="fragment">Write tools <font color="red">once</font>, run in <font color="red">any IDE</font>, and <font color="red">share</font> them.</li>
+    </ul>
+  </section>
+  <section>
+    <ul class="md100">
+      <li class="fragment"><i><font color="red">Rapid</font> - </i> application development</li>
+      <li class="fragment"><i><font color="red">Extensible</font> - </i> modular tooling.</li>
+      <li class="fragment"><i><font color="red">Abstract</font> - </i> user interface design (Shell, GUI, web, more?).</li>
+      <li class="fragment"><i><font color="red">Personal</font> - </i> and customizable. Your tools should do what you want.</li>
+    </ul>
+  </section>
+  <section>
+    <h2 class="md200">DEMO</h2>
+  </section>
+</section>
+<section>
+  <section class="invert">
+    <img src="assets/images/how_it_works.png" style="width:100%; height:100%; position: absolute; top: 0px; left: 0%; z-index: -1000">
+  </section>
+  <section data-state="whiteout">
+    <img src="assets/images/furnace_architecture/01.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/02.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/03.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/04.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/05.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/06.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/07.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/08.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/09.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/10.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/11.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/12.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/13.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/14.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/15.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/16.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/17.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/18.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/19.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/20.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/21.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/22.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/23.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/24.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/25.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/26.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/27.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/28.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/29.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/30.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/31.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/32.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/33.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/34.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/35.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/36.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/37.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/38.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/furnace_architecture/39.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+  </section>
+</section>
+<section>
+  <section data-state="whiteout">
+    <h2 class="md200" style="color: #333;">Quickly build and share tools</h2>
+  </section>
+  <section data-state="whiteout">
+    <img src="assets/images/forge_addon_community/01.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/forge_addon_community/02.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/forge_addon_community/03.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/forge_addon_community/04.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/forge_addon_community/05.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+    <img class="fragment" src="assets/images/forge_addon_community/06.jpg" style="width:90%; height:100%; position: absolute; top: 0px; left: 5%;">
+  </section>
+  <section>
+    <h2 class="md200">DEMO</h2>
+  </section>
+</section>
+<section>
+  <section data-state="whiteout">
+    <h2 class="md200" style="color: #333;">Recap</h2>
+  </section>
+  <section>
+    <h3>JBoss Forge</h3>
+    <ul class="md100">
+      <li class="fragment">can <font color="red">automate</font> common development <font color="red">tasks</font></li>
+      <li class="fragment">allows you to <font color="red">extend</font> it’s <font color="red">behavior</font></li>
+      <li class="fragment mr50">with a <font color="red">simple</font> programming <font color="red">model</font></li>
+      <li class="fragment"><font color="red">without constraining</font> you to a specific <font color="red">environment</font></li>
+    </ul>
+  </section>
+  <section>
+    <h3 class="md200">IDE's tend to suck:</h3>
+  </section>
+  <section>
+    <img src="assets/images/ide_errors/01.png" style="width:100%; position: absolute; top: 0px; left: 0%;">
+  </section>
+  <section>
+    <img src="assets/images/ide_errors/02.png" style="width:100%; position: absolute; top: 0px; left: 0%;">
+  </section>
+  <section>
+    <img src="assets/images/ide_errors/03.png" style="width:100%; position: absolute; top: 0px; left: 0%;">
+  </section>
+  <section>
+    <img src="assets/images/ide_errors/04.png" style="width:100%; position: absolute; top: 0px; left: 0%;">
+  </section>
+  <section>
+    <img src="assets/images/ide_errors/05.png" style="width:100%; position: absolute; top: 0px; left: 0%;">
+  </section>
+  <section>
+    <img src="assets/images/ide_errors/06.png" style="width:100%; position: absolute; top: 0px; left: 0%;">
+  </section>
+  <section>
+    <img src="assets/images/ide_errors/07.png" style="width:100%; position: absolute; top: 0px; left: 0%;">
+  </section>
+  <section data-state="whiteout">
+    <h2 class="md200" style="color: #333;">Forge fixes all that.</h2>
+  </section>
+  <section>
+    <img src="assets/images/ide_errors/08.png" style="width:100%; position: absolute; top: 0px; left: 0%;">
+  </section>
+  <section>
+    <img src="assets/images/ide_errors/09.png" style="width:100%; position: absolute; top: 0px; left: 0%;">
+  </section>
+  <section>
+    <img src="assets/images/ide_errors/10.png" style="width:100%; position: absolute; top: 0px; left: 0%;">
+  </section>
+  <section>
+    <h3 class="md200">Build something and share it.</h3>
+  </section>
+</section>
+<section>
+  <section data-state="whiteout">
+    <img src="assets/images/logos/forge_logo.png">
+    <img class="fragment mr100" src="assets/images/JBoss_Community_logo.png">
+  </section>
+  <section>
+    <table style="position: relative; left: -200px;" width="140%">
+      <tr>
+        <td class="fragment">
+          <h4>
+            <a href="http://twitter.com/lincolnthree" style="padding-top: 50px;">Lincoln Baxter, III</a>
+          </h4>
+          <ul>
+            <li>Forge Project Lead</li>
+          </ul>
+          <div>
+            <img src="assets/images/profiles/lincoln_profile.jpg" width="200px">
+          </div>
+        </td>
+        <td class="fragment">
+          <h4>
+            <a href="http://twitter.com/gegastaldi">George Gastaldi</a>
+          </h4>
+          <ul>
+            <li>Addon Development Lead</li>
+          </ul>
+          <div>
+            <img src="assets/images/profiles/george_gastaldi.jpg" width="150px">
+          </div>
+          <div class="md50 fragment">
+            <h4>
+              <a href="">Stale Pedersen</a>
+            </h4>
+            <ul>
+              <li>Shell CLI Lead</li>
+            </ul>
+            <div>
+              <img src="assets/images/profiles/stale_pedersen.jpg" width="150px">
+            </div>
+          </div>
+        </td>
+        <td class="fragment">
+          <h4>
+            <a href="http://twitter.com/koentsje">Koen Aers</a>
+          </h4>
+          <ul>
+            <li>Eclipse Integration Lead</li>
+          </ul>
+          <div>
+            <img src="assets/images/profiles/koen_aers.jpg" width="150px">
+          </div>
+          <h1 class="md150">
+            <span class="fragment">YOU!</span>
+          </h1>
+        </td>
+      </tr>
+    </table>
+  </section>
+</section>
+<section>
+  <h2>Stay in the loop</h2>
+  <ul class="links loop">
+    <li>
+      Project website:
+      <a href="http://forge.jboss.org/">http://forge.jboss.org</a>
+    </li>
+    <li>
+      Twitter:
+      <a href="https://twitter.com/JBossForge">https://twitter.com/JBossForge</a>
+    </li>
+    <li>
+      Forge Forums:
+      <a href="https://community.jboss.org/en/forge">https://community.jboss.org/en/forge</a>
+    </li>
+    <li>
+      IRC:
+      <a href="http://webchat.freenode.net?channels=forge">#forge on irc.freenode.net</a>
+    </li>
+  </ul>
+  <p style="margin-top: 50px">Get involved:</p>
+  <center>
+    <img src="assets/images/logos/forge_logo.png" width="150px">
+  </center>
+  <ul class="links">
+    <li>
+      Get the source:
+      <a href="https://github.com/forge/core">https://github.com/forge/core</a>
+    </li>
+    <li>
+      Join the discussion:
+      <a href="https://lists.jboss.org/mailman/listinfo/forge-dev">https://lists.jboss.org/mailman/listinfo/forge-dev</a>
+    </li>
+  </ul>
+</section>
+</div>
+
+<!-- The navigational controls UI -->
+<aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+</aside>
+
+<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+<div class="progress"><span></span></div>
+
+</div>
+
+<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+    <script src="lib/google-code-prettify/prettify.js"></script>
+    <script src="lib/classList.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/code_highlight.js"></script>
+
+<script>
+    // Parse the query string into a key/value object
+    var query = {};
+    location.search.replace(/[A-Z0-9]+?=(\w*)/gi, function (a) {
+        query[ a.split('=').shift() ] = a.split('=').pop();
+    });
+
+    // Fires each time a new slide is activated
+    Reveal.addEventListener('slidechanged', function (event) {
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    });
+
+    $(document).ready(function () {
+    Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls:false,
+
+        // Display a presentation progress bar
+        progress:true,
+
+        // If true; each slide will be pushed to the browser history
+        history:true,
+
+        // Loops the presentation, defaults to false
+        loop:false,
+
+        // Flags if mouse wheel navigation should be enabled
+        mouseWheel:false,
+
+        // Apply a 3D roll to links on hover
+        rollingLinks:false,
+
+        // UI style
+        theme:query.theme || 'default', // default/neon
+
+        // Transition style
+        transition:'linear' // || query.transition || 'default' // default/cube/page/concave/linear(2d)
+    });
+    CodeHighlight.initialize({reveal: Reveal});
+    prettyPrint();
+    });
+
+
+</script>
+</body>
+</html>

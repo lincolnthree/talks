@@ -45,10 +45,6 @@ ul.intro {
 
 }
 
-.reveal .white {
- background-color: #FFFFFF;
-}
-
 .reveal .images {
  width: 100%;
  padding-bottom: 50px;
@@ -251,6 +247,10 @@ img.bg {
 
 .black {
  color: #333;
+}
+
+.white {
+ color: #eee;
 }
 
 .bold {
